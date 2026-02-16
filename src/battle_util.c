@@ -7750,7 +7750,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     modifier = UQ_4_12(1.0);
 
     if (ctx->isSelfInflicted)
-        return uq4_12_multiply_by_int_half_down(ApplyOffensiveBadgeBoost(modifier, battlerAtk, move), atkStat);
+        return uq4_12_multiply_by_int_half_down(1, atkStat);
 
     // attacker's abilities
     switch (ctx->abilityAtk)
@@ -7953,8 +7953,6 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         break;
     }
 
-    modifier = ApplyOffensiveBadgeBoost(modifier, battlerAtk, move);
-
     return uq4_12_multiply_by_int_half_down(modifier, atkStat);
 }
 
@@ -8039,7 +8037,7 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
     modifier = UQ_4_12(1.0);
 
     if (ctx->isSelfInflicted)
-        return uq4_12_multiply_by_int_half_down(ApplyDefensiveBadgeBoost(modifier, battlerDef, move), defStat);
+        return uq4_12_multiply_by_int_half_down(1, defStat);
 
     // target's abilities
     switch (ctx->abilityDef)
@@ -8151,8 +8149,6 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
     // snow def boost for ice types
     if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) && usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
-
-    modifier = ApplyDefensiveBadgeBoost(modifier, battlerDef, move);
 
     return uq4_12_multiply_by_int_half_down(modifier, defStat);
 }
