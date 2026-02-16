@@ -1155,7 +1155,7 @@ static u32 GetActiveMatchCallTrainerId(u32 activeMatchCallId)
     - If in a valid outdoor map (not Safari Zone, not underwater, not Mt Chimney with Team Magma, not Sootopolis with legendaries)
     - If an eligible trainer to call the player is selected
 */
-bool32 TryStartMatchCall(void)
+bool32 TryStartMatchCall(void) 
 {
     if (FlagGet(FLAG_HAS_MATCH_CALL)
         && UpdateMatchCallStepCounter()
@@ -1164,8 +1164,8 @@ bool32 TryStartMatchCall(void)
         && MapAllowsMatchCall()
         && SelectMatchCallTrainer())
     {
-        StartMatchCall();
-        return TRUE;
+        //StartMatchCall();
+        return FALSE; //turns off the ability for people to get rematch calls
     }
 
     return FALSE;
