@@ -7678,24 +7678,6 @@ static bool32 IsRuinStatusActive(u32 fieldEffect)
     return FALSE;
 }
 
-static inline uq4_12_t ApplyOffensiveBadgeBoost(uq4_12_t modifier, u32 battler, u32 move)
-{
-    if (ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_ATTACK, battler) && IsBattleMovePhysical(move))
-        modifier = uq4_12_multiply_half_down(modifier, GetBadgeBoostModifier());
-    if (ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_SPATK, battler) && IsBattleMoveSpecial(move))
-        modifier = uq4_12_multiply_half_down(modifier, GetBadgeBoostModifier());
-    return modifier;
-}
-
-static inline uq4_12_t ApplyDefensiveBadgeBoost(uq4_12_t modifier, u32 battler, u32 move)
-{
-    if (ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_DEFENSE, battler) && IsBattleMovePhysical(move))
-        modifier = uq4_12_multiply_half_down(modifier, GetBadgeBoostModifier());
-    if (ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_SPDEF, battler) && IsBattleMoveSpecial(move))
-        modifier = uq4_12_multiply_half_down(modifier, GetBadgeBoostModifier());
-    return modifier;
-}
-
 static inline u32 CalcAttackStat(struct DamageContext *ctx)
 {
     u8 atkStage;
@@ -9723,30 +9705,6 @@ u32 TryImmunityAbilityHealStatus(u32 battler, enum AbilityEffect caseID)
     }
 
     return 0;
-}
-
-uq4_12_t GetBadgeBoostModifier(void)
-{
-    if (GetConfig(B_BADGE_BOOST) < GEN_3)
-        return UQ_4_12(1.125);
-    else
-        return UQ_4_12(1.1);
-}
-
-bool32 ShouldGetStatBadgeBoost(u16 badgeFlag, u32 battler)
-{
-    if (GetConfig(B_BADGE_BOOST) <= GEN_3 && badgeFlag != 0)
-    {
-        if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
-            return FALSE;
-        else if (!IsOnPlayerSide(battler))
-            return FALSE;
-        else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && TRAINER_BATTLE_PARAM.opponentA == TRAINER_SECRET_BASE)
-            return FALSE;
-        else if (FlagGet(badgeFlag))
-            return TRUE;
-    }
-    return FALSE;
 }
 
 static enum DamageCategory SwapMoveDamageCategory(u32 move)
