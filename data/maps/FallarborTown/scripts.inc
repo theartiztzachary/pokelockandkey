@@ -51,6 +51,92 @@ FallarborTown_EventScript_MoveTutorSign::
 	msgbox FallarborTown_Text_MoveTutorSign, MSGBOX_SIGN
 	end
 
+FallarborTown_EventScript_WorldLevelCyndaquil::
+	lock
+	msgbox FallarborTown_Text_WorldLevelCyndaquil, MSGBOX_NPC
+	message FallarborTown_Text_WorldLevelCyndaquil_Question
+	multichoice 25, 5, MULTI_WORLD_LEVEL, 0
+	closemessage
+	goto_if_eq VAR_RESULT, 0, SetWorldLevel0
+	goto_if_eq VAR_RESULT, 1, SetWorldLevel1
+	goto_if_eq VAR_RESULT, 2, SetWorldLevel2
+	goto_if_eq VAR_RESULT, 3, SetWorldLevel3
+	goto_if_eq VAR_RESULT, 4, SetWorldLevel4
+	goto_if_eq VAR_RESULT, 5, SetWorldLevel5
+	goto_if_eq VAR_RESULT, 6, SetWorldLevel6
+	goto_if_eq VAR_RESULT, 7, SetWorldLevel7
+	goto_if_eq VAR_RESULT, 8, SetWorldLevel8
+	goto_if_eq VAR_RESULT, 9, SetWorldLevel9
+	goto_if_eq VAR_RESULT, 10, SetWorldLevel10
+	goto_if_eq VAR_RESULT, 11, SetWorldLevel11
+	release
+	end
+
+SetWorldLevel0::
+	setvar VAR_WORLD_DIFFICULTY, 0
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel1::
+	setvar VAR_WORLD_DIFFICULTY, 1
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel2::
+	setvar VAR_WORLD_DIFFICULTY, 2
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel3::
+	setvar VAR_WORLD_DIFFICULTY, 3
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel4::
+	setvar VAR_WORLD_DIFFICULTY, 4
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel5::
+	setvar VAR_WORLD_DIFFICULTY, 5
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel6::
+	setvar VAR_WORLD_DIFFICULTY, 6
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel7::
+	setvar VAR_WORLD_DIFFICULTY, 7
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel8::
+	setvar VAR_WORLD_DIFFICULTY, 8
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel9::
+	setvar VAR_WORLD_DIFFICULTY, 9
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel10::
+	setvar VAR_WORLD_DIFFICULTY, 10
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+SetWorldLevel11::
+	setvar VAR_WORLD_DIFFICULTY, 11
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	goto WorldLevelChanged
+
+WorldLevelChanged::
+	msgbox FallarborTown_Text_WorldLevelCyndaquil_Changed, MSGBOX_DEFAULT
+	release
+	end
+
 FallarborTown_Text_ShadyCharactersCozmosHome:
 	.string "Something's happening,\n"
 	.string "and I don't like it!\p"
@@ -93,3 +179,13 @@ FallarborTown_Text_MoveTutorSign:
 	.string "MOVE TUTOR'S HOUSE\n"
 	.string "“New moves taught to POKéMON.”$"
 
+FallarborTown_Text_WorldLevelCyndaquil:
+	.string "Currently, the World Level is {STR_VAR_1}.\n"
+	.string "Nice!$"
+
+FallarborTown_Text_WorldLevelCyndaquil_Question:
+	.string "What would you like to change it to?$"
+
+FallarborTown_Text_WorldLevelCyndaquil_Changed:
+	.string "The World Level is now {STR_VAR_1}.\n"
+	.string "Let's hope this works.$"
