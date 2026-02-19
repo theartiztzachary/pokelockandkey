@@ -306,7 +306,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 7,
+      "x": 5,
       "y": 83,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -319,7 +319,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 8,
+      "x": 5,
       "y": 83,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -332,7 +332,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 9,
+      "x": 5,
       "y": 83,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -345,7 +345,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 10,
+      "x": 5,
       "y": 83,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -358,7 +358,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 8,
+      "x": 5,
       "y": 82,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -385,8 +385,8 @@
     {
       "local_id": "LOCALID_ROUTE110_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 34,
-      "y": 54,
+      "x": 39,
+      "y": 55,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -399,8 +399,8 @@
     {
       "local_id": "LOCALID_ROUTE110_RIVAL_ON_BIKE",
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
-      "x": 34,
-      "y": 54,
+      "x": 39,
+      "y": 56,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -491,8 +491,8 @@
     {
       "local_id": "LOCALID_ROUTE110_BIRCH",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 9,
-      "y": 79,
+      "x": 5,
+      "y": 82,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -568,7 +568,7 @@
     },
     {
       "type": "trigger",
-      "x": 33,
+      "x": 39,
       "y": 56,
       "elevation": 3,
       "var": "VAR_ROUTE110_STATE",
@@ -577,7 +577,7 @@
     },
     {
       "type": "trigger",
-      "x": 34,
+      "x": 39,
       "y": 56,
       "elevation": 3,
       "var": "VAR_ROUTE110_STATE",
@@ -586,7 +586,7 @@
     },
     {
       "type": "trigger",
-      "x": 35,
+      "x": 39,
       "y": 56,
       "elevation": 3,
       "var": "VAR_ROUTE110_STATE",
@@ -595,8 +595,8 @@
     },
     {
       "type": "trigger",
-      "x": 7,
-      "y": 85,
+      "x": 5,
+      "y": 83,
       "elevation": 3,
       "var": "VAR_REGISTER_BIRCH_STATE",
       "var_value": "1",
@@ -604,8 +604,8 @@
     },
     {
       "type": "trigger",
-      "x": 8,
-      "y": 85,
+      "x": 5,
+      "y": 83,
       "elevation": 3,
       "var": "VAR_REGISTER_BIRCH_STATE",
       "var_value": "1",
@@ -613,8 +613,8 @@
     },
     {
       "type": "trigger",
-      "x": 9,
-      "y": 85,
+      "x": 5,
+      "y": 83,
       "elevation": 3,
       "var": "VAR_REGISTER_BIRCH_STATE",
       "var_value": "1",
@@ -622,8 +622,8 @@
     },
     {
       "type": "trigger",
-      "x": 10,
-      "y": 85,
+      "x": 5,
+      "y": 83,
       "elevation": 3,
       "var": "VAR_REGISTER_BIRCH_STATE",
       "var_value": "1",

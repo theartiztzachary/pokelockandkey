@@ -27,6 +27,11 @@
       "map": "MAP_ROUTE116",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_RUSTBORO_PIER",
+      "offset": 14,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -140,7 +145,7 @@
       "local_id": "LOCALID_RUSTBORO_DEVON_EMPLOYEE",
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
       "x": 30,
-      "y": 10,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -153,8 +158,8 @@
     {
       "local_id": "LOCALID_RUSTBORO_GRUNT",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 13,
-      "y": 21,
+      "x": 16,
+      "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -334,8 +339,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 23,
-      "y": 20,
+      "x": 16,
+      "y": 25,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -343,8 +348,8 @@
     },
     {
       "type": "trigger",
-      "x": 23,
-      "y": 21,
+      "x": 16,
+      "y": 25,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -352,8 +357,8 @@
     },
     {
       "type": "trigger",
-      "x": 23,
-      "y": 22,
+      "x": 16,
+      "y": 25,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -361,8 +366,8 @@
     },
     {
       "type": "trigger",
-      "x": 23,
-      "y": 23,
+      "x": 16,
+      "y": 25,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -370,8 +375,8 @@
     },
     {
       "type": "trigger",
-      "x": 23,
-      "y": 24,
+      "x": 16,
+      "y": 25,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "1",
@@ -380,7 +385,7 @@
     {
       "type": "trigger",
       "x": 30,
-      "y": 9,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "2",
@@ -388,8 +393,8 @@
     },
     {
       "type": "trigger",
-      "x": 29,
-      "y": 10,
+      "x": 30,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "2",
@@ -398,7 +403,7 @@
     {
       "type": "trigger",
       "x": 30,
-      "y": 11,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "2",
@@ -407,7 +412,7 @@
     {
       "type": "trigger",
       "x": 30,
-      "y": 12,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "2",
@@ -416,7 +421,7 @@
     {
       "type": "trigger",
       "x": 30,
-      "y": 9,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "4",
@@ -424,8 +429,8 @@
     },
     {
       "type": "trigger",
-      "x": 31,
-      "y": 10,
+      "x": 30,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "4",
@@ -434,7 +439,7 @@
     {
       "type": "trigger",
       "x": 30,
-      "y": 11,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "4",
@@ -443,7 +448,7 @@
     {
       "type": "trigger",
       "x": 30,
-      "y": 12,
+      "y": 4,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "4",
@@ -451,8 +456,8 @@
     },
     {
       "type": "trigger",
-      "x": 12,
-      "y": 53,
+      "x": 8,
+      "y": 48,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
@@ -460,8 +465,8 @@
     },
     {
       "type": "trigger",
-      "x": 13,
-      "y": 53,
+      "x": 8,
+      "y": 48,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
@@ -469,8 +474,8 @@
     },
     {
       "type": "trigger",
-      "x": 14,
-      "y": 53,
+      "x": 8,
+      "y": 48,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
@@ -478,8 +483,8 @@
     },
     {
       "type": "trigger",
-      "x": 15,
-      "y": 53,
+      "x": 8,
+      "y": 48,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
@@ -487,8 +492,8 @@
     },
     {
       "type": "trigger",
-      "x": 16,
-      "y": 53,
+      "x": 8,
+      "y": 48,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
@@ -496,8 +501,8 @@
     },
     {
       "type": "trigger",
-      "x": 17,
-      "y": 53,
+      "x": 8,
+      "y": 48,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
@@ -505,8 +510,8 @@
     },
     {
       "type": "trigger",
-      "x": 18,
-      "y": 53,
+      "x": 8,
+      "y": 48,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
@@ -514,8 +519,8 @@
     },
     {
       "type": "trigger",
-      "x": 19,
-      "y": 53,
+      "x": 8,
+      "y": 48,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
