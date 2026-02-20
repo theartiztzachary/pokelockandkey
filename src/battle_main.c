@@ -77,6 +77,8 @@
 #include "constants/weather.h"
 #include "cable_club.h"
 #include "test/test_runner_battle.h"
+#include "constants/difficulty.h"
+#include "constants/vars.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -1940,7 +1942,15 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            
+            if (HasLevelEvolution(partyData[i].species, partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY)))) {
+                CreateMon(&party[i], HasLevelEvolution(partyData[i].species, partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY))), partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY)), 0, TRUE, personalityValue, otIdType, fixedOtId);
+            } else {
+                CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY)), 0, TRUE, personalityValue, otIdType, fixedOtId);
+            }
+
+            //DebugPrintf("%d", *GetVarPointer(VAR_WORLD_DIFFICULTY));
+
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
@@ -2024,6 +2034,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
+
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
