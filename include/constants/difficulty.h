@@ -3,10 +3,6 @@
 
 enum DifficultyLevel
 {
-    DIFFICULTY_EASY,
-    DIFFICULTY_NORMAL, //If you rename this, the word "Normal" in fprint_trainers must be replaced with the new difficulty name.
-    DIFFICULTY_HARD,
-    DIFFICULTY_COUNT,
     DIFFICULTY_WORLD_ZERO,
     DIFFICULTY_WORLD_ONE,
     DIFFICULTY_WORLD_TWO,
@@ -19,6 +15,10 @@ enum DifficultyLevel
     DIFFICULTY_WORLD_NINE,
     DIFFICULTY_WORLD_TEN,
     DIFFICULTY_WORLD_ELEVEN,
+    DIFFICULTY_EASY,
+    DIFFICULTY_NORMAL, //If you rename this, the word "Normal" in fprint_trainers must be replaced with the new difficulty name.
+    DIFFICULTY_HARD,
+    DIFFICULTY_COUNT,
 };
 
 #define DIFFICULTY_MIN 0

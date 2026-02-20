@@ -51,90 +51,125 @@ FallarborTown_EventScript_MoveTutorSign::
 	msgbox FallarborTown_Text_MoveTutorSign, MSGBOX_SIGN
 	end
 
-FallarborTown_EventScript_WorldLevelCyndaquil::
+FallarborTown_EventScript_WorldLevelCyndaquilGreeting::
 	lock
-	msgbox FallarborTown_Text_WorldLevelCyndaquil, MSGBOX_NPC
-	message FallarborTown_Text_WorldLevelCyndaquil_Question
-	multichoice 25, 5, MULTI_WORLD_LEVEL, 0
-	closemessage
-	goto_if_eq VAR_RESULT, 0, SetWorldLevel0
-	goto_if_eq VAR_RESULT, 1, SetWorldLevel1
-	goto_if_eq VAR_RESULT, 2, SetWorldLevel2
-	goto_if_eq VAR_RESULT, 3, SetWorldLevel3
-	goto_if_eq VAR_RESULT, 4, SetWorldLevel4
-	goto_if_eq VAR_RESULT, 5, SetWorldLevel5
-	goto_if_eq VAR_RESULT, 6, SetWorldLevel6
-	goto_if_eq VAR_RESULT, 7, SetWorldLevel7
-	goto_if_eq VAR_RESULT, 8, SetWorldLevel8
-	goto_if_eq VAR_RESULT, 9, SetWorldLevel9
-	goto_if_eq VAR_RESULT, 10, SetWorldLevel10
-	goto_if_eq VAR_RESULT, 11, SetWorldLevel11
-	release
+	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
+	msgbox FallarborTown_Text_WorldLevelCyndaquil, MSGBOX_DEFAULT
+	goto FallarborTown_EventScript_WorldLevelCyndaquil
+	releaseall
+	end
+
+FallarborTown_EventScript_WorldLevelCyndaquil::
+	msgbox FallarborTown_Text_WorldLevelCyndaquil_Question, MSGBOX_DEFAULT
+	dynmultipush FallarborTown_Text_WorldLevel0, 0
+	dynmultipush FallarborTown_Text_WorldLevel1, 1
+	dynmultipush FallarborTown_Text_WorldLevel2, 2
+	dynmultipush FallarborTown_Text_WorldLevel3, 3
+	dynmultipush FallarborTown_Text_WorldLevel4, 4
+	dynmultipush FallarborTown_Text_WorldLevel5, 5
+	dynmultipush FallarborTown_Text_WorldLevel6, 6
+	dynmultipush FallarborTown_Text_WorldLevel7, 7
+	dynmultipush FallarborTown_Text_WorldLevel8, 8
+	dynmultipush FallarborTown_Text_WorldLevel9, 9
+	dynmultipush FallarborTown_Text_WorldLevel10, 10
+	dynmultipush FallarborTown_Text_WorldLevel11, 11
+	dynmultistack 0, 0, FALSE, 4, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, SetWorldLevel0
+	case 1, SetWorldLevel1
+	case 2, SetWorldLevel2
+	case 3, SetWorldLevel3
+	case 4, SetWorldLevel4
+	case 5, SetWorldLevel5
+	case 6, SetWorldLevel6
+	case 7, SetWorldLevel7
+	case 8, SetWorldLevel8
+	case 9, SetWorldLevel9
+	case 10, SetWorldLevel10
+	case 11, SetWorldLevel11
+	releaseall
 	end
 
 SetWorldLevel0::
-	setvar VAR_WORLD_DIFFICULTY, 0
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_ZERO
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel1::
-	setvar VAR_WORLD_DIFFICULTY, 1
+	setvar VAR_WORLD_DIFFICULTY,  DIFFICULTY_WORLD_ONE
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel2::
-	setvar VAR_WORLD_DIFFICULTY, 2
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_TWO
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel3::
-	setvar VAR_WORLD_DIFFICULTY, 3
+	setvar VAR_WORLD_DIFFICULTY,  DIFFICULTY_WORLD_THREE
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel4::
-	setvar VAR_WORLD_DIFFICULTY, 4
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_FOUR
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel5::
-	setvar VAR_WORLD_DIFFICULTY, 5
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_FIVE
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel6::
-	setvar VAR_WORLD_DIFFICULTY, 6
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_SIX
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel7::
-	setvar VAR_WORLD_DIFFICULTY, 7
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_SEVEN
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel8::
-	setvar VAR_WORLD_DIFFICULTY, 8
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_EIGHT
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel9::
-	setvar VAR_WORLD_DIFFICULTY, 9
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_NINE
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel10::
-	setvar VAR_WORLD_DIFFICULTY, 10
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_TEN
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 SetWorldLevel11::
-	setvar VAR_WORLD_DIFFICULTY, 11
+	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_ELEVEN
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
+	end
 
 WorldLevelChanged::
 	msgbox FallarborTown_Text_WorldLevelCyndaquil_Changed, MSGBOX_DEFAULT
-	release
+	releaseall
+	end
+
+FallarborTown_EventScript_TestTrainer::
+	trainerbattle_single TRAINER_TEST_TRAINER, FallarborTown_Text_TestIntro, FallarborTown_Text_TestLose
+	msgbox FallarborTown_Text_TestPostBattle, MSGBOX_NPC
 	end
 
 FallarborTown_Text_ShadyCharactersCozmosHome:
@@ -186,6 +221,51 @@ FallarborTown_Text_WorldLevelCyndaquil:
 FallarborTown_Text_WorldLevelCyndaquil_Question:
 	.string "What would you like to change it to?$"
 
+FallarborTown_Text_WorldLevel0:
+	.string "Level 0$"
+
+FallarborTown_Text_WorldLevel1:
+	.string "Level 1$"
+
+FallarborTown_Text_WorldLevel2:
+	.string "Level 2$"
+
+FallarborTown_Text_WorldLevel3:
+	.string "Level 3$"
+
+FallarborTown_Text_WorldLevel4:
+	.string "Level 4$"
+
+FallarborTown_Text_WorldLevel5:
+	.string "Level 5$"
+
+FallarborTown_Text_WorldLevel6:
+	.string "Level 6$"
+
+FallarborTown_Text_WorldLevel7:
+	.string "Level 7$"
+
+FallarborTown_Text_WorldLevel8:
+	.string "Level 8$"
+
+FallarborTown_Text_WorldLevel9:
+	.string "Level 9$"
+
+FallarborTown_Text_WorldLevel10:
+	.string "Level 10$"
+
+FallarborTown_Text_WorldLevel11:
+	.string "Level 11$"	
+
 FallarborTown_Text_WorldLevelCyndaquil_Changed:
 	.string "The World Level is now {STR_VAR_1}.\n"
 	.string "Let's hope this works.$"
+
+FallarborTown_Text_TestIntro:
+	.string "Here we go!$"
+
+FallarborTown_Text_TestLose:
+	.string "Darn.$"
+
+FallarborTown_Text_TestPostBattle:
+	.string "You already fought me!$"

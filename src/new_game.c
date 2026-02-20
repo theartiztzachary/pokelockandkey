@@ -214,7 +214,7 @@ void NewGameInitData(void)
     ResetDexNav();
     ClearFollowerNPCData();
 
-    VarSet(VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_ONE);
+    VarSet(VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_ZERO);
 }
 
 static void ResetMiniGamesRecords(void)
