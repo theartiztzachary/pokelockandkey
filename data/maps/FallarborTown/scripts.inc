@@ -91,73 +91,73 @@ FallarborTown_EventScript_WorldLevelCyndaquil::
 	end
 
 SetWorldLevel0::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_ZERO
+	setvar VAR_WORLD_DIFFICULTY, 0
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel1::
-	setvar VAR_WORLD_DIFFICULTY,  DIFFICULTY_WORLD_ONE
+	setvar VAR_WORLD_DIFFICULTY,  1
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel2::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_TWO
+	setvar VAR_WORLD_DIFFICULTY, 2
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel3::
-	setvar VAR_WORLD_DIFFICULTY,  DIFFICULTY_WORLD_THREE
+	setvar VAR_WORLD_DIFFICULTY,  3
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel4::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_FOUR
+	setvar VAR_WORLD_DIFFICULTY, 4
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel5::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_FIVE
+	setvar VAR_WORLD_DIFFICULTY, 5
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel6::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_SIX
+	setvar VAR_WORLD_DIFFICULTY, 6
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel7::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_SEVEN
+	setvar VAR_WORLD_DIFFICULTY, 7
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel8::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_EIGHT
+	setvar VAR_WORLD_DIFFICULTY, 8
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel9::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_NINE
+	setvar VAR_WORLD_DIFFICULTY, 9
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel10::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_TEN
+	setvar VAR_WORLD_DIFFICULTY, 10
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
 
 SetWorldLevel11::
-	setvar VAR_WORLD_DIFFICULTY, DIFFICULTY_WORLD_ELEVEN
+	setvar VAR_WORLD_DIFFICULTY, 11
 	buffernumberstring STR_VAR_1, VAR_WORLD_DIFFICULTY
 	goto WorldLevelChanged
 	end
