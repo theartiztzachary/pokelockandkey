@@ -1287,3 +1287,17 @@ const u8 gText_Rename[] = _("RENAME");
 const u8 gText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
 const u8 gText_CannotSendMonToBoxActive[] = _("Cannot send an active battler\nto the box.{PAUSE_UNTIL_PRESS}");
 const u8 gText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't,\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
+
+// text for world level multiselect box, probably only for dev/testing
+const u8 gText_WorldLevel0[] = _("LEVEL 0");
+const u8 gText_WorldLevel1[] = _("LEVEL 1");
+const u8 gText_WorldLevel2[] = _("LEVEL 2");
+const u8 gText_WorldLevel3[] = _("LEVEL 3");
+const u8 gText_WorldLevel4[] = _("LEVEL 4");
+const u8 gText_WorldLevel5[] = _("LEVEL 5");
+const u8 gText_WorldLevel6[] = _("LEVEL 6");
+const u8 gText_WorldLevel7[] = _("LEVEL 7");
+const u8 gText_WorldLevel8[] = _("LEVEL 8");
+const u8 gText_WorldLevel9[] = _("LEVEL 9");
+const u8 gText_WorldLevel10[] = _("LEVEL 10");
+const u8 gText_WorldLevel11[] = _("LEVEL 11");
