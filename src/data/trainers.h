@@ -43820,31 +43820,13 @@ F_TRAINER_FEMALE |
     },
     [DIFFICULTY_NORMAL][TRAINER_TEST_TRAINER] =
     {
-
-        .trainerName = _("TEST"),
-
-        .trainerClass = TRAINER_CLASS_FISHERMAN,
-
-        .trainerPic = TRAINER_PIC_FISHERMAN,
-        .encounterMusic_gender =
-
-            TRAINER_ENCOUNTER_MUSIC_HIKER,
-
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-
-        .trainerBackPic = TRAINER_PIC_FISHERMAN,
-        .partySize = 2,
         .party = (const struct TrainerMon[])
         {
             {
-
             .species = SPECIES_BARBOACH,
             .gender = TRAINER_MON_RANDOM_GENDER,
-
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-
             .lvl = 10,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -43852,12 +43834,53 @@ F_TRAINER_FEMALE |
             {
             .species = SPECIES_GOLDEEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
-
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-
-            .lvl = 20,
+            .lvl = 10,
             .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+            .species = SPECIES_CARVANHA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .lvl = 10,
+            .nature = NATURE_BOLD,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+            .species = SPECIES_MAGIKARP,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .lvl = 10,
+            .nature = NATURE_BOLD,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,    
             }
         },
+        .items = {},
+        .trainerClass = TRAINER_CLASS_FISHERMAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = _("TEST"),
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .startingStatus = STARTING_STATUS_NONE,
+        .mugshotColor = MUGSHOT_COLOR_NONE,
+        .partySize = 2,
+        .poolSize = NULL,
+        .poolRuleIndex = NULL,
+        .poolPickIndex = NULL,
+        .poolPruneIndex = NULL,
+        .overrideTrainer = NULL,
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
+        .partySizeWorldZero = 1,
+        .partySizeWorldOne = 1,
+        .partySizeWorldTwo = 1,
+        .partySizeWorldThree = 2,
+        .partySizeWorldFour = 2,
+        .partySizeWorldFive = 2,
+        .partySizeWorldSix = 3,
+        .partySizeWorldSeven = 3,
+        .partySizeWorldEight = 3,
+        .partySizeWorldNine = 4,
+        .partySizeWorldTen = 4,
+        .partySizeWorldEleven = 4,
     },
