@@ -1009,6 +1009,18 @@ void HandleAction_ActionFinished(void)
     }
 }
 
+u16 HasLevelEvolution(u16 species, u8 level)
+{
+	if(gSpeciesInfo[species].evolutions[0].param && gSpeciesInfo[species].evolutions[0].param <= level)
+	{
+		if(HasLevelEvolution(gSpeciesInfo[species].evolutions[0].targetSpecies, level))
+			return HasLevelEvolution(gSpeciesInfo[species].evolutions[0].targetSpecies, level);
+		else
+			return gSpeciesInfo[species].evolutions[0].targetSpecies;
+	}
+	return 0;
+}
+
 // code
 
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12(u32 percent)
