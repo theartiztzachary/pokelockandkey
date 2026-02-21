@@ -75,7 +75,7 @@ bool32 CanDynamax(u32 battler)
     u16 species = GetBattlerVisualSpecies(battler);
     enum HoldEffect holdEffect = GetBattlerHoldEffectIgnoreNegation(battler);
 
-    // Prevents Zigzagoon from dynamaxing in vanilla.
+    // Prevents Zigzagoon from dynamaxing in vanilla. (assuming they mean the first starter battle zigzaoon... hopefully?)
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE && !IsOnPlayerSide(battler))
         return FALSE;
 
