@@ -1890,6 +1890,48 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u32 personalityValue;
     s32 i;
     u8 monsCount;
+    u8 currentPartyCount; 
+    switch (*GetVarPointer(VAR_WORLD_DIFFICULTY)) {
+        case 0:
+            currentPartyCount = trainer->partySizeWorldZero;
+            break;
+        case 1:
+            currentPartyCount = trainer->partySizeWorldOne;
+            break;
+        case 2:
+            currentPartyCount = trainer->partySizeWorldTwo;
+            break;
+        case 3:
+            currentPartyCount = trainer->partySizeWorldThree;
+            break;
+        case 4:
+            currentPartyCount = trainer->partySizeWorldFour;
+            break;
+        case 5:
+            currentPartyCount = trainer->partySizeWorldFive;
+            break;
+        case 6:
+            currentPartyCount = trainer->partySizeWorldSix;
+            break;
+        case 7:
+            currentPartyCount = trainer->partySizeWorldSeven;
+            break;
+        case 8:
+            currentPartyCount = trainer->partySizeWorldEight;
+            break;
+        case 9:
+            currentPartyCount = trainer->partySizeWorldNine;
+            break;
+        case 10:
+            currentPartyCount = trainer->partySizeWorldTen;
+            break;
+        case 11:
+            currentPartyCount = trainer->partySizeWorldEleven;
+            break;
+        default:
+            currentPartyCount = trainer->partySize;
+    }
+
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -1899,14 +1941,14 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
         if (battleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
         {
-            if (trainer->partySize > PARTY_SIZE / 2)
+            if (currentPartyCount > PARTY_SIZE / 2)
                 monsCount = PARTY_SIZE / 2;
             else
-                monsCount = trainer->partySize;
+                monsCount = currentPartyCount;
         }
         else
         {
-            monsCount = trainer->partySize;
+            monsCount = currentPartyCount;
         }
 
         u32 monIndices[monsCount];
