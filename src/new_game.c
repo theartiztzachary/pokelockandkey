@@ -215,8 +215,8 @@ void NewGameInitData(void)
     ResetDexNav();
     ClearFollowerNPCData();
 
-    FlagSet(FLAG_SYS_POKEDEX_GET);
-    FlagSet(FLAG_SYS_POKENAV_GET);
+    //FlagSet(FLAG_SYS_POKEDEX_GET);
+    //FlagSet(FLAG_SYS_POKENAV_GET);
     FlagSet(FLAG_SYS_B_DASH);
 }
 
