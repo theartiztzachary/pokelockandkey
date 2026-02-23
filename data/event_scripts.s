@@ -1163,3 +1163,19 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/MeteorFalls_Deep/scripts.inc"
+
+	.include "data/maps/MeteorFalls_Peak/scripts.inc"
+
+	.include "data/maps/PetalburgHauntedHouse/scripts.inc"
+
+	.include "data/maps/Hauntwood/scripts.inc"
+
+	.include "data/maps/AshfallPath/scripts.inc"
+
+	.include "data/maps/RustboroPier/scripts.inc"
+
+	.include "data/maps/AmaraDesert/scripts.inc"
+
+	.include "data/maps/Whitegrave/scripts.inc"

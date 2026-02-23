@@ -43873,4 +43873,8 @@ F_TRAINER_FEMALE |
         .partySizeWorldNine = 4, //sets party size when world level is nine
         .partySizeWorldTen = 4, //sets party size when world level is ten
         .partySizeWorldEleven = 4, //sets party size when world level is eleven
+<<<<<<< HEAD
     },
+=======
+    },
+>>>>>>> master

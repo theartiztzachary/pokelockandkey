@@ -234,7 +234,7 @@
     {
       "id": "LAYOUT_ROUTE108",
       "name": "Route108_Layout",
-      "width": 60,
+      "width": 120,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
@@ -265,7 +265,7 @@
       "id": "LAYOUT_ROUTE111",
       "name": "Route111_Layout",
       "width": 40,
-      "height": 140,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route111/border.bin",
@@ -1245,7 +1245,7 @@
       "id": "LAYOUT_METEOR_FALLS_1F_1R",
       "name": "MeteorFalls_1F_1R_Layout",
       "width": 30,
-      "height": 42,
+      "height": 45,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/MeteorFalls_1F_1R/border.bin",
@@ -4410,6 +4410,86 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_DEEP",
+      "name": "MeteorFalls_Deep_Layout",
+      "width": 30,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_Deep/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_Deep/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_PEAK",
+      "name": "MeteorFalls_Peak_Layout",
+      "width": 30,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_Peak/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_Peak/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_HAUNTED_HOUSE",
+      "name": "PetalburgHauntedHouse_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PetalburgHauntedHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgHauntedHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ASHFALL_PATH",
+      "name": "AshfallPath_Layout",
+      "width": 44,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/AshfallPath/border.bin",
+      "blockdata_filepath": "data/layouts/AshfallPath/map.bin"
+    },
+    {
+      "id": "LAYOUT_HAUNTWOOD",
+      "name": "Hauntwood_Layout",
+      "width": 30,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/Hauntwood/border.bin",
+      "blockdata_filepath": "data/layouts/Hauntwood/map.bin"
+    },
+    {
+      "id": "LAYOUT_AMARA_DESERT",
+      "name": "AmaraDesert_Layout",
+      "width": 40,
+      "height": 106,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/AmaraDesert/border.bin",
+      "blockdata_filepath": "data/layouts/AmaraDesert/map.bin"
+    },
+    {
+      "id": "LAYOUT_WHITEGRAVE",
+      "name": "Whitegrave_Layout",
+      "width": 26,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Whitegrave/border.bin",
+      "blockdata_filepath": "data/layouts/Whitegrave/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTBORO_PIER",
+      "name": "RustboroPier_Layout",
+      "width": 35,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/RustboroPier/border.bin",
+      "blockdata_filepath": "data/layouts/RustboroPier/map.bin"
     }
   ]
 }
