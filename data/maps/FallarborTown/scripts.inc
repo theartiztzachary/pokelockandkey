@@ -172,6 +172,70 @@ FallarborTown_EventScript_TestTrainer::
 	msgbox FallarborTown_Text_TestPostBattle, MSGBOX_NPC
 	end
 
+FallarborTown_EventScript_TestItemBall::
+	@goto_if_eq VAR_RESULT, TRUE, MyScript
+	goto_if_eq VAR_WORLD_DIFFICULTY, 0, FallarborTown_WorldZero_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 1, FallarborTown_WorldOne_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 2, FallarborTown_WorldTwo_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 3, FallarborTown_WorldThree_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 4, FallarborTown_WorldFour_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 5, FallarborTown_WorldFive_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 6, FallarborTown_WorldSix_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 7, FallarborTown_WorldSeven_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 8, FallarborTown_WorldEight_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 9, FallarborTown_WorldNine_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 10, FallarborTown_WorldTen_Item
+	goto_if_eq VAR_WORLD_DIFFICULTY, 11, FallarborTown_WorldEleven_Item
+	end
+
+FallarborTown_WorldZero_Item::
+	finditem ITEM_POTION, amount=1
+	end
+
+FallarborTown_WorldOne_Item::
+	finditem ITEM_POTION, amount=2
+	end
+
+FallarborTown_WorldTwo_Item::
+	finditem ITEM_SUPER_POTION, amount=1
+	end
+
+FallarborTown_WorldThree_Item::
+	finditem ITEM_SUPER_POTION, amount=2
+	end
+
+FallarborTown_WorldFour_Item::
+	finditem ITEM_HYPER_POTION, amount=1
+	end
+
+FallarborTown_WorldFive_Item::
+	finditem ITEM_HYPER_POTION, amount=2
+	end
+
+FallarborTown_WorldSix_Item::
+	finditem ITEM_MAX_POTION, amount=1
+	end
+
+FallarborTown_WorldSeven_Item::
+	finditem ITEM_FULL_RESTORE, amount=1
+	end
+
+FallarborTown_WorldEight_Item::
+	finditem ITEM_FULL_RESTORE, amount=2
+	end
+
+FallarborTown_WorldNine_Item::
+	finditem ITEM_MAX_REVIVE, amount=1
+	end
+
+FallarborTown_WorldTen_Item::
+	finditem ITEM_MAX_REVIVE, amount=2
+	end
+
+FallarborTown_WorldEleven_Item::
+	finditem ITEM_SACRED_ASH, amount=1
+	end
+
 FallarborTown_Text_ShadyCharactersCozmosHome:
 	.string "Something's happening,\n"
 	.string "and I don't like it!\p"
