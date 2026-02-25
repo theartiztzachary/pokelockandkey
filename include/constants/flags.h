@@ -656,31 +656,36 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
+//WORLD ROUTE FLAGS - general note - stretches between two unlocked anchors aren't unlocked until that anchor point is "cleared" and the next selection opens
+// when you defeat a anchor boss, you get a "key" that can be used to unlock any stretch, not just the ones connected to that anchor
+#define FLAG_FALLARBOR_RUSTBORO_STRETCH  0x264 // Fallarbor <--> Rustboro on route 114
+#define FLAG_FALLARBOR_LAVARIDGE_STRETCH 0x265 // Fallarbor <--> Lavaridge 
+#define FLAG_RUSTBORO_MAUVILLE_STRETCH   0x266 // Rustboro <--> Mauville
+#define FLAG_LAVARIDGE_MAUVILLE_STRETCH  0x267 // Lavaridge <--> Mauville
+#define FLAG_RUSTBORO_PETALBURG_STRETCH  0x268 // Rustboro <--> Petalburg
+#define FLAG_PETALBURG_DEWFORD_STRETCH   0x269 // Petalburg <--> Dewford
+#define FLAG_DEWFORD_SLATEPORT_STRETCH   0x26A // Dewford <--> Slateport
+#define FLAG_PETALBURG_SLATEPORT_STRETCH 0x26B // Petalburg <--> Slateport
+#define FLAG_SLATEPORT_MAUVILLE_STRETCH  0x26C // Slateport <--> Mauville
+#define FLAG_LAVARIDGE_FORTREE_STRETCH   0x26D // Lavaridge <--> Fortree
+#define FLAG_MAUVILLE_MTPYRE_STRETCH     0x26E // Mauville <--> Mt Pyre
+#define FLAG_FORTREE_MTPYRE_STRETCH      0x26F // Fortree <--> Mt Pyre
+#define FLAG_MTPYRE_LILYCOVE_STRETCH     0x270 // Mt Pyre <--> Lilycove
+#define FLAG_LILYCOVE_MOSSDEEP_STRETCH   0x271 // Lilycove <--> Mossdeep
+#define FLAG_SLATEPORT_MOSSDEEP_STRETCH  0x272 // Slateport <--> Mossdeep
+
+//ANCHOR BOSS FLAGS
+#define FLAG_RUSTBORO_BOSS   0x273 // 
+#define FLAG_PETALBURG_BOSS  0x274 //
+#define FLAG_DEWFORD_BOSS    0x275 //
+#define FLAG_SLATEPORT_BOSS  0x276 //
+#define FLAG_MAUVILLE_BOSS   0x277 //
+#define FLAG_LAVARIDGE_BOSS  0x278 //
+#define FLAG_FORTREE_BOSS    0x279 //
+#define FLAG_MTPYRE_BOSS     0x27A //
+#define FLAG_LILYCOVE_BOSS   0x27B //
+#define FLAG_MOSSDEEP_BOSS   0x27C //
+
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
 #define FLAG_UNUSED_0x27F  0x27F // Unused Flag

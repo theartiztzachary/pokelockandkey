@@ -753,6 +753,16 @@
       "y": 10,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_ROUTE123_CYCLE"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": -1,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL",
+      "selectionname": "tomauville"
     }
   ],
   "bg_events": [
