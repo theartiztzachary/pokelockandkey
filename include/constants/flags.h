@@ -168,7 +168,7 @@
 #define FLAG_CAUGHT_HO_OH                    0x92
 #define FLAG_MR_BRINEY_SAILING_INTRO         0x93
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
-#define FLAG_DELIVERED_DEVON_GOODS           0x95
+#define FLAG_DELIVERED_DEVON_GOODS           0x95 // Unused now since we are removing vanilla story beats
 #define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
@@ -685,8 +685,8 @@
 #define FLAG_MTPYRE_BOSS     0x27A //
 #define FLAG_LILYCOVE_BOSS   0x27B //
 #define FLAG_MOSSDEEP_BOSS   0x27C //
+#define FLAG_FALLARBOR_BOSS  0x27D //
 
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
 #define FLAG_UNUSED_0x27F  0x27F // Unused Flag
 #define FLAG_UNUSED_0x280  0x280 // Unused Flag
