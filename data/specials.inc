@@ -567,3 +567,6 @@ gSpecials::
 	def_special SetAbility
 	def_special ObjectEventInteractionGetApricornTreeData
 	def_special ObjectEventInteractionPickApricornTree
+	def_special IncrementPlayerKeys
+	def_special DecrementPlayerKeys
+	def_special IncrementWorldLevel

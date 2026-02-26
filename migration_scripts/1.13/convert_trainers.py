@@ -395,7 +395,6 @@ if __name__ == '__main__':
     except:
         print(f"usage: python3 {sys.argv[0]} <trainers.h> <out>")
         print("trainers.h path: src/data/trainers.h")
-        print("trainers.party output path: src/data/trainers.party")
     else:
         with open(trainers_in_path, "r") as source, open(out_path, 'w') as output:
             parse_trainers(source, output)

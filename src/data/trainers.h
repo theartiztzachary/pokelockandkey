@@ -1,10 +1,5 @@
-//
-// DO NOT MODIFY THIS FILE! It is auto-generated from src/data/trainers.party
-//
-// If you want to modify this file see expansion PR #7154
-//
 
-    [DIFFICULTY_NORMAL][TRAINER_NONE] =
+[DIFFICULTY_NORMAL][TRAINER_NONE] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
         .trainerPic = TRAINER_PIC_HIKER,
@@ -43880,52 +43875,97 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[]) 
         {
             {
-            .nickname = COMPOUND_STRING("Testing"), //poke's nickname, there's probably a max somewhere
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
-            //.moves = {} //list of moves the pokemon has, ie { MOVE_TACKLE, MOVE_GROWL }, move refs in /include/constants/moves.h
-            .species = SPECIES_BARBOACH, //actual pokemon itself, just make sure it's SPECIES_POKEMON //NEEDED
-            .heldItem = ITEM_ORAN_BERRY, //item the poke is holding, item reference is /include/constants/items.h
-            .ability = ABILITY_DRIZZLE, //set's poke's ability, reference is /include/constants/abilities.h
-            .lvl = 10, //for our purposes, the level of the poke at World Level 0 /NEEDED
-            .ball = ITEM_POKE_BALL, //the ball the mon is in, same references as items
-            .friendship = 0, //poke's friendship level, a number between 0-255, idk what the thresholds are lol
-            .nature = NATURE_HARDY, //poke's nature, just make sure it's NATURE_NATURENAME
-            .gender = TRAINER_MON_RANDOM_GENDER, //poke's gender, it's TRAINER_MON_MALE, _FEMALE, or _RANDOM_GENDER //NEEDED
-            .isShiny = FALSE, //i think this is self explanitory xd
-            .teraType = TYPE_NONE, //poke's tera type, ref is in include/constants/pokemon.h line 5
-            .gigantamaxFactor = FALSE, //check for if a poke has gigantamax turned on or not, mostly for basics that have gigantamax ie eevee, pikachu, etc
-            .shouldUseDynamax = FALSE, //tells the battle system if this poke should dynamax or not
-            .padding1 = 1, //i legit have no idea, looks like it is default set to one so probably keep it at that
+            .species = SPECIES_DRATINI,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
-            .padding2 = 4, //also have no idea, default is 4 so probably keep it at that
-            .tags = NULL, //used with the trainer pool system
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_BAGON,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_TRAPINCH,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_HORSEA,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_AXEW,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_GABITE,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
             },
         },
-        //.items = {}, //list items the trainer has, ie { ITEM_FULL_RESTORE }, items references can be found in /include/constants/items.h
-        .trainerClass = TRAINER_CLASS_FISHERMAN, //it looks like this is used to help decide what in-battle and post-battle background music is played, enum is include/constants/trainers.h line 288
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER, //the music that plays when a trainer notices you/you talk to them, before the batle actually starts, enum is in include/constants/trainers.h line 359
-        .trainerPic = TRAINER_PIC_FISHERMAN, //from what I can tell this looks like it determines the sprite that shows up in battle, vars can be found in include/constants/trainers.h starting on like 18
-        .trainerName = _("TEST"), //the trainer's name as it appears in-game, looks like the max name length is 10 as set in include/constants/global.h, line 147
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES, //sets if the battle is a single or double, unsure if pokeemerald expansion has support for other types, enum is in include/data.h line 85
-        .startingStatus = STARTING_STATUS_NONE, //sets starting battlefield status, see include/constants/battle.h line 674
-        .mugshotColor = MUGSHOT_COLOR_NONE, //yknow the like graphical cut-in that happens with gym leaders/e4? yeah that. enum is in include/battle_transition.h, line 13
-        .partySize = 2, //can probably be ignored/removed, but putting a default value is probably best practice as a backup in case the game tries to read it for some reason
-        .poolSize = NULL, // okay so it looks like the .pool attributes are an optional way to set up a trainer to have a pool of pokemon that they can draw from, 
-        .poolRuleIndex = NULL, // instead of having a fixed party, the game will randomly select pokemon from the pool to fill the trainer's party each battle
-        .poolPickIndex = NULL, //it looks like this isn't used for the battle frontier at all, so we might be able to co-opt it for the gym leaders having a 'pool' of pokes
-        .poolPruneIndex = NULL, //but that will take some extra research
-        .overrideTrainer = NULL, //...I got nothing, i can find where it's used in the code but idk what it does, looks like other trainers don't use this attribute so we can probably ignore it/leave it null
-        .trainerBackPic = TRAINER_PIC_FISHERMAN, //I... have no idea, player and partner npc back pics are handleded elsewhere and don't reference this, for the sake of matching other definitions I would use the same thing you put for .trainerPic
-        .partySizeWorldZero = 1, //sets party size when world level is zero
-        .partySizeWorldOne = 1, //sets par ty size when world level is one
-        .partySizeWorldTwo = 1, //sets party size when world level is two
-        .partySizeWorldThree = 2, //sets party size when world level is three
-        .partySizeWorldFour = 2, //sets party size when world level is four
-        .partySizeWorldFive = 2, //sets party size when world level is five
-        .partySizeWorldSix = 3, //sets party size when world level is six
-        .partySizeWorldSeven = 3, //sets party size when world level is seven
-        .partySizeWorldEight = 3, //sets party size when world level is eight
-        .partySizeWorldNine = 4, //sets party size when world level is nine
-        .partySizeWorldTen = 4, //sets party size when world level is ten
-        .partySizeWorldEleven = 4, //sets party size when world level is eleven
+        .items = { ITEM_POTION },
+        .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_ELITE_FOUR_DRAKE,
+        .trainerName = _("SP Boss"),
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .startingStatus = STARTING_STATUS_NONE,
+        .mugshotColor = MUGSHOT_COLOR_PURPLE,
+        .trainerBackPic = TRAINER_PIC_ELITE_FOUR_DRAKE,
+        .partySizeWorldZero = 1,
+        .partySizeWorldOne = 2,
+        .partySizeWorldTwo = 2,
+        .partySizeWorldThree = 3,
+        .partySizeWorldFour = 3,
+        .partySizeWorldFive = 4,
+        .partySizeWorldSix = 4,
+        .partySizeWorldSeven = 5, 
+        .partySizeWorldEight = 5,
+        .partySizeWorldNine = 6,
+        .partySizeWorldTen = 6,
+        .partySizeWorldEleven = 6,
     },

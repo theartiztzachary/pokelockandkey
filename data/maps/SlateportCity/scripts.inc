@@ -1,6 +1,5 @@
 SlateportCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_OnFrame
 	.byte 0
 
 SlateportCity_OnTransition:
@@ -72,11 +71,6 @@ SlateportCity_EventScript_Girl::
 	release
 	end
 
-SlateportCity_EventScript_GirlSternInterview::
-	msgbox SlateportCity_Text_InterviewerSoCool, MSGBOX_DEFAULT
-	release
-	end
-
 SlateportCity_EventScript_GirlSecretBase::
 	msgbox SlateportCity_Text_BuyBricksSoDecorWontGetDirty, MSGBOX_DEFAULT
 	release
@@ -88,10 +82,6 @@ SlateportCity_EventScript_RichBoy::
 
 SlateportCity_EventScript_FatMan::
 	msgbox SlateportCity_Text_BushedHikingFromMauville, MSGBOX_NPC
-	end
-
-SlateportCity_EventScript_FatManSternInterview::
-	msgbox SlateportCity_Text_AmIOnTV, MSGBOX_SIGN
 	end
 
 SlateportCity_EventScript_Man1::
@@ -223,6 +213,10 @@ SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM_HIDDEN_POWER
 	.2byte ITEM_TM_SECRET_POWER
 	pokemartlistend
+
+SlateportCity_EventScript_Man3::
+	msgbox SlateportCity_Text_WonderIfLighthouseStartlesPokemon, MSGBOX_NPC
+	end
 
 SlateportCity_EventScript_BerryPowderClerk::
 	lock
@@ -393,14 +387,111 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 SlateportCity_EventScript_TestBoss::
 	lock
 	faceplayer
+	goto_if_defeated TRAINER_SLATEPORT_BOSS, SlateportCity_EventScript_TestBoss_AlreadyFought
 	msgbox SlateportCity_Text_TestBoss_Intro, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_TestBossNoBattle
-	trainerbattle_single 
+	trainerbattle_single TRAINER_SLATEPORT_BOSS, SlateportCity_Text_TestBoss_YesBattle, SlateportCity_Text_TestBoss_Lose, SlateportCity_EventScript_TestBoss_FlagsAfterBattle
+	msgbox SlateportCity_Text_TestBoss_PostBattle, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SlateportCity_EventScript_TestBoss_AlreadyFought::
+	msgbox SlateportCity_Text_TestBoss_PostBattle, MSGBOX_AUTOCLOSE
+	release
+	end
 
 SlateportCity_EventScript_TestBossNoBattle::
 	msgbox SlateportCity_Text_TestBoss_NoBattle, MSGBOX_DEFAULT
 	release
 	end
+
+SlateportCity_EventScript_TestBoss_FlagsAfterBattle::
+	setflag FLAG_SLATEPORT_BOSS
+	special IncrementPlayerKeys
+	special IncrementWorldLevel
+	release
+	end
+
+SlateportCity_EventScript_Check_ToMauville::
+	goto_if_unset FLAG_SLATEPORT_MAUVILLE_STRETCH, SlateportCity_EventScript_Check_Slateport_Mauville
+	end
+
+SlateportCity_EventScript_Check_Slateport_Mauville::
+	lock
+	goto_if_unset FLAG_SLATEPORT_BOSS, SlateportCity_EventScript_ToMauville_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, SlateportCity_EventScript_Cannot_Unlock_Mauville
+	msgbox SlateportCity_Text_To_Mauville, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_Reject_ToMauville
+	msgbox SlateportCity_Text_Accept_Mauville, MSGBOX_DEFAULT
+	setflag FLAG_SLATEPORT_MAUVILLE_STRETCH
+	special DecrementPlayerKeys
+	release
+	end
+
+SlateportCity_EventScript_ToMauville_BossUndefeated::
+	msgbox SlateportCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Mauville
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Cannot_Unlock_Mauville::
+	msgbox SlateportCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Mauville
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Reject_ToMauville::
+	msgbox SlateportCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Mauville
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Check_ToDewford::
+	goto_if_unset FLAG_DEWFORD_SLATEPORT_STRETCH, SlateportCity_EventScript_Check_Dewford_Slateport
+	end
+
+SlateportCity_EventScript_Check_Dewford_Slateport::
+	lock
+	goto_if_unset FLAG_SLATEPORT_BOSS, SlateportCity_EventScript_ToDewford_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, SlateportCity_EventScript_Cannot_Unlock_Dewford
+	msgbox SlateportCity_Text_To_Dewford, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_Reject_ToDewford
+	setflag FLAG_DEWFORD_SLATEPORT_STRETCH
+	special DecrementPlayerKeys
+	release
+	end
+
+SlateportCity_EventScript_ToDewford_BossUndefeated::
+	msgbox SlateportCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Dewford
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Cannot_Unlock_Dewford::
+	msgbox SlateportCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Dewford
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Reject_ToDewford::
+	msgbox SlateportCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Dewford
+	waitmovement 0
+	release
+	end
+
+SlateportCity_Movement_TurnFrom_Mauville:
+	walk_down
+	step_end
+
+SlateportCity_Movement_TurnFrom_Dewford:
+	walk_up
+	step_end
 
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the ENERGY GURU! I'll go for it and\n"
@@ -640,5 +731,29 @@ SlateportCity_Text_TestBoss_Lose:
 
 SlateportCity_Text_TestBoss_PostBattle:
 	.string "Oh, you should have also gotten a key.\p"
-	.string "It's not in your inventory though. It's a var\n"
-	.string "in the script!$"
+	.string "It's not in your inventory though.\n"
+	.string "It's a var in the script!$"
+
+SlateportCity_Text_Boss_Undefeated:
+	.string "There are still things I need\n"
+	.string "to do here.$"
+
+SlateportCity_Text_Cannot_Unlock:
+	.string "I have things to do elsewhere first.$"
+
+SlateportCity_Text_To_Mauville:
+	.string "This is the way to Mauville City...\n"
+	.string "Head this way?$"
+
+SlateportCity_Text_Accept_Mauville:
+	.string "Time to head for Mauville City.$"
+
+SlateportCity_Text_To_Dewford:
+	.string "This is the way to Dewford Town...\n"
+	.string "Head this way?$"
+
+SlateportCity_Text_Accept_Dewford:
+	.string "Time to head for Dewford Town.$"
+
+SlateportCity_Text_Reject_Path:
+	.string "Maybe next time.$"

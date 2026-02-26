@@ -215,6 +215,7 @@ void NewGameInitData(void)
     ClearFollowerNPCData();
 
     VarSet(VAR_WORLD_DIFFICULTY, 0);
+    VarSet(VAR_NUMBER_OF_KEYS, 0);
 }
 
 static void ResetMiniGamesRecords(void)
