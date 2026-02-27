@@ -1014,7 +1014,7 @@
 #define FLAG_RECEIVED_SHOAL_SHELL_3                                 0x3BE
 #define FLAG_RECEIVED_SHOAL_SHELL_4                                 0x3BF
 #define FLAG_HIDE_ROUTE_111_SECRET_POWER_MAN                        0x3C0
-#define FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION                       0x3C1
+#define FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION                       0x3C1 //technically unused but it's being referenced in the scripts still, will clean up later
 #define FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN      0x3C2
 #define FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL                          0x3C3
 #define FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL                          0x3C4
