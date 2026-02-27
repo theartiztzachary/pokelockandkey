@@ -485,12 +485,93 @@ SlateportCity_EventScript_Reject_ToDewford::
 	release
 	end
 
+SlateportCity_EventScript_Check_ToPetalburg::
+	goto_if_unset FLAG_PETALBURG_SLATEPORT_STRETCH, SlateportCity_EventScript_Check_Petalburg_Slateport
+	end
+
+SlateportCity_EventScript_Check_Petalburg_Slateport::
+	lock
+	goto_if_unset FLAG_SLATEPORT_BOSS, SlateportCity_EventScript_ToPetalburg_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, SlateportCity_EventScript_Cannot_Unlock_Petalburg
+	msgbox SlateportCity_Text_To_Petalburg, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_Reject_ToPetalburg
+	msgbox SlateportCity_Text_Accept_Petalburg, MSGBOX_DEFAULT
+	setflag FLAG_PETALBURG_SLATEPORT_STRETCH
+	special DecrementPlayerKeys
+	release
+	end
+
+SlateportCity_EventScript_ToPetalburg_BossUndefeated::
+	msgbox SlateportCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Petalburg
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Cannot_Unlock_Petalburg::
+	msgbox SlateportCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Petalburg
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Reject_ToPetalburg::
+	msgbox SlateportCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Petalburg
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Check_ToMossdeep::
+	goto_if_unset FLAG_SLATEPORT_MOSSDEEP_STRETCH, SlateportCity_EventScript_Check_Slateport_Mossdeep
+	end
+
+SlateportCity_EventScript_Check_Slateport_Mossdeep::
+	lock
+	goto_if_unset FLAG_SLATEPORT_BOSS, SlateportCity_EventScript_ToMossdeep_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, SlateportCity_EventScript_Cannot_Unlock_Mossdeep
+	msgbox SlateportCity_Text_To_Mossdeep, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_Reject_ToMossdeep
+	setflag FLAG_SLATEPORT_MOSSDEEP_STRETCH
+	special DecrementPlayerKeys
+	release
+	end
+
+SlateportCity_EventScript_ToMossdeep_BossUndefeated::
+	msgbox SlateportCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Mossdeep
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Cannot_Unlock_Mossdeep::
+	msgbox SlateportCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Mossdeep
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_Reject_ToMossdeep::
+	msgbox SlateportCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Mossdeep
+	waitmovement 0
+	release
+	end
+
 SlateportCity_Movement_TurnFrom_Mauville:
 	walk_down
 	step_end
 
 SlateportCity_Movement_TurnFrom_Dewford:
 	walk_up
+	step_end
+
+SlateportCity_Movement_TurnFrom_Petalburg:
+	walk_right
+	step_end
+
+SlateportCity_Movement_TurnFrom_Mossdeep:
+	walk_left
 	step_end
 
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
@@ -754,6 +835,20 @@ SlateportCity_Text_To_Dewford:
 
 SlateportCity_Text_Accept_Dewford:
 	.string "Time to head for Dewford Town.$"
+
+SlateportCity_Text_To_Petalburg:
+	.string "This is the way to Petalburg City...\n"
+	.string "Head this way?$"
+
+SlateportCity_Text_Accept_Petalburg:
+	.string "Time to head for Petalburg City.$"
+
+SlateportCity_Text_To_Mossdeep:
+	.string "This is the way to Mossdeep City...\n"
+	.string "Head this way?$"
+
+SlateportCity_Text_Accept_Mossdeep:
+	.string "Time to head for Mossdeep City.$"
 
 SlateportCity_Text_Reject_Path:
 	.string "Maybe next time.$"

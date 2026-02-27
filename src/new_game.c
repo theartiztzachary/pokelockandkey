@@ -216,6 +216,7 @@ void NewGameInitData(void)
 
     VarSet(VAR_WORLD_DIFFICULTY, 0);
     VarSet(VAR_NUMBER_OF_KEYS, 0);
+    VarSet(VAR_PETALBURG_GYM_STATE, 6); //sets the petalburg gym as ready to battle
 }
 
 static void ResetMiniGamesRecords(void)
