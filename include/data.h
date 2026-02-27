@@ -119,6 +119,7 @@ struct Trainer
              u8 partySizeWorldNine;
              u8 partySizeWorldTen;
              u8 partySizeWorldEleven;
+             u8 trainerUnlockedAt;
 };
 
 struct TrainerClass
@@ -321,6 +322,11 @@ static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
 static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
 {
     return GetTrainerStructFromId(trainerId)->aiFlags;
+}
+
+static inline const u8 GetTrainerUnlockedFromId(trainerId)
+{
+    return GetTrainerStructFromId(trainerId)->trainerUnlockedAt;
 }
 
 #endif // GUARD_DATA_H

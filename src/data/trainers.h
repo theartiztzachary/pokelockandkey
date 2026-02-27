@@ -43813,7 +43813,7 @@ F_TRAINER_FEMALE |
             },
         },
     },
-    [DIFFICULTY_NORMAL][TRAINER_TEST_TRAINER] = //attributes are arranged to match the struct layouts present in include/data.c line 91 (trainer) and 59 (poke)
+    [DIFFICULTY_NORMAL][TRAINER_TEST_TRAINER] = //attributes are arranged to match the struct layouts present in include/data.h line 91 (trainer) and 59 (poke)
     {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE, //ai flags can be found in include/constants/battle_ai.h, multiple flags can be present 
         .party = (const struct TrainerMon[]) //defines pokes in a party, also found in include/data.h line 59 
@@ -43868,6 +43868,7 @@ F_TRAINER_FEMALE |
         .partySizeWorldNine = 4, //sets party size when world level is nine
         .partySizeWorldTen = 4, //sets party size when world level is ten
         .partySizeWorldEleven = 4, //sets party size when world level is eleven
+        .trainerUnlockedAt = 0, //keep this at zero as a default
     },
     [DIFFICULTY_NORMAL][TRAINER_SLATEPORT_BOSS] = 
     {
