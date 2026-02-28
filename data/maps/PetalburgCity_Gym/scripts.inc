@@ -82,6 +82,27 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	setflag FLAG_PETALBURG_BOSS
 	special IncrementPlayerKeys
 	special IncrementWorldLevel
+	goto_if_set FLAG_RUSTBORO_BOSS, PetalburgCity_Gym_EventScript_AutoUnlock_Rustboro
+	goto_if_set FLAG_DEWFORD_BOSS, PetalburgCity_Gym_EventScript_AutoUnlock_Dewford
+	goto_if_set FLAG_SLATEPORT_BOSS, PetalburgCity_Gym_EventScript_AutoUnlock_Slateport
+	end
+
+PetalburgCity_Gym_EventScript_AutoUnlock_Rustboro::
+	setflag FLAG_RUSTBORO_PETALBURG_STRETCH
+	copyvar VAR_RUSTBORO_PETALBURG_LEVEL, VAR_WORLD_DIFFICULTY 
+	return
+	end
+
+PetalburgCity_Gym_EventScript_AutoUnlock_Dewford::
+	setflag FLAG_PETALBURG_DEWFORD_STRETCH
+	copyvar VAR_PETALBURG_DEWFORD_LEVEL, VAR_WORLD_DIFFICULTY
+	return
+	end
+
+PetalburgCity_Gym_EventScript_AutoUnlock_Slateport::
+	setflag FLAG_PETALBURG_SLATEPORT_STRETCH
+	copyvar VAR_PETALBURG_SLATEPORT_LEVEL, VAR_WORLD_DIFFICULTY
+	return
 	end
 
 PetalburgCity_Gym_EventScript_GiveFacade::

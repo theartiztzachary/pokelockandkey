@@ -409,6 +409,10 @@ SlateportCity_EventScript_TestBoss_FlagsAfterBattle::
 	setflag FLAG_SLATEPORT_BOSS
 	special IncrementPlayerKeys
 	special IncrementWorldLevel
+	goto_if_set FLAG_MAUVILLE_BOSS, SlateportCity_EventScript_AutoUnlock_Mauville
+	goto_if_set FLAG_DEWFORD_BOSS, SlateportCity_EventScript_AutoUnlock_Dewford
+	goto_if_set FLAG_PETALBURG_BOSS, SlateportCity_EventScript_AutoUnlock_Petalburg
+	goto_if_set FLAG_MOSSDEEP_BOSS, SlateportCity_EventScript_AutoUnlock_Mossdeep
 	release
 	end
 
@@ -419,7 +423,6 @@ SlateportCity_EventScript_Check_ToMauville::
 SlateportCity_EventScript_Check_Slateport_Mauville::
 	lock
 	goto_if_unset FLAG_SLATEPORT_BOSS, SlateportCity_EventScript_ToMauville_BossUndefeated
-	goto_if_set FLAG_MAUVILLE_BOSS, SlateportCity_EventScript_AutoUnlock_Mauville
 	goto_if_lt VAR_NUMBER_OF_KEYS, 1, SlateportCity_EventScript_Cannot_Unlock_Mauville
 	msgbox SlateportCity_Text_To_Mauville, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_Reject_ToMauville
@@ -440,7 +443,8 @@ SlateportCity_EventScript_ToMauville_BossUndefeated::
 
 SlateportCity_EventScript_AutoUnlock_Mauville::
 	setflag FLAG_SLATEPORT_MAUVILLE_STRETCH
-	release
+	copyvar VAR_SLATEPORT_MAUVILLE_LEVEL, VAR_WORLD_DIFFICULTY
+	return
 	end
 
 SlateportCity_EventScript_Cannot_Unlock_Mauville::
@@ -464,7 +468,6 @@ SlateportCity_EventScript_Check_ToDewford::
 SlateportCity_EventScript_Check_Dewford_Slateport::
 	lock
 	goto_if_unset FLAG_SLATEPORT_BOSS, SlateportCity_EventScript_ToDewford_BossUndefeated
-	goto_if_set FLAG_DEWFORD_BOSS, SlateportCity_EventScript_AutoUnlock_Dewford
 	goto_if_lt VAR_NUMBER_OF_KEYS, 1, SlateportCity_EventScript_Cannot_Unlock_Dewford
 	msgbox SlateportCity_Text_To_Dewford, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_Reject_ToDewford
@@ -484,7 +487,8 @@ SlateportCity_EventScript_ToDewford_BossUndefeated::
 
 SlateportCity_EventScript_AutoUnlock_Dewford::
 	setflag FLAG_DEWFORD_SLATEPORT_STRETCH
-	release
+	copyvar VAR_DEWFORD_SLATEPORT_LEVEL, VAR_WORLD_DIFFICULTY
+	return
 	end
 
 SlateportCity_EventScript_Cannot_Unlock_Dewford::
@@ -508,7 +512,6 @@ SlateportCity_EventScript_Check_ToPetalburg::
 SlateportCity_EventScript_Check_Petalburg_Slateport::
 	lock
 	goto_if_unset FLAG_SLATEPORT_BOSS, SlateportCity_EventScript_ToPetalburg_BossUndefeated
-	goto_if_set FLAG_PETALBURG_BOSS, SlateportCity_EventScript_AutoUnlock_Petalburg
 	goto_if_lt VAR_NUMBER_OF_KEYS, 1, SlateportCity_EventScript_Cannot_Unlock_Petalburg
 	msgbox SlateportCity_Text_To_Petalburg, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_Reject_ToPetalburg
@@ -529,7 +532,8 @@ SlateportCity_EventScript_ToPetalburg_BossUndefeated::
 
 SlateportCity_EventScript_AutoUnlock_Petalburg::
 	setflag FLAG_PETALBURG_SLATEPORT_STRETCH
-	release
+	copyvar VAR_PETALBURG_SLATEPORT_LEVEL, VAR_WORLD_DIFFICULTY
+	return
 	end
 
 SlateportCity_EventScript_Cannot_Unlock_Petalburg::
@@ -568,6 +572,12 @@ SlateportCity_EventScript_ToMossdeep_BossUndefeated::
 	applymovement LOCALID_PLAYER, SlateportCity_Movement_TurnFrom_Mossdeep
 	waitmovement 0
 	release
+	end
+
+SlateportCity_EventScript_AutoUnlock_Mossdeep::
+	setflag FLAG_SLATEPORT_MOSSDEEP_STRETCH
+	copyvar VAR_SLATEPORT_MOSSDEEP_LEVEL, VAR_WORLD_DIFFICULTY
+	return
 	end
 
 SlateportCity_EventScript_Cannot_Unlock_Mossdeep::

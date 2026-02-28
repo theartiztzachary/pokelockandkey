@@ -199,7 +199,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL",
+      "script": "MauvilleCity_EventScript_Check_ToRustboro",
       "stretchentrance": "torustboro"
     },
     {
@@ -209,7 +209,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL",
+      "script": "MauvilleCity_EventScript_Check_ToSlateport",
       "stretchentrance": "toslateport"
     },
     {
@@ -219,7 +219,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL",
+      "script": "MauvilleCity_EventScript_Check_ToLavaridge",
       "stretchentrance": "tolavaridge"
     },
     {
@@ -229,7 +229,17 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL",
+      "script": "MauvilleCity_EventScript_Check_ToMtPyre",
+      "stretchentrance": "tomtpyre"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MauvilleCity_EventScript_Check_ToMtPyre",
       "stretchentrance": "tomtpyre"
     }
   ],

@@ -95,6 +95,172 @@ MauvilleCity_EventScript_ReceivedThunderbolt::
 	release
 	end
 
+MauvilleCity_EventScript_Check_ToRustboro::
+	goto_if_unset FLAG_RUSTBORO_MAUVILLE_STRETCH, MauvilleCity_EventScript_Check_Rustboro_Mauville
+	end
+
+MauvilleCity_EventScript_Check_Rustboro_Mauville::
+	lock
+	goto_if_unset FLAG_MAUVILLE_BOSS, MauvilleCity_EventScript_ToRustboro_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, MauvilleCity_EventScript_Cannot_Unlock_Rustboro
+	msgbox MauvilleCity_Text_To_Rustboro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_EventScript_Reject_ToRustboro
+	copyvar VAR_RUSTBORO_MAUVILLE_LEVEL, VAR_WORLD_DIFFICULTY
+	copyvar VAR_RUSTBORO_LEVEL, VAR_WORLD_DIFFICULTY
+	special DecrementPlayerKeys
+	release
+	end
+
+MauvilleCity_EventScript_ToRustboro_BossUndefeated::
+	msgbox MauvilleCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Rustboro
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Cannot_Unlock_Rustboro::
+	msgbox MauvilleCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Rustboro
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Reject_ToRustboro::
+	msgbox MauvilleCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Rustboro
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Check_ToLavaridge::
+	goto_if_unset FLAG_LAVARIDGE_MAUVILLE_STRETCH, MSGBOX_DEFAULT
+	end
+
+MauvilleCity_EventScript_Check_Lavaridge_Mauville::
+	lock
+	goto_if_unset FLAG_MAUVILLE_BOSS, MauvilleCity_EventScript_ToLavaridge_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, MauvilleCity_EventScript_Cannot_Unlock_Lavaridge
+	msgbox MauvilleCity_Text_To_Lavaridge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_EventScript_Reject_ToLavaridge
+	setflag FLAG_LAVARIDGE_MAUVILLE_STRETCH
+	copyvar VAR_LAVARIDGE_MAUVILLE_LEVEL, VAR_WORLD_DIFFICULTY
+	copyvar VAR_LAVARIDGE_LEVEL, VAR_WORLD_DIFFICULTY
+	special DecrementPlayerKeys
+	release
+	end
+
+MauvilleCity_EventScript_ToLavaridge_BossUndefeated::
+	msgbox MauvilleCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Lavaridge
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Cannot_Unlock_Lavaridge::
+	msgbox MauvilleCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Lavaridge
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Reject_ToLavaridge::
+	msgbox MauvilleCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Lavaridge
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Check_ToMtPyre::
+	goto_if_unset FLAG_MAUVILLE_MTPYRE_STRETCH, MauvilleCity_EventScript_Check_Mauville_MtPyre
+	end
+
+MauvilleCity_EventScript_Check_Mauville_MtPyre::
+	lock
+	goto_if_unset FLAG_MAUVILLE_BOSS, MauvilleCity_EventScript_ToMtPyre_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, MauvilleCity_EventScript_Cannot_Unlock_MtPyre
+	msgbox MauvilleCity_Text_To_MtPyre, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_EventScript_Reject_ToMtPyre
+	setflag FLAG_MAUVILLE_MTPYRE_STRETCH
+	copyvar VAR_MAUVILLE_MTPYRE_LEVEL, VAR_WORLD_DIFFICULTY
+	copyvar VAR_MTPYRE_LEVEL, VAR_WORLD_DIFFICULTY
+	release
+	end
+
+MauvilleCity_EventScript_ToMtPyre_BossUndefeated::
+	msgbox MauvilleCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_MtPyre
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Cannot_Unlock_MtPyre::
+	msgbox MauvilleCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_MtPyre
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Reject_ToMtPyre::
+	msgbox MauvilleCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_MtPyre
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Check_ToSlateport::
+	goto_if_unset FLAG_SLATEPORT_MAUVILLE_STRETCH, MauvilleCity_EventScript_Check_Slateport_Mauville
+	end
+
+MauvilleCity_EventScript_Check_Slateport_Mauville::
+	lock
+	goto_if_unset FLAG_MAUVILLE_BOSS, MauvilleCity_EventScript_ToSlateport_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, MauvilleCity_EventScript_Cannot_Unlock_Slateport
+	msgbox MauvilleCity_Text_To_Slateport, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_EventScript_Reject_ToSlateport
+	setflag FLAG_SLATEPORT_MAUVILLE_STRETCH
+	copyvar VAR_SLATEPORT_MAUVILLE_LEVEL, VAR_WORLD_DIFFICULTY
+	copyvar VAR_SLATEPORT_LEVEL, VAR_WORLD_DIFFICULTY
+	special DecrementPlayerKeys
+	release
+	end
+
+MauvilleCity_EventScript_ToSlateport_BossUndefeated::
+	msgbox MauvilleCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Slateport
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Cannot_Unlock_Slateport::
+	msgbox MauvilleCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Slateport
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_EventScript_Reject_ToSlateport::
+	msgbox MauvilleCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_TurnFrom_Slateport
+	waitmovement 0
+	release
+	end
+
+MauvilleCity_Movement_TurnFrom_Rustboro::
+	walk_right
+	step_end
+
+MauvilleCity_Movement_TurnFrom_Lavaridge::
+	walk_down
+	step_end
+
+MauvilleCity_Movement_TurnFrom_MtPyre::
+	walk_left
+	step_end
+
+MauvilleCity_Movement_TurnFrom_Slateport::
+	walk_up
+	step_end
+
 MauvilleCity_Text_WattsonNeedFavorTakeKey:
 	.string "WATTSON: Oh, {PLAYER}{KUN}!\n"
 	.string "You look like you have a lot of zip!\l"
@@ -184,3 +350,41 @@ MauvilleCity_Text_ExplainTV:
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
+
+MauvilleCity_Text_Boss_Undefeated:
+	.string "There are still things I need\n"
+	.string "to do here.$"
+
+MauvilleCity_Text_Cannot_Unlock:
+	.string "I have things to do elsewhere first.$"
+
+MauvilleCity_Text_To_Rustboro:
+	.string "This is the way to Rustboro City...\n"
+	.string "Head this way?$"
+
+MauvilleCity_Text_Accept_Rustboro:
+	.string "Time to head for Rustboro City.$"
+
+MauvilleCity_Text_To_Lavaridge:
+	.string "This is the way to Lavaridge Town...\n"
+	.string "Head this way?$"
+
+MauvilleCity_Text_Accept_Lavaridge:
+	.string "Time to head to Lavaridge Town.$"
+
+MauvilleCity_Text_To_MtPyre:
+	.string "This is the way to Mt. Pyre...\n"
+	.string "Head this way?$"
+
+MauvilleCity_Text_Accept_MtPyre:
+	.string "Time to head to Mt. Pyre.$"
+
+MauvilleCity_Text_To_Slateport:
+	.string "This is the way to Slateport City...\n"
+	.string "Head this way?$"
+
+MauvilleCity_Text_Accept_Slateport:
+	.string "Time to head for Slateport City.$"
+
+MauvilleCity_Text_Reject_Path:
+	.string "Maybe next time.$"
