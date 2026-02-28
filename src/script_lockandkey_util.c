@@ -1,6 +1,7 @@
 #include "global.h"
 #include "constants/vars.h"
 #include "event_data.h"
+#include "data.h"
 
 void IncrementPlayerKeys(void)
 {

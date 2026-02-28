@@ -43868,7 +43868,9 @@ F_TRAINER_FEMALE |
         .partySizeWorldNine = 4, //sets party size when world level is nine
         .partySizeWorldTen = 4, //sets party size when world level is ten
         .partySizeWorldEleven = 4, //sets party size when world level is eleven
-        .trainerUnlockedAt = 0, //keep this at zero as a default
+        .trainerUnlockedAt = FALLARBOR, //put the var here that matches where the trainer is
+        .trainerMoneyMultiplier = 1, //percentage as a decimal point
+        .isAnchorBoss = FALSE, //true/false flag to mark if a trainer is an anchor boss or not
     },
     [DIFFICULTY_NORMAL][TRAINER_SLATEPORT_BOSS] = 
     {
@@ -43969,4 +43971,7 @@ F_TRAINER_FEMALE |
         .partySizeWorldNine = 6,
         .partySizeWorldTen = 6,
         .partySizeWorldEleven = 6,
+        .trainerUnlockedAt = SLATEPORT,
+        .trainerMoneyMultiplier = 1,
+        .isAnchorBoss = TRUE,
     },

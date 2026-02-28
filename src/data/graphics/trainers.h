@@ -1,5 +1,6 @@
 #include "constants/trainers.h"
 #include "data.h"
+#include "event_data.h"
 
 const u32 gTrainerFrontPic_Hiker[] = INCBIN_U32("graphics/trainers/front_pics/hiker.4bpp.smol");
 const u16 gTrainerPalette_Hiker[] = INCBIN_U16("graphics/trainers/front_pics/hiker.gbapal");

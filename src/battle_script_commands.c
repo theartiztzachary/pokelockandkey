@@ -8555,9 +8555,7 @@ static void Cmd_hitanimation(void)
 
 static u32 GetTrainerMoneyToGive(u16 trainerId)
 {
-    u32 lastMonLevel = 0;
     u32 moneyReward;
-    u8 trainerMoney = 0;
 
     if (trainerId == TRAINER_SECRET_BASE)
     {
@@ -8568,18 +8566,107 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
         if (party == NULL)
             return 20;
-        lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
-        trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
-
-        if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
-        else if (IsDoubleBattle())
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
-        else
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+        
+        if (*GetVarPointer(VAR_WORLD_DIFFICULTY) == 0) 
+        {
+            moneyReward = 500 * GetTrainerMoneyMultiplierFromId(trainerId);
+        }    
+        else if (GetAnchorBossStatusFromId(trainerId)) {
+            moneyReward = 500 * ((*GetVarPointer(VAR_WORLD_DIFFICULTY) / 2) + 1) * GetTrainerMoneyMultiplierFromId(trainerId);
+        }
+        else 
+        {
+            u8 unlockedDifficultyModifier = 1;
+            switch (GetTrainerUnlockedFromId(trainerId))
+            {
+            case 0: 
+                unlockedDifficultyModifier = *GetVarPointer(VAR_FALLARBOR_RUSTBORO_LEVEL);
+                break;
+            case 1:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_FALLARBOR_LAVARIDGE_LEVEL);
+                break;
+            case 2:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_RUSTBORO_MAUVILLE_LEVEL);
+                break;
+            case 3:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_LAVARIDGE_MAUVILLE_LEVEL);
+                break;
+            case 4:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_RUSTBORO_PETALBURG_LEVEL);
+                break;
+            case 5:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_PETALBURG_DEWFORD_LEVEL);
+                break;
+            case 6:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_DEWFORD_SLATEPORT_LEVEL);
+                break;
+            case 7:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_PETALBURG_SLATEPORT_LEVEL);
+                break;
+            case 8:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_SLATEPORT_MAUVILLE_LEVEL);
+                break;
+            case 9:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_LAVARIDGE_FORTREE_LEVEL);
+                break;
+            case 10:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_MAUVILLE_MTPYRE_LEVEL);
+                break;
+            case 11:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_FORTREE_MTPYRE_LEVEL);
+                break;
+            case 12:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_MTPYRE_LILYCOVE_LEVEL);
+                break;
+            case 13:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_LILYCOVE_MOSSDEEP_LEVEL);
+                break;
+            case 14:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_SLATEPORT_MOSSDEEP_LEVEL);
+                break;
+            case 15:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_FALLARBOR_LEVEL);
+                break;
+            case 16:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_RUSTBORO_LEVEL);
+                break;
+            case 17:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_PETALBURG_LEVEL);
+                break;
+            case 18:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_DEWFORD_LEVEL);
+                break;
+            case 19:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_SLATEPORT_LEVEL);
+                break;
+            case 20:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_MAUVILLE_LEVEL);
+                break;
+            case 21:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_LAVARIDGE_LEVEL);
+                break;
+            case 22:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_FORTREE_LEVEL);
+                break;
+            case 23:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_MTPYRE_LEVEL);
+                break;
+            case 24:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_LILYCOVE_LEVEL);
+                break;
+            case 25:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_MOSSDEEP_LEVEL);
+                break;
+            case 26:
+                unlockedDifficultyModifier = *GetVarPointer(VAR_SOOTOPOLIS_LEVEL);
+                break;
+            default:
+                unlockedDifficultyModifier = 1;
+                break;
+            }
+            moneyReward = 500 * (( unlockedDifficultyModifier / 2) + 1) * GetTrainerMoneyMultiplierFromId(trainerId);
+        } 
     }
-
-    moneyReward = 100; //temp testing
 
     return moneyReward;
 }
