@@ -3,6 +3,9 @@
 #include "event_data.h"
 #include "data.h"
 
+//OH BOY THANKS C
+#include "src/data/routeparties/dewford_slateport.h";
+
 void IncrementPlayerKeys(void)
 {
     u16 i;
@@ -30,3 +33,23 @@ void IncrementWorldLevel(void)
     VarSet(VAR_WORLD_DIFFICULTY, i);
 
 };
+
+void RollBossParties(void)
+{
+
+};
+
+void CombinePools(const struct Trainer *trainer)
+{
+    const struct TrainerMon *poolparty;
+
+
+
+
+
+    //combine the two pools into one
+    //set pool size based on the array and return that array
+
+};
+
+

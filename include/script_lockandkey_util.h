@@ -4,5 +4,7 @@
 void IncrementPlayerKeys(void);
 void DecrementPlayerKeys(void);
 void IncrementWorldLevel(void);
+void RollBossParties(void);
+void CombinePools(const struct Trainer *trainer);
 
 #endif // GUARD_SCRIPT_LOCKANDKEY_UTIL_H
