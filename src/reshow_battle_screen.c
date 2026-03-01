@@ -15,6 +15,7 @@
 #include "battle_interface.h"
 #include "battle_anim.h"
 #include "data.h"
+#include "event_data.h"
 
 // this file's functions
 static void CB2_ReshowBattleScreenAfterMenu(void);

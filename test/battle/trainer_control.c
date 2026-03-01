@@ -11,6 +11,7 @@
 #include "constants/abilities.h"
 #include "constants/trainers.h"
 #include "constants/battle.h"
+#include "event_data.h"
 
 #define NUM_TEST_TRAINERS 11
 

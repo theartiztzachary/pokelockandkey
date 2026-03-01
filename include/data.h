@@ -88,6 +88,37 @@ enum TrainerBattleType
     TRAINER_BATTLE_TYPE_DOUBLES,
 };
 
+enum TrainerUnlockedAt
+{
+    FALLARBOR_RUSTBORO,
+    FALLARBOR_LAVARIDGE,
+    RUSTBORO_MAUVILLE,
+    LAVARIDGE_MAUVILLE,
+    RUSTBORO_PETALBURG,
+    PETALBURG_DEWFORD,
+    DEWFORD_SLATEPORT,
+    PETALBURG_SLATEPORT,
+    SLATEPORT_MAUVILLE,
+    LAVARIDGE_FORTREE,
+    MAUVILLE_MTPYRE,
+    FORTREE_MTPYRE,
+    MTPYRE_LILYCOVE,
+    LILYCOVE_MOSSDEEP,
+    SLATEPORT_MOSSDEEP,
+    FALLARBOR,
+    RUSTBORO,
+    PETALBURG,
+    DEWFORD,
+    SLATEPORT,
+    MAUVILLE,
+    LAVARIDGE,
+    FORTREE,
+    MTPYRE,
+    LILYCOVE,
+    MOSSDEEP,
+    SOOTOPOLIS,
+};
+
 struct Trainer
 {
     /*0x00*/ u64 aiFlags;
@@ -119,6 +150,9 @@ struct Trainer
              u8 partySizeWorldNine;
              u8 partySizeWorldTen;
              u8 partySizeWorldEleven;
+             u8 trainerUnlockedAt;
+             u16 trainerMoneyMultiplier;
+             bool8 isAnchorBoss;
 };
 
 struct TrainerClass
@@ -321,6 +355,21 @@ static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
 static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
 {
     return GetTrainerStructFromId(trainerId)->aiFlags;
+}
+
+static inline const u8 GetTrainerUnlockedFromId(u16 trainerId)
+{
+    return GetTrainerStructFromId(trainerId)->trainerUnlockedAt;
+}
+
+static inline const u16 GetTrainerMoneyMultiplierFromId(u16 trainerId)
+{
+    return GetTrainerStructFromId(trainerId)->trainerMoneyMultiplier;
+}
+
+static inline const bool8 GetAnchorBossStatusFromId(u16 trainerId)
+{
+    return GetTrainerStructFromId(trainerId)->isAnchorBoss;
 }
 
 #endif // GUARD_DATA_H

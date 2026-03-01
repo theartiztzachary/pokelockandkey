@@ -1,10 +1,5 @@
-//
-// DO NOT MODIFY THIS FILE! It is auto-generated from src/data/trainers.party
-//
-// If you want to modify this file see expansion PR #7154
-//
 
-    [DIFFICULTY_NORMAL][TRAINER_NONE] =
+[DIFFICULTY_NORMAL][TRAINER_NONE] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
         .trainerPic = TRAINER_PIC_HIKER,
@@ -43818,7 +43813,7 @@ F_TRAINER_FEMALE |
             },
         },
     },
-    [DIFFICULTY_NORMAL][TRAINER_TEST_TRAINER] = //attributes are arranged to match the struct layouts present in include/data.c line 91 (trainer) and 59 (poke)
+    [DIFFICULTY_NORMAL][TRAINER_TEST_TRAINER] = //attributes are arranged to match the struct layouts present in include/data.h line 91 (trainer) and 59 (poke)
     {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE, //ai flags can be found in include/constants/battle_ai.h, multiple flags can be present 
         .party = (const struct TrainerMon[]) //defines pokes in a party, also found in include/data.h line 59 
@@ -43873,4 +43868,110 @@ F_TRAINER_FEMALE |
         .partySizeWorldNine = 4, //sets party size when world level is nine
         .partySizeWorldTen = 4, //sets party size when world level is ten
         .partySizeWorldEleven = 4, //sets party size when world level is eleven
+        .trainerUnlockedAt = FALLARBOR, //put the var here that matches where the trainer is
+        .trainerMoneyMultiplier = 1, //percentage as a decimal point
+        .isAnchorBoss = FALSE, //true/false flag to mark if a trainer is an anchor boss or not
+    },
+    [DIFFICULTY_NORMAL][TRAINER_SLATEPORT_BOSS] = 
+    {
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .party = (const struct TrainerMon[]) 
+        {
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_DRATINI,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_BAGON,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_TRAPINCH,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_HORSEA,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_AXEW,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+            {
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
+            .species = SPECIES_GABITE,
+            .heldItem = ITEM_ORAN_BERRY,
+            .lvl = 10,
+            .ball = ITEM_POKE_BALL,
+            .friendship = 100,
+            .nature = NATURE_HARDY,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .isShiny = FALSE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL, //dynamax level, max is 10 (ie MAX_DYNAMAX_LEVEL)
+            },
+        },
+        .items = { ITEM_POTION },
+        .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_ELITE_FOUR_DRAKE,
+        .trainerName = _("SP Boss"),
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .startingStatus = STARTING_STATUS_NONE,
+        .mugshotColor = MUGSHOT_COLOR_PURPLE,
+        .trainerBackPic = TRAINER_PIC_ELITE_FOUR_DRAKE,
+        .partySizeWorldZero = 1,
+        .partySizeWorldOne = 2,
+        .partySizeWorldTwo = 2,
+        .partySizeWorldThree = 3,
+        .partySizeWorldFour = 3,
+        .partySizeWorldFive = 4,
+        .partySizeWorldSix = 4,
+        .partySizeWorldSeven = 5, 
+        .partySizeWorldEight = 5,
+        .partySizeWorldNine = 6,
+        .partySizeWorldTen = 6,
+        .partySizeWorldEleven = 6,
+        .trainerUnlockedAt = SLATEPORT,
+        .trainerMoneyMultiplier = 1,
+        .isAnchorBoss = TRUE,
     },

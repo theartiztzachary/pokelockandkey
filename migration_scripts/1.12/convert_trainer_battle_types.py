@@ -10,8 +10,3 @@ def trainer_battle_types(data):
 if not os.path.exists("Makefile"):
     print("Please run this script from your root folder.")
     quit()
-
-with open('src/data/trainers.party', 'r') as file:
-    data = file.read()
-with open('src/data/trainers.party', 'w') as file:
-    file.write(trainer_battle_types(data))
