@@ -357,7 +357,7 @@ static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
     return GetTrainerStructFromId(trainerId)->aiFlags;
 }
 
-static inline const u8 GetTrainerUnlockedFromId(u16 trainerId)
+static inline const enum TrainerUnlockedAt GetTrainerUnlockedFromId(u16 trainerId)
 {
     return GetTrainerStructFromId(trainerId)->trainerUnlockedAt;
 }

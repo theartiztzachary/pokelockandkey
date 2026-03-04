@@ -3,9 +3,6 @@
 #include "event_data.h"
 #include "data.h"
 
-//OH BOY THANKS C
-#include "src/data/routeparties/dewford_slateport.h";
-
 void IncrementPlayerKeys(void)
 {
     u16 i;
@@ -39,12 +36,44 @@ void RollBossParties(void)
 
 };
 
-void CombinePools(const struct Trainer *trainer)
+void CombinePools(u16 trainerId)
 {
     const struct TrainerMon *poolparty;
+    const struct TrainerMon *classpool;
+    const struct TrainerMon *routepool;
+    u8 currentTrainerClass = GetTrainerClassFromId(trainerId);
+    u8 currentTrainerRoute = GetTrainerUnlockedFromId(trainerId);
 
-
-
+    switch(currentTrainerClass)
+    {
+        case 0:
+            classpool = 
+            {
+                #include "data/classparties/hiker.h"
+            };
+            break;
+        case 1:
+            classpool = 
+            {
+                #include "data/classparties/team_aqua.h"
+            };
+            break;
+        case 2:
+            classpool =
+            {
+                #include "data/classparties/pkmn_breeder.h"
+            };
+            break;
+        case 3:
+            classpool =
+            {
+                #include "data/classparties/cooltrainer.h"
+            };
+            break;
+        case 4:
+            
+    }
+    
 
 
     //combine the two pools into one
