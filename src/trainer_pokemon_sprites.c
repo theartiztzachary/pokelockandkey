@@ -8,6 +8,7 @@
 #include "data.h"
 #include "pokemon.h"
 #include "constants/trainers.h"
+#include "event_data.h"
 
 #define PICS_COUNT 8
 

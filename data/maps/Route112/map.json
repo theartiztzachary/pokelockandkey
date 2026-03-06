@@ -252,7 +252,28 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL",
+      "selectionname": "toforetree"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL",
+      "selectionname": "tomauville"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -14,6 +14,7 @@
 #include "constants/moves.h"
 #include "constants/items.h"
 #include "constants/trainer_hill.h"
+#include "event_data.h"
 
 // Save data using TryWriteSpecialSaveSector is allowed to exceed SECTOR_DATA_SIZE (up to the counter field)
 STATIC_ASSERT(sizeof(struct TrainerHillChallenge) <= SECTOR_COUNTER_OFFSET, TrainerHillChallengeFreeSpace);

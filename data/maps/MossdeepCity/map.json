@@ -420,6 +420,26 @@
       "var": "VAR_MOSSDEEP_CITY_STATE",
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL",
+      "selectionname": "toslateport"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL",
+      "selectionname": "tolilycove"
     }
   ],
   "bg_events": [
