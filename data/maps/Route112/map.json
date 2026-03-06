@@ -245,13 +245,6 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 11,
-      "y": 39,
-      "elevation": 0,
-      "dest_map": "MAP_FIERY_PATH",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 22,
       "y": 13,
       "elevation": 0,

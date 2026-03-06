@@ -49,6 +49,7 @@
 #include "difficulty.h"
 #include "follower_npc.h"
 #include "script_lockandkey_util.h"
+#include "constants/flags.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -96,10 +97,10 @@ static void InitPlayerTrainerId(void)
 // L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
-    gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
+    gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
-    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
 }
@@ -176,7 +177,7 @@ void NewGameInitData(void)
     ResetGabbyAndTy();
     ClearSecretBases();
     ClearBerryTrees();
-    SetMoney(&gSaveBlock1Ptr->money, 3000);
+    SetMoney(&gSaveBlock1Ptr->money, 999999); //currently set to cap for testing
     SetCoins(0);
     ResetLinkContestBoolean();
     ResetGameStats();
@@ -198,7 +199,7 @@ void NewGameInitData(void)
     InitDewfordTrend();
     ResetFanClub();
     ResetLotteryCorner();
-    WarpToTruck();
+    WarpToTruck(); //the script that places you in the starting spot for the game
     RunScriptImmediately(EventScript_ResetAllMapFlags);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
@@ -215,6 +216,9 @@ void NewGameInitData(void)
     ResetDexNav();
     ClearFollowerNPCData();
 
+    //FlagSet(FLAG_SYS_POKEDEX_GET);
+    //FlagSet(FLAG_SYS_POKENAV_GET);
+    FlagSet(FLAG_SYS_B_DASH);
     VarSet(VAR_WORLD_DIFFICULTY, 0);
     VarSet(VAR_NUMBER_OF_KEYS, 0);
     VarSet(VAR_PETALBURG_GYM_STATE, 6); //sets the petalburg gym as ready to battle

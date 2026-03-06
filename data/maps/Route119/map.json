@@ -604,8 +604,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 27,
-      "y": 112,
+      "x": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_MT_CHIMNEY",
       "dest_warp_id": "4"
@@ -797,13 +797,6 @@
     },
     {
       "type": "secret_base",
-      "x": 5,
-      "y": 2,
-      "elevation": 0,
-      "secret_base_id": "SECRET_BASE_SHRUB1_1"
-    },
-    {
-      "type": "secret_base",
       "x": 4,
       "y": 89,
       "elevation": 0,
@@ -894,13 +887,6 @@
       "y": 15,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_SHRUB3_3"
-    },
-    {
-      "type": "secret_base",
-      "x": 6,
-      "y": 2,
-      "elevation": 0,
-      "secret_base_id": "SECRET_BASE_SHRUB4_3"
     },
     {
       "type": "hidden_item",

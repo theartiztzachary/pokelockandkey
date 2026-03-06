@@ -125,7 +125,7 @@
       "id": "LAYOUT_LAVARIDGE_TOWN",
       "name": "LavaridgeTown_Layout",
       "width": 20,
-      "height": 20,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/LavaridgeTown/border.bin",
@@ -204,8 +204,8 @@
     {
       "id": "LAYOUT_ROUTE105",
       "name": "Route105_Layout",
-      "width": 40,
-      "height": 80,
+      "width": 70,
+      "height": 90,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route105/border.bin",
@@ -237,7 +237,7 @@
       "width": 120,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route108/border.bin",
       "blockdata_filepath": "data/layouts/Route108/map.bin"
     },
@@ -265,7 +265,7 @@
       "id": "LAYOUT_ROUTE111",
       "name": "Route111_Layout",
       "width": 40,
-      "height": 34,
+      "height": 56,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route111/border.bin",
@@ -1324,8 +1324,8 @@
     {
       "id": "LAYOUT_GRANITE_CAVE_B1F",
       "name": "GraniteCave_B1F_Layout",
-      "width": 32,
-      "height": 26,
+      "width": 70,
+      "height": 90,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/GraniteCave_B1F/border.bin",
@@ -1334,8 +1334,8 @@
     {
       "id": "LAYOUT_GRANITE_CAVE_B2F",
       "name": "GraniteCave_B2F_Layout",
-      "width": 32,
-      "height": 26,
+      "width": 70,
+      "height": 90,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/GraniteCave_B2F/border.bin",
@@ -4412,6 +4412,16 @@
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
     },
     {
+      "id": "LAYOUT_FALLARBOR_TOWN_PROFESSOR_COZMOS_LAB",
+      "name": "FallarborTown_ProfessorCozmosLab_Layout",
+      "width": 13,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/FallarborTown_ProfessorCozmosLab/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborTown_ProfessorCozmosLab/map.bin"
+    },
+    {
       "id": "LAYOUT_METEOR_FALLS_DEEP",
       "name": "MeteorFalls_Deep_Layout",
       "width": 30,
@@ -4424,10 +4434,10 @@
     {
       "id": "LAYOUT_METEOR_FALLS_PEAK",
       "name": "MeteorFalls_Peak_Layout",
-      "width": 30,
-      "height": 32,
+      "width": 25,
+      "height": 25,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_MeteorFalls",
+      "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/MeteorFalls_Peak/border.bin",
       "blockdata_filepath": "data/layouts/MeteorFalls_Peak/map.bin"
     },
@@ -4465,7 +4475,7 @@
       "id": "LAYOUT_AMARA_DESERT",
       "name": "AmaraDesert_Layout",
       "width": 40,
-      "height": 106,
+      "height": 84,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/AmaraDesert/border.bin",
@@ -4490,6 +4500,66 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/RustboroPier/border.bin",
       "blockdata_filepath": "data/layouts/RustboroPier/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANITE_CAVE_ENTRANCE_CHAMBER_4",
+      "name": "GraniteCave_Entrance_Chamber_4_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GraniteCave_Entrance_Chamber_4/border.bin",
+      "blockdata_filepath": "data/layouts/GraniteCave_Entrance_Chamber_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANITE_CAVE_ENTRANCE_CHAMBER_3",
+      "name": "GraniteCave_Entrance_Chamber_3_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GraniteCave_Entrance_Chamber_3/border.bin",
+      "blockdata_filepath": "data/layouts/GraniteCave_Entrance_Chamber_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANITE_CAVE_ENTRANCE_CHAMBER_1",
+      "name": "GraniteCave_Entrance_Chamber_1_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GraniteCave_Entrance_Chamber_1/border.bin",
+      "blockdata_filepath": "data/layouts/GraniteCave_Entrance_Chamber_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANITE_CAVE_ENTRANCE_CHAMBER_2",
+      "name": "GraniteCave_Entrance_Chamber_2_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GraniteCave_Entrance_Chamber_2/border.bin",
+      "blockdata_filepath": "data/layouts/GraniteCave_Entrance_Chamber_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_GRANITE_CAVE_B1F",
+      "name": "OLD_GraniteCave_B1F_Layout",
+      "width": 32,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/OLD_GraniteCave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/OLD_GraniteCave_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_GRANITE_CAVE_B2F",
+      "name": "OLD_GraniteCave_B2F_Layout",
+      "width": 32,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/OLD_GraniteCave_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/OLD_GraniteCave_B2F/map.bin"
     }
   ]
 }

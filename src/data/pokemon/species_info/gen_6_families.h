@@ -4985,7 +4985,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sGoomyTeachableLearnset,
         .eggMoveLearnset = sGoomyEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_SLIGGOO, CONDITIONS({IF_NOT_REGION, REGION_HISUI})},
-                                {EVO_LEVEL, 40, SPECIES_SLIGGOO_HISUI, CONDITIONS({IF_REGION, REGION_HISUI})}),
+                                {EVO_LEVEL, 40, SPECIES_SLIGGOO_HISUI, CONDITIONS({IF_KNOWS_MOVE_TYPE, TYPE_STEEL})}),
     },
 
     [SPECIES_SLIGGOO] =
