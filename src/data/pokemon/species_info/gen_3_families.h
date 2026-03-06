@@ -2804,7 +2804,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sKirliaTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GARDEVOIR}
                             #if P_GEN_4_CROSS_EVOS
-                                ,{EVO_ITEM, ITEM_DAWN_STONE, SPECIES_GALLADE, CONDITIONS({IF_GENDER, MON_MALE})}
+                                ,{EVO_ITEM, ITEM_DAWN_STONE, SPECIES_GALLADE,}
                             #endif
                             ),
     },
@@ -7507,12 +7507,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_CACNEA
     [SPECIES_CACNEA] =
     {
-        .baseHP        = 50,
+        .baseHP        = 70,
         .baseAttack    = 85,
-        .baseDefense   = 40,
+        .baseDefense   = 60,
         .baseSpeed     = 35,
         .baseSpAttack  = 85,
-        .baseSpDefense = 40,
+        .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 67 : 97,
@@ -7585,12 +7585,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_CACTURNE] =
     {
-        .baseHP        = 70,
+        .baseHP        = 100,
         .baseAttack    = 115,
-        .baseDefense   = 60,
+        .baseDefense   = 90,
         .baseSpeed     = 55,
-        .baseSpAttack  = 115,
-        .baseSpDefense = 60,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_GRASS, TYPE_DARK),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 166 : 177,

@@ -437,7 +437,13 @@
     "MeteorFalls_StevensCave",
     "MeteorFalls_Peak",
     "MeteorFalls_Deep",
-    "PetalburgHauntedHouse"
+    "PetalburgHauntedHouse",
+    "GraniteCave_Entrance_Chamber_1",
+    "GraniteCave_Entrance_Chamber_2",
+    "GraniteCave_Entrance_Chamber_3",
+    "GraniteCave_Entrance_Chamber_4",
+    "OLD_GraniteCave_B1F",
+    "OLD_GraniteCave_B2F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

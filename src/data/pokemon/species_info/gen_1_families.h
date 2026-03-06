@@ -358,14 +358,14 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         SHADOW(2, 4, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Venusaur)
         .isGigantamax = TRUE,
-        .levelUpLearnset = sVenusaurLevelUpLearnset,
+        .levelUpLearnset = sVenusaurLevelUpLearnset
         .teachableLearnset = sVenusaurTeachableLearnset,
         .formSpeciesIdTable = sVenusaurFormSpeciesIdTable,
         .formChangeTable = sVenusaurFormChangeTable,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_BULBASAUR
-
+,
 #if P_FAMILY_CHARMANDER
     [SPECIES_CHARMANDER] =
     {

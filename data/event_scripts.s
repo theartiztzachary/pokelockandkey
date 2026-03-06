@@ -1179,3 +1179,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/AmaraDesert/scripts.inc"
 
 	.include "data/maps/Whitegrave/scripts.inc"
+
+	.include "data/maps/GraniteCave_Entrance_Chamber_2/scripts.inc"
+
+	.include "data/maps/GraniteCave_Entrance_Chamber_3/scripts.inc"
+
+	.include "data/maps/GraniteCave_Entrance_Chamber_4/scripts.inc"
+
+	.include "data/maps/GraniteCave_Entrance_Chamber_1/scripts.inc"
+
+	.include "data/maps/OLD_GraniteCave_B1F/scripts.inc"
+
+	.include "data/maps/OLD_GraniteCave_B2F/scripts.inc"

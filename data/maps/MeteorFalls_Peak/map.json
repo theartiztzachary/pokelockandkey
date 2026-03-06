@@ -16,8 +16,8 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 10,
-      "y": 29,
+      "x": 12,
+      "y": 5,
       "elevation": 3,
       "dest_map": "MAP_METEOR_FALLS_1F_2R",
       "dest_warp_id": "2"
