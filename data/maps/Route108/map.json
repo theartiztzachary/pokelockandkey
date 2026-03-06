@@ -117,15 +117,7 @@
       "flag": "FLAG_ITEM_ROUTE_108_STAR_PIECE"
     }
   ],
-  "warp_events": [
-    {
-      "x": 89,
-      "y": 6,
-      "elevation": 3,
-      "dest_map": "MAP_ABANDONED_SHIP_DECK",
-      "dest_warp_id": "0"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": [
     {

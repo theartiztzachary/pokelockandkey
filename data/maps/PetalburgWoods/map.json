@@ -204,18 +204,11 @@
       "dest_warp_id": "7"
     },
     {
-      "x": 38,
-      "y": 17,
+      "x": 39,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_HAUNTED_HOUSE",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 39,
-      "y": 17,
-      "elevation": 0,
-      "dest_map": "MAP_PETALBURG_HAUNTED_HOUSE",
-      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

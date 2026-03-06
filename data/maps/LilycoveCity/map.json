@@ -22,11 +22,6 @@
       "map": "MAP_ROUTE124",
       "offset": -10,
       "direction": "right"
-    },
-    {
-      "map": "MAP_WHITEGRAVE",
-      "offset": 39,
-      "direction": "up"
     }
   ],
   "object_events": [
