@@ -77,6 +77,8 @@
 #include "constants/weather.h"
 #include "cable_club.h"
 #include "test/test_runner_battle.h"
+#include "constants/difficulty.h"
+#include "constants/vars.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -1888,6 +1890,48 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u32 personalityValue;
     s32 i;
     u8 monsCount;
+    u8 currentPartyCount; 
+    switch (*GetVarPointer(VAR_WORLD_DIFFICULTY)) {
+        case 0:
+            currentPartyCount = trainer->partySizeWorldZero;
+            break;
+        case 1:
+            currentPartyCount = trainer->partySizeWorldOne;
+            break;
+        case 2:
+            currentPartyCount = trainer->partySizeWorldTwo;
+            break;
+        case 3:
+            currentPartyCount = trainer->partySizeWorldThree;
+            break;
+        case 4:
+            currentPartyCount = trainer->partySizeWorldFour;
+            break;
+        case 5:
+            currentPartyCount = trainer->partySizeWorldFive;
+            break;
+        case 6:
+            currentPartyCount = trainer->partySizeWorldSix;
+            break;
+        case 7:
+            currentPartyCount = trainer->partySizeWorldSeven;
+            break;
+        case 8:
+            currentPartyCount = trainer->partySizeWorldEight;
+            break;
+        case 9:
+            currentPartyCount = trainer->partySizeWorldNine;
+            break;
+        case 10:
+            currentPartyCount = trainer->partySizeWorldTen;
+            break;
+        case 11:
+            currentPartyCount = trainer->partySizeWorldEleven;
+            break;
+        default:
+            currentPartyCount = trainer->partySize;
+    }
+
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -1897,14 +1941,14 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
         if (battleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
         {
-            if (trainer->partySize > PARTY_SIZE / 2)
+            if (currentPartyCount > PARTY_SIZE / 2)
                 monsCount = PARTY_SIZE / 2;
             else
-                monsCount = trainer->partySize;
+                monsCount = currentPartyCount;
         }
         else
         {
-            monsCount = trainer->partySize;
+            monsCount = currentPartyCount;
         }
 
         u32 monIndices[monsCount];
@@ -1940,7 +1984,15 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            
+            if (HasLevelEvolution(partyData[i].species, partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY)))) {
+                CreateMon(&party[i], HasLevelEvolution(partyData[i].species, partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY))), partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY)), 0, TRUE, personalityValue, otIdType, fixedOtId);
+            } else {
+                CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY)), 0, TRUE, personalityValue, otIdType, fixedOtId);
+            }
+
+            //DebugPrintf("%d", *GetVarPointer(VAR_WORLD_DIFFICULTY));
+
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
@@ -2024,6 +2076,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
+
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;

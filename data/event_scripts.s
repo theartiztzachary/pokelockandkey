@@ -1165,3 +1165,31 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/apricorn_tree.inc"
 
 	.include "data/maps/FallarborTown_ProfessorCozmosLab/scripts.inc"
+  
+	.include "data/maps/MeteorFalls_Deep/scripts.inc"
+
+	.include "data/maps/MeteorFalls_Peak/scripts.inc"
+
+	.include "data/maps/PetalburgHauntedHouse/scripts.inc"
+
+	.include "data/maps/Hauntwood/scripts.inc"
+
+	.include "data/maps/AshfallPath/scripts.inc"
+
+	.include "data/maps/RustboroPier/scripts.inc"
+
+	.include "data/maps/AmaraDesert/scripts.inc"
+
+	.include "data/maps/Whitegrave/scripts.inc"
+
+	.include "data/maps/GraniteCave_Entrance_Chamber_2/scripts.inc"
+
+	.include "data/maps/GraniteCave_Entrance_Chamber_3/scripts.inc"
+
+	.include "data/maps/GraniteCave_Entrance_Chamber_4/scripts.inc"
+
+	.include "data/maps/GraniteCave_Entrance_Chamber_1/scripts.inc"
+
+	.include "data/maps/OLD_GraniteCave_B1F/scripts.inc"
+
+	.include "data/maps/OLD_GraniteCave_B2F/scripts.inc"

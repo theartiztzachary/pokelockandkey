@@ -43,7 +43,7 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
+#define FLAG_FALLARBOR_TESTING_ITEMBALL   0x20 // Flag we are using for testing item ball variation
 #define FLAG_STOLE_COZMOS_BAG    0x21 // sets if the player has stolen cozmos' bag
 #define FLAG_GRABBED_STARTER    0x22 // sets if the player has grabbed their starter
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag

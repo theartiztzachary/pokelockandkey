@@ -8988,12 +8988,12 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, 
         .flingPower = 30,
         .iconPic = gItemIcon_ToxicOrb,
         .iconPalette = gItemIconPalette_ToxicOrb,
     },
-
+ 
 // Weather Rocks
 
     [ITEM_DAMP_ROCK] =

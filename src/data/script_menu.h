@@ -789,6 +789,22 @@ struct MultichoiceListStruct
     u8 count;
 };
 
+static const struct MenuAction MultichoiceList_WorldLevel[] =
+{
+    {gText_WorldLevel0},
+    {gText_WorldLevel1},
+    {gText_WorldLevel2},
+    {gText_WorldLevel3},
+    {gText_WorldLevel4},
+    {gText_WorldLevel5},
+    {gText_WorldLevel6},
+    {gText_WorldLevel7},
+    {gText_WorldLevel8},
+    {gText_WorldLevel9},
+    {gText_WorldLevel10},
+    {gText_WorldLevel11},
+};
+
 static const struct MultichoiceListStruct sMultichoiceLists[] =
 {
     [MULTI_BRINEY_ON_DEWFORD]          = MULTICHOICE(MultichoiceList_BrineyOnDewford),
@@ -800,7 +816,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BASE_PC_WITH_REGISTRY]      = MULTICHOICE(MultichoiceList_BasePCWithRegistry),
     [MULTI_REGISTER_MENU]              = MULTICHOICE(MultichoiceList_RegisterMenu),
     [MULTI_SSTIDAL_LILYCOVE]           = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_9]                   = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_WORLD_LEVEL]                = MULTICHOICE(MultichoiceList_WorldLevel),
     [MULTI_UNUSED_10]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_FRONTIER_PASS_INFO]         = MULTICHOICE(MultichoiceList_FrontierPassInfo),
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),

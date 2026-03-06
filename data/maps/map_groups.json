@@ -92,7 +92,12 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125"
+    "Underwater_Route125",
+    "AshfallPath",
+    "Hauntwood",
+    "AmaraDesert",
+    "RustboroPier",
+    "Whitegrave"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -430,7 +435,16 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "MeteorFalls_Peak",
+    "MeteorFalls_Deep",
+    "PetalburgHauntedHouse",
+    "GraniteCave_Entrance_Chamber_1",
+    "GraniteCave_Entrance_Chamber_2",
+    "GraniteCave_Entrance_Chamber_3",
+    "GraniteCave_Entrance_Chamber_4",
+    "OLD_GraniteCave_B1F",
+    "OLD_GraniteCave_B2F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

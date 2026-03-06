@@ -232,6 +232,7 @@ void HandleAction_WallyBallThrow(void);
 void HandleAction_TryFinish(void);
 void HandleAction_NothingIsFainted(void);
 void HandleAction_ActionFinished(void);
+u16 HasLevelEvolution(u16 species, u8 level);
 u8 GetBattlerForBattleScript(u8 caseId);
 bool32 IsBattlerMarkedForControllerExec(u32 battler);
 void MarkBattlerForControllerExec(u32 battler);

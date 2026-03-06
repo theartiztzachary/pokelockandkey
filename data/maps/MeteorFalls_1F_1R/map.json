@@ -17,7 +17,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 2,
-      "y": 4,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -30,7 +30,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 2,
-      "y": 14,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -43,7 +43,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 27,
-      "y": 5,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -56,7 +56,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 26,
-      "y": 32,
+      "y": 35,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -69,8 +69,8 @@
     {
       "local_id": "LOCALID_METEOR_FALLS_MAGMA_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
-      "x": 12,
-      "y": 20,
+      "x": -1,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -83,8 +83,8 @@
     {
       "local_id": "LOCALID_METEOR_FALLS_MAGMA_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
-      "x": 14,
-      "y": 21,
+      "x": -1,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -97,8 +97,8 @@
     {
       "local_id": "LOCALID_METEOR_FALLS_ARCHIE",
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
-      "x": 6,
-      "y": 20,
+      "x": -1,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -111,8 +111,8 @@
     {
       "local_id": "LOCALID_METEOR_FALLS_AQUA_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 6,
-      "y": 20,
+      "x": -1,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -125,8 +125,8 @@
     {
       "local_id": "LOCALID_METEOR_FALLS_AQUA_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 6,
-      "y": 21,
+      "x": -1,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -138,8 +138,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 13,
-      "y": 23,
+      "x": -1,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -153,38 +153,38 @@
   "warp_events": [
     {
       "x": 27,
-      "y": 18,
+      "y": 21,
       "elevation": 4,
       "dest_map": "MAP_ROUTE114",
       "dest_warp_id": "0"
     },
     {
       "x": 6,
-      "y": 39,
+      "y": 42,
       "elevation": 3,
       "dest_map": "MAP_ROUTE115",
       "dest_warp_id": "0"
     },
     {
-      "x": 10,
-      "y": 3,
+      "x": 11,
+      "y": 4,
       "elevation": 3,
       "dest_map": "MAP_METEOR_FALLS_1F_2R",
-      "dest_warp_id": "0"
+      "dest_warp_id": "3"
     },
     {
       "x": 5,
-      "y": 4,
-      "elevation": 3,
+      "y": 8,
+      "elevation": 4,
       "dest_map": "MAP_METEOR_FALLS_B1F_1R",
-      "dest_warp_id": "4"
+      "dest_warp_id": "3"
     },
     {
       "x": 26,
-      "y": 28,
+      "y": 32,
       "elevation": 3,
       "dest_map": "MAP_METEOR_FALLS_B1F_1R",
-      "dest_warp_id": "5"
+      "dest_warp_id": "4"
     },
     {
       "x": 4,
@@ -197,8 +197,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 14,
-      "y": 18,
+      "x": -1,
+      "y": 22,
       "elevation": 4,
       "var": "VAR_METEOR_FALLS_STATE",
       "var_value": "0",
@@ -209,7 +209,7 @@
     {
       "type": "sign",
       "x": 9,
-      "y": 58,
+      "y": 61,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "0x0"

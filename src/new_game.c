@@ -218,6 +218,7 @@ void NewGameInitData(void)
     //FlagSet(FLAG_SYS_POKEDEX_GET);
     //FlagSet(FLAG_SYS_POKENAV_GET);
     FlagSet(FLAG_SYS_B_DASH);
+    VarSet(VAR_WORLD_DIFFICULTY, 0);
 }
 
 static void ResetMiniGamesRecords(void)

@@ -65,7 +65,7 @@ struct TrainerMon
     u16 species;
     u16 heldItem;
     enum Ability ability;
-    u8 lvl;
+    u16 lvl;
     u8 ball;
     u8 friendship;
     u8 nature:5;
@@ -107,6 +107,18 @@ struct Trainer
     /*0x24*/ u8 poolPruneIndex;
     /*0x25*/ u16 overrideTrainer;
     /*0x26*/ u8 trainerBackPic;
+             u8 partySizeWorldZero;
+             u8 partySizeWorldOne;
+             u8 partySizeWorldTwo;
+             u8 partySizeWorldThree;
+             u8 partySizeWorldFour;
+             u8 partySizeWorldFive;
+             u8 partySizeWorldSix;
+             u8 partySizeWorldSeven;
+             u8 partySizeWorldEight;
+             u8 partySizeWorldNine;
+             u8 partySizeWorldTen;
+             u8 partySizeWorldEleven;
 };
 
 struct TrainerClass
