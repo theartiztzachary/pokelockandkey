@@ -439,9 +439,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_ELIXIR",
+      "trainer_sight_or_berry_tree_id": "ITEM_RAZOR_FANG",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_123_ELIXIR"
+      "flag": "FLAG_ITEM_ROUTE_123_RAZOR_FANG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -530,9 +530,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
+      "trainer_sight_or_berry_tree_id": "ITEM_LEFTOVERS",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_123_PP_UP"
+      "flag": "FLAG_ITEM_ROUTE_123_LEFTOVERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
@@ -569,9 +569,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_REVIVAL_HERB",
+      "trainer_sight_or_berry_tree_id": "ITEM_LOADED_DICE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_123_REVIVAL_HERB"
+      "flag": "FLAG_ITEM_ROUTE_123_LOADED_DICE"
     }
   ],
   "warp_events": [

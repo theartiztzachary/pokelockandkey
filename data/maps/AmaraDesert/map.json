@@ -231,16 +231,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 12,
-      "y": 54,
+      "x": 28,
+      "y": 60,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_STARDUST",
+      "trainer_sight_or_berry_tree_id": "ITEM_SMOOTH_ROCK",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_111_STARDUST"
+      "flag": "FLAG_ITEM_ROUTE_111_SMOOTH_ROCK"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -947,8 +947,8 @@
       "x": 35,
       "y": 66,
       "elevation": 0,
-      "item": "ITEM_RARE_CANDY",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_RARE_CANDY"
+      "item": "ITEM_SAFETY_GOGGLES",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_SAFETY_GOGGLES"
     },
     {
       "type": "sign",
@@ -958,5 +958,18 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route111_EventScript_TrainerHillSign"
     }
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 54,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_SAFETY_GOGGLES",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_SAFETY_GOGGLES"
+    },
   ]
 }
