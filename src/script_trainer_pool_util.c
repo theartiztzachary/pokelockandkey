@@ -34,8 +34,53 @@ const int psychicLength = 1;
 const int gentlemanLength = 1;
 const int elite_fourLength = 1;
 const int leaderLength = 1;
+const int school_kidLength = 1;
+const int sr_and_jrLength = 1;
+const int winstrateLength = 1;
+const int pokefanLength = 1;
+const int youngsterLength = 1;
+const int championLength = 1;
+const int fishermanLength = 1;
+const int triathleteLength = 1;
+const int dragon_tamerLength = 1;
+const int ninja_boyLength = 1;
+const int battle_girlLength = 1;
+const int parasol_ladyLength = 1;
+const int swimmer_fLength = 1;
+const int twinsLength = 1;
+const int sailorLength = 1;
+const int cooltrainer_2Length = 1;
+const int magma_adminLength = 1;
+const int rivalLength = 1;
+const int bug_catcherLength = 1;
+const int pkmn_rangerLength = 1;
+const int magma_leaderLength = 1;
+const int lassLength = 1;
+const int young_coupleLength = 1;
+const int old_coupleLength = 1;
+const int sis_and_broLength = 1;
+const int salon_maidenLength = 1;
+const int arena_tycoonLength = 1;
+const int factory_headLength = 1;
+const int pike_queenLength = 1;
+const int pyramid_kingLength = 1;
+const int rs_protagLength = 1;
+
+//route
+const int fallarbor_rustboroLength = 1;
+const int fallarbor_lavaridgeLength = 1;
+const int rustboro_mauvilleLength = 1;
+const int lavaridge_mauvilleLength = 1;
+const int rustboro_petalburgLength = 1;
+const int petalburg_dewfordLength = 1;
+const int dewford_slateportLength = 1;
+const int petalburg_slateportLength = 1;
+const int slateport_mauvilleLength = 1;
+const int lavaridge_fortreeLength = 1;
+const int mauville_mtpyreLength = 1;
 
 //initialize pools
+//class
 const struct TrainerMon ClassParty_Hiker[1] =
 {
     #include "data/classparties/hiker.h"
@@ -191,6 +236,217 @@ const struct TrainerMon ClassParty_Leader[1] =
     #include "data/classparties/leader.h"
 };
 
+const struct TrainerMon ClassParty_School_Kid[1] =
+{
+    #include "data/classparties/school_kid.h"
+};
+
+const struct TrainerMon ClassParty_Sr_And_Jr[1] =
+{
+    #include "data/classparties/sr_and_jr.h"
+};
+
+const struct TrainerMon ClassParty_Winstrate[1] =
+{
+    #include "data/classparties/winstrate.h"
+};
+
+const struct TrainerMon ClassParty_Pokefan[1] =
+{
+    #include "data/classparties/pokefan.h"
+};
+
+const struct TrainerMon ClassParty_Youngster[1] =
+{
+    #include "data/classparties/youngster.h"
+};
+
+const struct TrainerMon ClassParty_Champion[1] =
+{
+    #include "data/classparties/champion.h"
+};
+
+const struct TrainerMon ClassParty_Fisherman[1] =
+{
+    #include "data/classparties/fisherman.h"
+};
+
+const struct TrainerMon ClassParty_Triathlete[1] =
+{
+    #include "data/classparties/triathlete.h"
+};
+
+const struct TrainerMon ClassParty_Dragon_Tamer[1] =
+{
+    #include "data/classparties/dragon_tamer.h"
+};
+
+const struct TrainerMon ClassParty_Ninja_Boy[1] =
+{
+    #include "data/classparties/ninja_boy.h"
+};
+
+const struct TrainerMon ClassParty_Battle_Girl[1] =
+{
+    #include "data/classparties/battle_girl.h"
+};
+
+const struct TrainerMon ClassParty_Parasol_Lady[1] =
+{
+    #include "data/classparties/parasol_lady.h"
+};
+
+const struct TrainerMon ClassParty_Swimmer_F[1] =
+{
+    #include "data/classparties/swimmer_f.h"
+};
+
+const struct TrainerMon ClassParty_Twins[1] =
+{
+    #include "data/classparties/twins.h"
+};
+
+const struct TrainerMon ClassParty_Sailor[1] =
+{
+    #include "data/classparties/sailor.h"
+};
+
+const struct TrainerMon ClassParty_Cooltrainer_2[1] =
+{
+    #include "data/classparties/cooltrainer_2.h"
+};
+
+const struct TrainerMon ClassParty_Magma_Admin[1] =
+{
+    #include "data/classparties/magma_admin.h"
+};
+
+const struct TrainerMon ClassParty_Rival[1] =
+{
+    #include "data/classparties/rival.h"
+};
+
+const struct TrainerMon ClassParty_Bug_Catcher[1] =
+{
+    #include "data/classparties/bug_catcher.h"
+};
+
+const struct TrainerMon ClassParty_Pkmn_Ranger[1] =
+{
+    #include "data/classparties/pkmn_ranger.h"
+};
+
+const struct TrainerMon ClassParty_Magma_Leader[1] =
+{
+    #include "data/classparties/magma_leader.h"
+};
+
+const struct TrainerMon ClassParty_Lass[1] =
+{
+    #include "data/classparties/lass.h"
+};
+
+const struct TrainerMon ClassParty_Young_Couple[1] =
+{
+    #include "data/classparties/young_couple.h"
+};
+
+const struct TrainerMon ClassParty_Old_Couple[1] =
+{
+    #include "data/classparties/old_couple.h"
+};
+
+const struct TrainerMon ClassParty_Sis_And_Bro[1] =
+{
+    #include "data/classparties/sis_and_bro.h"
+};
+
+const struct TrainerMon ClassParty_Salon_Maiden[1] =
+{
+    #include "data/classparties/salon_maiden.h"
+};
+
+const struct TrainerMon ClassParty_Arena_Tycoon[1] =
+{
+    #include "data/classparties/arena_tycoon.h"
+};
+
+const struct TrainerMon ClassParty_Factory_Head[1] =
+{
+    #include "data/classparties/factory_head.h"
+};
+
+const struct TrainerMon ClassParty_Pike_Queen[1] =
+{
+    #include "data/classparties/pike_queen.h"
+};
+
+const struct TrainerMon ClassParty_Pyramid_King[1] =
+{
+    #include "data/classparties/pyramid_king.h"
+};
+
+const struct TrainerMon ClassParty_Rs_Protag[1] =
+{
+    #include "data/classparties/rs_protag.h"
+};
+
+//routes
+const struct TrainerMon RouteParty_Fallarbor_Rustboro[1] =
+{
+    #include "data/routeparties/fallarbor_rustboro.h"
+};
+
+const struct TrainerMon RouteParty_Fallarbor_Lavaridge[1] =
+{
+    #include "data/routeparties/fallarbor_lavaridge.h"
+};
+
+const struct TrainerMon RouteParty_Rustboro_Mauville[1] =
+{
+    #include "data/routeparties/rustboro_mauville.h"
+};
+
+const struct TrainerMon RouteParty_Lavaridge_Mauville[1] =
+{
+    #include "data/routeparties/lavaridge_mauville.h"
+};
+
+const struct TrainerMon RouteParty_Rustboro_Petalburg[1] =
+{
+    #include "data/routeparties/rustboro_petalburg.h"
+};
+
+const struct TrainerMon RouteParty_Petalburg_Dewford[1] =
+{
+    #include "data/routeparties/petalburg_dewford.h"
+};
+
+const struct TrainerMon RouteParty_Dewford_Slateport[1] =
+{
+    #include "data/routeparties/dewford_slateport.h"
+};
+
+const struct TrainerMon RouteParty_Petalburg_Slateport[1] =
+{
+    #include "data/routeparties/petalburg_slateport.h"
+};
+
+const struct TrainerMon RouteParty_Slateport_Mauville[1] =
+{
+    #include "data/routeparties/slateport_mauville.h"
+};
+
+const struct TrainerMon RouteParty_Lavaridge_Fortree[1] =
+{
+    #include "data/routeparties/lavaridge_fortree.h"
+};
+
+const struct TrainerMon RouteParty_Mauville_Mtpyre[1] =
+{
+    #include "data/routeparties/mauville_mtpyre.h"
+};
+
 //functions
 int GetClassPoolSize(u16 trainerId)
 {
@@ -291,6 +547,102 @@ int GetClassPoolSize(u16 trainerId)
         case 30: //leader
             return leaderLength;
             break;
+        case 31: //school kid
+            return school_kidLength;
+            break;
+        case 32: // sr and jr
+            return sr_and_jrLength;
+            break;
+        case 33: //winstrate
+            return winstrateLength;
+            break;
+        case 34: //pokefan
+            return pokefanLength;
+            break;
+        case 35: //youngster
+            return youngsterLength;
+            break;
+        case 36: //champion
+            return championLength;
+            break;
+        case 37: //fisherman
+            return fishermanLength;
+            break;
+        case 38: //triathlete
+            return triathleteLength;
+            break;
+        case 39: //dragon tamer
+            return dragon_tamerLength;
+            break;
+        case 40: //ninja boy
+            return ninja_boyLength;
+            break;
+        case 41: //battle girl
+            return battle_girlLength;
+            break;
+        case 42: //parasol lady
+            return parasol_ladyLength;
+            break;
+        case 43: //swimmer f
+            return swimmer_fLength;
+            break;
+        case 44: //twins
+            return twinsLength;
+            break;
+        case 45: //sailor
+            return sailorLength;
+            break;
+        case 46: //cool trainer 2
+            return cooltrainer_2Length;
+            break;
+        case 47: //magma admin
+            return magma_adminLength;
+            break;
+        case 48: //rival
+            return rivalLength;
+            break;
+        case 49: //bug catcher
+            return bug_catcherLength;
+            break;
+        case 50: //pkmn ranger
+            return pkmn_rangerLength;
+            break;
+        case 51: //magma leader
+            return magma_leaderLength;
+            break;
+        case 52: //lass
+            return lassLength;
+            break;
+        case 53: //young couple
+            return young_coupleLength;
+            break;
+        case 54: //old couple
+            return old_coupleLength;
+            break;
+        case 55: //sis and bro
+            return sis_and_broLength;
+            break;
+        case 56: //salon maiden
+            return salon_maidenLength;
+            break;
+        case 57: //arena tycoon
+            return arena_tycoonLength;
+            break;
+        case 58: //factory head
+            return factory_headLength;
+            break;
+        case 59: //pike queen
+            return pike_queenLength;
+            break;
+        case 60: //pyramid king
+            return pyramid_kingLength;
+            break;
+        case 61: //rs protag
+            return rs_protagLength;
+            break;
+        default:
+            return 1;
+            break;
     };
 
     return 1;
@@ -302,7 +654,39 @@ int GetRoutePoolSize(u16 trainerId)
 
     switch (currentTrainerRoute)
     {
-
+        case 0:
+            return fallarbor_rustboroLength;
+            break;
+        case 1:
+            return fallarbor_lavaridgeLength;
+            break;
+        case 2:
+            return rustboro_mauvilleLength;
+            break;
+        case 3:
+            return lavaridge_mauvilleLength;
+            break;
+        case 4:
+            return rustboro_petalburgLength;
+            break;
+        case 5:
+            return petalburg_dewfordLength;
+            break;
+        case 6:
+            return dewford_slateportLength;
+            break;
+        case 7:
+            return petalburg_slateportLength;
+            break;
+        case 8:
+            return slateport_mauvilleLength;
+            break;
+        case 9:
+            return lavaridge_fortreeLength;
+            break;
+        case 10:
+            return mauville_mtpyreLength;
+            break;
     };
 
     return 1;
@@ -414,279 +798,145 @@ const struct TrainerMon *CombinePools(u16 trainerId)
         case 30: //leader
             memcpy(poolparty, ClassParty_Leader, classPoolSize);
             break;
+        case 31: //school kid
+            memcpy(poolparty, ClassParty_School_Kid, classPoolSize);
+            break;
+        case 32: //sr and jr
+            memcpy(poolparty, ClassParty_Sr_And_Jr, classPoolSize);
+            break;
+        case 33: //winstrate
+            memcpy(poolparty, ClassParty_Winstrate, classPoolSize);
+            break;
+        case 34: //pokefan
+            memcpy(poolparty, ClassParty_Pokefan, classPoolSize);
+            break;
+        case 35: //youngster
+            memcpy(poolparty, ClassParty_Youngster, classPoolSize);
+            break;
+        case 36: //champion
+            memcpy(poolparty, ClassParty_Champion, classPoolSize);
+            break;
+        case 37: //fisherman
+            memcpy(poolparty, ClassParty_Fisherman, classPoolSize);
+            break;
+        case 38: //triathlete
+            memcpy(poolparty, ClassParty_Triathlete, classPoolSize);
+            break;
+        case 39: //dragon tamer
+            memcpy(poolparty, ClassParty_Dragon_Tamer, classPoolSize);
+            break;
+        case 40: //ninja boy
+            memcpy(poolparty, ClassParty_Ninja_Boy, classPoolSize);
+            break;
+        case 41: //battle girl
+            memcpy(poolparty, ClassParty_Battle_Girl, classPoolSize);
+            break;
+        case 42: //parasol lady
+            memcpy(poolparty, ClassParty_Parasol_Lady, classPoolSize);
+            break;
+        case 43: //swimmer f
+            memcpy(poolparty, ClassParty_Swimmer_F, classPoolSize);
+            break;
+        case 44: //twins
+            memcpy(poolparty, ClassParty_Twins, classPoolSize);
+            break;
+        case 45: //sailor
+            memcpy(poolparty, ClassParty_Sailor, classPoolSize);
+            break;
+        case 46: //cool trainer 2
+            memcpy(poolparty, ClassParty_Cooltrainer_2, classPoolSize);
+            break;
+        case 47: //magma admin
+            memcpy(poolparty, ClassParty_Magma_Admin, classPoolSize);
+            break;
+        case 48: //rival
+            memcpy(poolparty, ClassParty_Rival, classPoolSize);
+            break;
+        case 49: //bug catchter
+            memcpy(poolparty, ClassParty_Bug_Catcher, classPoolSize);
+            break;
+        case 50: //pkmn ranger
+            memcpy(poolparty, ClassParty_Pkmn_Ranger, classPoolSize);
+            break;
+        case 51: //magma leader
+            memcpy(poolparty, ClassParty_Magma_Leader, classPoolSize);
+            break;
+        case 52: //lass
+            memcpy(poolparty, ClassParty_Lass, classPoolSize);
+            break;
+        case 53: //young couple
+            memcpy(poolparty, ClassParty_Young_Couple, classPoolSize);
+            break;
+        case 54: //old couple
+            memcpy(poolparty, ClassParty_Old_Couple, classPoolSize);
+            break;
+        case 55: //sis and bro
+            memcpy(poolparty, ClassParty_Sis_And_Bro, classPoolSize);
+            break;
+        case 56: //salon maiden
+            memcpy(poolparty, ClassParty_Salon_Maiden, classPoolSize);
+            break;
+        case 57: //arena tycoon
+            memcpy(poolparty, ClassParty_Arena_Tycoon, classPoolSize);
+            break;
+        case 58: //factory head
+            memcpy(poolparty, ClassParty_Factory_Head, classPoolSize);
+            break;
+        case 59: //pike queen
+            memcpy(poolparty, ClassParty_Pike_Queen, classPoolSize);
+            break;
+        case 60: //pyramid king
+            memcpy(poolparty, ClassParty_Pyramid_King, classPoolSize);
+            break;
+        case 61: //rs protag
+            memcpy(poolparty, ClassParty_Rs_Protag, classPoolSize);
+            break;
+        default: 
+            memcpy(poolparty, ClassParty_Fisherman, classPoolSize);
+            break;
     };
 
-    // switch(currentTrainerRoute)
-    // {
-    //     case 0: //
-    //     memcpy(poolparty + classPoolSize, [routepool], routePoolSize * sizeof(TrainerMon));
-    // };
+    switch(currentTrainerRoute)
+    {
+        case 0: // fallarbor_rustboro
+            memcpy(poolparty + classPoolSize, RouteParty_Fallarbor_Rustboro, routePoolSize);
+            break;
+        case 1: //fallarbor_lavardige
+            memcpy(poolparty + classPoolSize, RouteParty_Fallarbor_Lavaridge, routePoolSize);
+            break;
+        case 2: //rustboro_mauville
+            memcpy(poolparty + classPoolSize, RouteParty_Rustboro_Mauville, routePoolSize);
+            break;
+        case 3: //lavaridge_mauville
+            memcpy(poolparty + classPoolSize, RouteParty_Lavaridge_Mauville, routePoolSize);
+            break;
+        case 4: //rustboro_petalburg
+            memcpy(poolparty + classPoolSize, RouteParty_Rustboro_Petalburg, routePoolSize);
+            break;
+        case 5: //petalburg_dewford
+            memcpy(poolparty + classPoolSize, RouteParty_Petalburg_Dewford, routePoolSize);
+            break;
+        case 6: //dewford_slateport
+            memcpy(poolparty + classPoolSize, RouteParty_Dewford_Slateport, routePoolSize);
+            break;
+        case 7: //petalburg_slateport
+            memcpy(poolparty + classPoolSize, RouteParty_Petalburg_Slateport, routePoolSize);
+            break;
+        case 8: //slateport_mauville
+            memcpy(poolparty + classPoolSize, RouteParty_Slateport_Mauville, routePoolSize);
+            break;
+        case 9: //lavaridge_fortree
+            memcpy(poolparty, classPoolSize, RouteParty_Lavaridge_Fortree, routePoolSize);
+            break;
+        case 10: //mauville_mtpyre
+            memcpy(poolparty, classPoolSize, RouteParty_Mauville_Mtpyre, routePoolSize);
+            break;
+    };
 
 
     return *poolparty;
 };
 
-    //     case 29:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/school_kid.h"
-    //         };
-    //         break;
-    //     case 30:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/sr_and_jr.h"
-    //         };
-    //         break;
-    //     case 31:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/winstrate.h"
-    //         };
-    //         break;
-    //     case 32:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/pokefan.h"
-    //         };
-    //         break;
-    //     case 33:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/youngster.h"
-    //         };
-    //         break;
-    //     case 34:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/champion.h"
-    //         };
-    //         break;
-    //     case 35:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/fisherman.h"
-    //         };
-    //         break;
-    //     case 36:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/triathlete.h"
-    //         };
-    //         break;
-    //     case 37:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/dragon_tamer.h"
-    //         };
-    //         break;
-    //     case 38:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/ninja_boy.h"
-    //         };
-    //         break;
-    //     case 39:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/battle_girl.h"
-    //         };
-    //         break;
-    //     case 40:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/parasol_lady.h"
-    //         };
-    //         break;
-    //     case 41:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/swimmer_f.h"
-    //         };
-    //         break;
-    //     case 42:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/twins.h"
-    //         };
-    //         break;
-    //     case 43:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/sailor.h"
-    //         };
-    //         break;
-    //     case 44:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/cooltrainer_2.h"
-    //         };
-    //         break;
-    //     case 45:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/magma_admin.h"
-    //         };
-    //         break;
-    //     case 46:
-    //         classpool = 
-    //         {
-    //             #include "data/classparties/rival.h"
-    //         };
-    //         break;
-    //     case 47:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/bug_catcher.h"
-    //         };
-    //         break;
-    //     case 48:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/pkmn_ranger.h"
-    //         };
-    //         break;
-    //     case 49:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/magma_leader.h"
-    //         };
-    //         break;
-    //     case 50:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/lass.h"
-    //         };
-    //         break;
-    //     case 51:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/young_couple.h"
-    //         };
-    //         break;
-    //     case 52:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/old_couple.h"
-    //         };
-    //         break;
-    //     case 53:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/sis_and_bro.h"
-    //         };
-    //         break;
-    //     case 54:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/salon_maiden.h"
-    //         };
-    //     case 55:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/arena_tycoon.h"
-    //         };
-    //         break;
-    //     case 56:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/factory_head.h"
-    //         };
-    //         break;
-    //     case 57:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/pike_queen.h"
-    //         };
-    //         break;
-    //     case 58:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/pyramid_king.h"
-    //         };
-    //         break;
-    //     case 59:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/rs_protag.h"
-    //         };
-    //         break;
-    //     default:
-    //         classpool =
-    //         {
-    //             #include "data/classparties/collector.h"
-    //         };
-    //         break;
-    // }
-
-    // switch (currentTrainerRoute)
-    // {
-    //     case 0:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/fallarbor_rustboro.h"
-    //         };
-    //         break;
-    //     case 1:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/fallarbor_lavaridge.h"
-    //         };
-    //         break;
-    //     case 2:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/rustboro_mauville.h"
-    //         };
-    //         break;
-    //     case 3:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/lavaridge_mauville.h"
-    //         };
-    //         break;
-    //     case 4:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/rustboro_petalburg.h"
-    //         };
-    //         break;
-    //     case 5:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/petalburg_dewford.h"
-    //         };
-    //         break;
-    //     case 6:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/dewford_slateport.h"
-    //         };
-    //         break;
-    //     case 7:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/petalburg_slateport.h"
-    //         };
-    //         break;
-    //     case 8:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/slateport_mauville.h"
-    //         };
-    //         break;
-    //     case 9:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/lavaridge_fortree.h"
-    //         };
-    //         break;
-    //     case 10:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/mauville_mtpyre.h"
-    //         };
-    //         break;
     //     case 11:
     //         routepool =
     //         {
