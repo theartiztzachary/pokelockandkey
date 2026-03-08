@@ -1,3 +1,5 @@
+
+[0] =
 {
     .species = SPECIES_GEODUDE,
     .gender = TRAINER_MON_RANDOM_GENDER,
