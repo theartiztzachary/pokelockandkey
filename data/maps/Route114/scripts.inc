@@ -4,6 +4,33 @@ Route114_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route114_OnFrame
 	.byte 0
 
+Route114_EventScript_MuscleFeather::
+	goto_if_eq VAR_WORLD_DIFFICULTY, 0, Route114_ThreeMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 1, Route114_ThreeMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 2, Route114_ThreeMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 3, Route114_ThreeMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 4, Route114_FourMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 5, Route114_FourMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 6, Route114_FourMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 7, Route114_FourMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 8, Route114_FiveMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 9, Route114_FiveMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 10, Route114_FiveMuscleFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 11, Route114_FiveMuscleFeathers
+	end
+
+Route114_ThreeMuscleFeathers::
+	finditem ITEM_MUSCLE_FEATHER, amount=3
+	end
+
+Route114_FourMuscleFeathers::
+	finditem ITEM_MUSCLE_FEATHER, amount=4
+	end
+
+Route114_FiveMuscleFeathers::
+	finditem ITEM_MUSCLE_FEATHER, amount=5
+	end
+
 Route114_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_NORTH, AbnormalWeather_StartGroudonWeather

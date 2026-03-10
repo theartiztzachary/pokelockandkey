@@ -3039,7 +3039,7 @@ static void SetNonVolatileStatus(u32 effectBattler, enum MoveEffect effect, cons
         gBattleStruct->synchronizeMoveEffect = effect;
 
     if (effect == MOVE_EFFECT_POISON || effect == MOVE_EFFECT_TOXIC)
-        gBattleStruct->poisonPuppeteerConfusion = TRUE;
+        gBattleStruct->agonizingVenomConfusion = TRUE;
 }
 
 // To avoid confusion the arguments are naned battler/effectBattler since they can be different from gBattlerAttacker/gBattlerTarget
@@ -7164,7 +7164,7 @@ static void Cmd_moveend(void)
             gBattleStruct->swapDamageCategory = FALSE;
             gBattleStruct->categoryOverride = FALSE;
             gBattleStruct->additionalEffectsCounter = 0;
-            gBattleStruct->poisonPuppeteerConfusion = FALSE;
+            gBattleStruct->agonizingVenomConfusion = FALSE;
             gBattleStruct->fickleBeamBoosted = FALSE;
             gBattleStruct->tryDestinyBond = FALSE;
             gBattleStruct->tryGrudge = FALSE;

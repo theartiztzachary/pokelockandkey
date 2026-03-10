@@ -1706,6 +1706,14 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_ECHOING_ROAR:
+            if (CountUsablePartyMons(battlerDef) == 0)
+                ADJUST_SCORE(-10);
+            else if (aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
+                ADJUST_SCORE(-10);
+            else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_TOXIC_THREAD:
             if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED))
                 ADJUST_SCORE(-1);    // may still want to just poison
@@ -4381,6 +4389,14 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             break;
         score += AI_TryToClearStats(battlerAtk, battlerDef, moveTargetsBothOpponents);
         break;
+    case EFFECT_ECHOING_ROAR:
+        if ((IsSoundMove(move) && aiData->abilities[battlerDef] == ABILITY_SOUNDPROOF)
+          || aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
+            break;
+        else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
+            break;
+        score += AI_TryToClearStats(battlerAtk, battlerDef, moveTargetsBothOpponents);
+        break;
     case EFFECT_MULTI_HIT:
     case EFFECT_TRIPLE_KICK:
     case EFFECT_POPULATION_BOMB:
@@ -6696,6 +6712,10 @@ static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_ROAR:
+        if (opposingHazardFlags)
+            ADJUST_SCORE(GOOD_EFFECT);
+        break;
+    case EFFECT_ECHOING_ROAR:
         if (opposingHazardFlags)
             ADJUST_SCORE(GOOD_EFFECT);
         break;

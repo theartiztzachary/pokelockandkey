@@ -5465,6 +5465,17 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_ANCESTOR:
+            if (IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && RandomChance(RNG_ANCESTOR, 1, 10)
+             && IsBattlerTurnDamaged(gBattlerTarget)
+             && !MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_ALL_STATS_UP))
+            {
+                SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_ALL_STATS_UP, gBattlescriptCurrInstr, EFFECT_PRIMARY);
+                effect++;
+            }
+            break;
         case ABILITY_GULP_MISSILE:
             if ((gBattleMons[gBattlerAttacker].species == SPECIES_CRAMORANT)
              && ((gCurrentMove == MOVE_SURF && IsBattlerTurnDamaged(gBattlerTarget)) || gBattleMons[gBattlerAttacker].volatiles.semiInvulnerable == STATE_UNDERWATER)
@@ -5475,12 +5486,12 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
-        case ABILITY_POISON_PUPPETEER:
-            if (gBattleMons[gBattlerAttacker].species == SPECIES_PECHARUNT
-             && gBattleStruct->poisonPuppeteerConfusion == TRUE
+        case ABILITY_AGONIZING_VENOM:
+            if (gBattleMons[gBattlerAttacker].species == SPECIES_SEVIPER
+             && gBattleStruct->agonizingVenomConfusion == TRUE
              && CanBeConfused(gBattlerTarget))
             {
-                gBattleStruct->poisonPuppeteerConfusion = FALSE;
+                gBattleStruct->agonizingVenomConfusion = FALSE;
                 gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                 BattleScriptCall(BattleScript_AbilityStatusEffect);

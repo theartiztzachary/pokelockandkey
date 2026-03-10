@@ -170,6 +170,13 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
+    [EFFECT_ECHOING_ROAR] =
+    {
+        .battleScript = BattleScript_EffectEchoingRoar,
+        .battleTvScore = 5,
+        .encourageEncore = TRUE,
+    },
+
     [EFFECT_MULTI_HIT] =
     {
         .battleScript = BattleScript_EffectHit,

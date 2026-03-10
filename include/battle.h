@@ -675,7 +675,7 @@ struct BattleStruct
     u8 battlerKOAnimsRunning:3;
     u8 friskedAbility:1; // If identifies two mons, show the ability pop-up only once.
     u8 fickleBeamBoosted:1;
-    u8 poisonPuppeteerConfusion:1;
+    u8 agonizingVenomConfusion:1;
     u8 toxicChainPriority:1; // If Toxic Chain will trigger on target, all other non volatiles will be blocked
     u8 moldBreakerActive:1;
     u16 startingStatusTimer;

@@ -1337,6 +1337,41 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+        [MOVE_ECHOING_ROAR] =
+    {
+        .name = COMPOUND_STRING("Roar"),
+        .description = COMPOUND_STRING(
+            "Roars so ferociously\n"
+            "it alsos scares itself."),
+        .effect = EFFECT_ECHOING_ROAR,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = B_UPDATED_MOVE_DATA >= GEN_6 ? 0 : 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        #if B_UPDATED_MOVE_DATA >= GEN_3
+            .priority = -6,
+        #elif B_UPDATED_MOVE_DATA == GEN_2
+            .priority = -1,
+        #else
+            .priority = 0,
+        #endif
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
+        .ignoresProtect = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .ignoresSubstitute = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .magicCoatAffected = B_UPDATED_MOVE_FLAGS >= GEN_5,
+        .soundMove = TRUE,
+        .copycatBanned = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .assistBanned = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_NEXT_APPEAL_LATER : CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_STEALTH_ROCK, COMBO_STARTER_ENTRAINMENT, COMBO_STARTER_PLAY_NICE, COMBO_STARTER_SPIKES, COMBO_STARTER_TOXIC_SPIKES},
+        .battleAnimScript = gBattleAnimMove_Roar,
+        .validApprenticeMove = TRUE,
+    },
+
     [MOVE_SING] =
     {
         .name = COMPOUND_STRING("Sing"),
@@ -10660,6 +10695,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 80,
         .type = TYPE_BUG,
         .accuracy = 100,
+        .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -16638,6 +16674,29 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_SmartStrike,
     },
 
+    [MOVE_SCYTHING_SLASH] =
+    {
+        .name = COMPOUND_STRING("Scything Slash"),
+        .description = COMPOUND_STRING(
+            "Slashes with cruel talons.\n"
+            "Frequently critically hits."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_BehemothBlade,
+    },
+
     [MOVE_PURIFY] =
     {
         .name = COMPOUND_STRING("Purify"),
@@ -19533,7 +19592,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Can poison on impact. Powers\n"
             "up against poisoned foes."),
         .effect = EFFECT_DOUBLE_POWER_ON_ARG_STATUS,
-        .power = 60,
+        .power = 75,
         .type = TYPE_POISON,
         .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 10 : 15,
@@ -19543,7 +19602,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .argument = { .status = STATUS1_PSN_ANY },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_POISON,
-            .chance = 50,
+            .chance = 75,
         }),
         .battleAnimScript = gBattleAnimMove_BarbBarrage,
     },

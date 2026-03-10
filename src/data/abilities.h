@@ -16,6 +16,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 1,
     },
 
+    [ABILITY_ANCESTOR] =
+    {
+        .name = _("Ancestor"),
+        .description = COMPOUND_STRING("All moves are Ancient Power."),
+        .aiRating = 1,
+    },
+
     [ABILITY_DRIZZLE] =
     {
         .name = _("Drizzle"),
@@ -2403,9 +2410,9 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
     },
 
-    [ABILITY_POISON_PUPPETEER] =
+    [ABILITY_AGONIZING_VENOM] =
     {
-        .name = _("Poison Puppeteer"),
+        .name = _("Agonizing Venom"),
         .description = COMPOUND_STRING("Confuses poisoned foes."),
         .aiRating = 8,
         .cantBeCopied = TRUE,
