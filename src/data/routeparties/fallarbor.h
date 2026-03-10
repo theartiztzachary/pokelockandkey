@@ -1,5 +1,6 @@
+[0] =
 {
-    .species = SPECIES_GEODUDE,
+    .species = SPECIES_SKARMORY,
     .gender = TRAINER_MON_RANDOM_GENDER,
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 21,

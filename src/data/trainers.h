@@ -43026,7 +43026,7 @@ F_TRAINER_FEMALE |
             .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0), //probably keeping these at zero, hp, atk, def, speed, spatk, spdef
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0), //hp, atk, def, speed, spatk, spdef //NEEDED
             //.moves = {} //list of moves the pokemon has, ie { MOVE_TACKLE, MOVE_GROWL }, move refs in /include/constants/moves.h
-            .species = SPECIES_BARBOACH, //actual pokemon itself, just make sure it's SPECIES_POKEMON //NEEDED
+            .species = SPECIES_MAGIKARP, //actual pokemon itself, just make sure it's SPECIES_POKEMON //NEEDED
             .heldItem = ITEM_ORAN_BERRY, //item the poke is holding, item reference is /include/constants/items.h
             .ability = ABILITY_DRIZZLE, //set's poke's ability, reference is /include/constants/abilities.h
             .lvl = 10, //for our purposes, the level of the poke at World Level 0 /NEEDED
@@ -43043,6 +43043,13 @@ F_TRAINER_FEMALE |
             .padding2 = 4, //also have no idea, default is 4 so probably keep it at that
             .tags = NULL, //used with the trainer pool system
             },
+            {
+            .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
+            .species = SPECIES_GOLDEEN,
+            .lvl = 10,
+            .nature = NATURE_BASHFUL,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            },
         },
         //.items = {}, //list items the trainer has, ie { ITEM_FULL_RESTORE }, items references can be found in /include/constants/items.h
         .trainerClass = TRAINER_CLASS_FISHERMAN, //it looks like this is used to help decide what in-battle and post-battle background music is played, enum is include/constants/trainers.h line 288
@@ -43052,11 +43059,11 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES, //sets if the battle is a single or double, unsure if pokeemerald expansion has support for other types, enum is in include/data.h line 85
         .startingStatus = STARTING_STATUS_NONE, //sets starting battlefield status, see include/constants/battle.h line 674
         .mugshotColor = MUGSHOT_COLOR_NONE, //yknow the like graphical cut-in that happens with gym leaders/e4? yeah that. enum is in include/battle_transition.h, line 13
-        .partySize = 2, //can probably be ignored/removed, but putting a default value is probably best practice as a backup in case the game tries to read it for some reason
-        .poolSize = NULL, // okay so it looks like the .pool attributes are an optional way to set up a trainer to have a pool of pokemon that they can draw from, 
-        .poolRuleIndex = NULL, // instead of having a fixed party, the game will randomly select pokemon from the pool to fill the trainer's party each battle
-        .poolPickIndex = NULL, //it looks like this isn't used for the battle frontier at all, so we might be able to co-opt it for the gym leaders having a 'pool' of pokes
-        .poolPruneIndex = NULL, //but that will take some extra research
+        .partySize = 1, //can probably be ignored/removed, but putting a default value is probably best practice as a backup in case the game tries to read it for some reason
+        .poolSize = 2, //length of class pool + length of route pool
+        .poolRuleIndex = NULL,
+        .poolPickIndex = NULL, 
+        .poolPruneIndex = NULL, 
         .overrideTrainer = NULL, //...I got nothing, i can find where it's used in the code but idk what it does, looks like other trainers don't use this attribute so we can probably ignore it/leave it null
         .trainerBackPic = TRAINER_PIC_FISHERMAN, //I... have no idea, player and partner npc back pics are handleded elsewhere and don't reference this, for the sake of matching other definitions I would use the same thing you put for .trainerPic
         .partySizeWorldZero = 1, //sets party size when world level is zero

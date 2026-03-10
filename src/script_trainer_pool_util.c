@@ -78,6 +78,23 @@ const int petalburg_slateportLength = 1;
 const int slateport_mauvilleLength = 1;
 const int lavaridge_fortreeLength = 1;
 const int mauville_mtpyreLength = 1;
+const int fortree_mtpyreLength = 1;
+const int mtpyre_lilycoveLength = 1;
+const int lilycove_mossdeepLength = 1;
+const int slateport_mossdeepLength = 1;
+const int fallarborLength = 1;
+const int rustboroLength = 1;
+const int petalburgLength = 1;
+const int dewfordLength = 1;
+const int slateportLength = 1;
+const int mauvilleLength = 1;
+const int lavaridgeLength = 1;
+const int fortreeLength = 1;
+const int mtpyreLength = 1;
+const int lilycoveLength = 1;
+const int mossdeepLength = 1;
+const int sootopolisLength = 1;
+const int battle_frontierLength = 1;
 
 //initialize pools
 //class
@@ -166,7 +183,7 @@ const struct TrainerMon ClassParty_Tuber_F[1] =
     #include "data/classparties/tuber_f.h"
 };
 
-const strct TrainerMon ClassParty_Tuber_M[1] =
+const struct TrainerMon ClassParty_Tuber_M[1] =
 {
     #include "data/classparties/tuber_m.h"
 };
@@ -447,12 +464,95 @@ const struct TrainerMon RouteParty_Mauville_Mtpyre[1] =
     #include "data/routeparties/mauville_mtpyre.h"
 };
 
-//functions
-int GetClassPoolSize(u16 trainerId)
+const struct TrainerMon RouteParty_Fortree_Mtpyre[1] =
 {
-    u8 currentTrainerClass = GetTrainerClassFromId(trainerId);
+    #include "data/routeparties/fortree_mtpyre.h"
+};
 
-    switch(currentTrainerClass)
+const struct TrainerMon RouteParty_Mtpyre_Lilycove[1] =
+{
+    #include "data/routeparties/mtpyre_lilycove.h"
+};
+
+const struct TrainerMon RouteParty_Lilycove_Mossdeep[1] =
+{
+    #include "data/routeparties/lilycove_mossdeep.h"
+};
+
+const struct TrainerMon RouteParty_Slateport_Mossdeep[1] =
+{
+    #include "data/routeparties/slateport_mossdeep.h"
+};
+
+const struct TrainerMon RouteParty_Fallarbor[1] =
+{
+   #include "data/routeparties/fallarbor.h" 
+};
+
+const struct TrainerMon RouteParty_Rustboro[1] =
+{
+    #include "data/routeparties/rustboro.h"
+};
+
+const struct TrainerMon RouteParty_Petalburg[1] =
+{
+    #include "data/routeparties/petalburg.h"
+};
+
+const struct TrainerMon RouteParty_Dewford[1] =
+{
+    #include "data/routeparties/dewford.h"
+};
+
+const struct TrainerMon RouteParty_Slateport[1] =
+{
+    #include "data/routeparties/slateport.h"
+};
+
+const struct TrainerMon RouteParty_Mauville[1] =
+{
+    #include "data/routeparties/mauville.h"
+};
+
+const struct TrainerMon RouteParty_Lavaridge[1] =
+{
+    #include "data/routeparties/lavaridge.h"
+};
+
+const struct TrainerMon RouteParty_Fortree[1] =
+{
+    #include "data/routeparties/fortree.h"
+};
+
+const struct TrainerMon RouteParty_Mtpyre[1] =
+{
+    #include "data/routeparties/mtpyre.h"
+};
+
+const struct TrainerMon RouteParty_Lilycove[1] =
+{
+    #include "data/routeparties/lilycove.h"
+};
+
+const struct TrainerMon RouteParty_Mossdeep[1] =
+{
+    #include "data/routeparties/mossdeep.h"
+};
+
+const struct TrainerMon RouteParty_Sootopolis[1] =
+{
+    #include "data/routeparties/sootopolis.h"
+};
+
+const struct TrainerMon RouteParty_Battle_Frontier[1] =
+{
+    #include "data/routeparties/battle_frontier.h"
+};
+
+//functions
+int GetClassPoolSize(const enum TrainerClassID trainerClass)
+{
+    switch(trainerClass)
     {
         case 0: //hiker
             return hikerLength;
@@ -648,11 +748,9 @@ int GetClassPoolSize(u16 trainerId)
     return 1;
 };
 
-int GetRoutePoolSize(u16 trainerId) 
+int GetRoutePoolSize(const enum TrainerUnlockedAt unlockedAt) 
 {
-    u8 currentTrainerRoute = GetTrainerUnlockedFromId(trainerId);
-
-    switch (currentTrainerRoute)
+    switch (unlockedAt)
     {
         case 0:
             return fallarbor_rustboroLength;
@@ -687,19 +785,74 @@ int GetRoutePoolSize(u16 trainerId)
         case 10:
             return mauville_mtpyreLength;
             break;
+        case 11:
+            return fortree_mtpyreLength;
+            break;
+        case 12:
+            return mtpyre_lilycoveLength;
+            break;
+        case 13:
+            return lilycove_mossdeepLength;
+            break;
+        case 14:
+            return slateport_mossdeepLength;
+            break;
+        case 15:
+            return fallarborLength;
+            break;
+        case 16:
+            return rustboroLength;
+            break;
+        case 17:
+            return petalburgLength;
+            break;
+        case 18:
+            return dewfordLength;
+            break;
+        case 19:
+            return slateportLength;
+            break;
+        case 20:
+            return mauvilleLength;
+            break;
+        case 21:
+            return lavaridgeLength;
+            break;
+        case 22:
+            return fortreeLength;
+            break;
+        case 23:
+            return mtpyreLength;
+            break;
+        case 24:
+            return lilycoveLength;
+            break;
+        case 25:
+            return mossdeepLength;
+            break;
+        case 26:
+            return sootopolisLength;
+            break;
+        case 27:
+            return battle_frontierLength;
+            break;
+        default:
+            return 1;
+            break;
     };
 
     return 1;
 
 };
 
-const struct TrainerMon *CombinePools(u16 trainerId)
+const struct TrainerMon *CombinePools(const struct Trainer *trainer)
 {
     
-    u8 currentTrainerClass = GetTrainerClassFromId(trainerId);
-    u8 currentTrainerRoute = GetTrainerUnlockedFromId(trainerId);
-    u8 classPoolSize = GetClassPoolSize(trainerId);
-    u8 routePoolSize = GetRoutePoolSize(trainerId);
+    u8 currentTrainerClass = trainer->trainerClass;
+    u8 currentTrainerRoute = trainer->trainerUnlockedAt;
+    u8 classPoolSize = GetClassPoolSize(currentTrainerClass);
+    u8 routePoolSize = GetRoutePoolSize(currentTrainerRoute);
+    size_t classArraySize;
 
     const struct TrainerMon *poolparty[classPoolSize + routePoolSize];
 
@@ -718,7 +871,7 @@ const struct TrainerMon *CombinePools(u16 trainerId)
             memcpy(poolparty, ClassParty_Cooltrainer, classPoolSize);
             break;
         case 4: //bird keeper
-            memcpy(poolpary, ClassParty_Bird_Keeper, classPoolSize);
+            memcpy(poolparty, ClassParty_Bird_Keeper, classPoolSize);
             break;
         case 5: //collector
             memcpy(poolparty, ClassParty_Collector, classPoolSize);
@@ -818,6 +971,7 @@ const struct TrainerMon *CombinePools(u16 trainerId)
             break;
         case 37: //fisherman
             memcpy(poolparty, ClassParty_Fisherman, classPoolSize);
+            classArraySize = sizeof(ClassParty_Fisherman);
             break;
         case 38: //triathlete
             memcpy(poolparty, ClassParty_Triathlete, classPoolSize);
@@ -899,147 +1053,93 @@ const struct TrainerMon *CombinePools(u16 trainerId)
     switch(currentTrainerRoute)
     {
         case 0: // fallarbor_rustboro
-            memcpy(poolparty + classPoolSize, RouteParty_Fallarbor_Rustboro, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Fallarbor_Rustboro, sizeof(RouteParty_Fallarbor_Rustboro));
             break;
         case 1: //fallarbor_lavardige
-            memcpy(poolparty + classPoolSize, RouteParty_Fallarbor_Lavaridge, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Fallarbor_Lavaridge, sizeof(RouteParty_Fallarbor_Lavaridge));
             break;
         case 2: //rustboro_mauville
-            memcpy(poolparty + classPoolSize, RouteParty_Rustboro_Mauville, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Rustboro_Mauville, sizeof(RouteParty_Rustboro_Mauville));
             break;
         case 3: //lavaridge_mauville
-            memcpy(poolparty + classPoolSize, RouteParty_Lavaridge_Mauville, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Lavaridge_Mauville, sizeof(RouteParty_Lavaridge_Mauville));
             break;
         case 4: //rustboro_petalburg
-            memcpy(poolparty + classPoolSize, RouteParty_Rustboro_Petalburg, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Rustboro_Petalburg, sizeof(RouteParty_Rustboro_Petalburg));
             break;
         case 5: //petalburg_dewford
-            memcpy(poolparty + classPoolSize, RouteParty_Petalburg_Dewford, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Petalburg_Dewford, sizeof(RouteParty_Petalburg_Dewford));
             break;
         case 6: //dewford_slateport
-            memcpy(poolparty + classPoolSize, RouteParty_Dewford_Slateport, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Dewford_Slateport, sizeof(RouteParty_Dewford_Slateport));
             break;
         case 7: //petalburg_slateport
-            memcpy(poolparty + classPoolSize, RouteParty_Petalburg_Slateport, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Petalburg_Slateport, sizeof(RouteParty_Petalburg_Slateport));
             break;
         case 8: //slateport_mauville
-            memcpy(poolparty + classPoolSize, RouteParty_Slateport_Mauville, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Slateport_Mauville, sizeof(RouteParty_Slateport_Mauville));
             break;
         case 9: //lavaridge_fortree
-            memcpy(poolparty, classPoolSize, RouteParty_Lavaridge_Fortree, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Lavaridge_Fortree, sizeof(RouteParty_Lavaridge_Fortree));
             break;
         case 10: //mauville_mtpyre
-            memcpy(poolparty, classPoolSize, RouteParty_Mauville_Mtpyre, routePoolSize);
+            memcpy(poolparty + classPoolSize, RouteParty_Mauville_Mtpyre, sizeof(RouteParty_Mauville_Mtpyre));
+            break;
+        case 11: //fortree_mtpyre
+            memcpy(poolparty + classPoolSize, RouteParty_Fortree_Mtpyre, sizeof(RouteParty_Fortree_Mtpyre));
+            break;
+        case 12: //mtpyre_lilycove
+            memcpy(poolparty + classPoolSize, RouteParty_Mtpyre_Lilycove, sizeof(RouteParty_Mtpyre_Lilycove));
+            break;
+        case 13: //lilycove_mossdeep
+            memcpy(poolparty + classPoolSize, RouteParty_Lilycove_Mossdeep, sizeof(RouteParty_Lilycove_Mossdeep));
+            break;
+        case 14: //slateport_mossdeep
+            memcpy(poolparty + classPoolSize, RouteParty_Slateport_Mossdeep, sizeof(RouteParty_Slateport_Mossdeep));
+            break;
+        case 15: //fallarbor
+            memcpy(poolparty + classPoolSize, RouteParty_Fallarbor, sizeof(RouteParty_Fallarbor));
+            break;
+        case 16: //rustboro
+            memcpy(poolparty + classPoolSize, RouteParty_Rustboro, sizeof(RouteParty_Rustboro));
+            break;
+        case 17: //petalburg
+            memcpy(poolparty + classPoolSize, RouteParty_Petalburg, sizeof(RouteParty_Petalburg));
+            break;
+        case 18: //dewford
+            memcpy(poolparty + classPoolSize, RouteParty_Dewford, sizeof(RouteParty_Dewford));
+            break;
+        case 19: //slateport
+            memcpy(poolparty + classPoolSize, RouteParty_Slateport, sizeof(RouteParty_Slateport));
+            break;
+        case 20: //mauville
+            memcpy(poolparty + classPoolSize, RouteParty_Mauville, sizeof(RouteParty_Mauville));
+            break;
+        case 21: //lavaridge
+            memcpy(poolparty + classPoolSize, RouteParty_Lavaridge, sizeof(RouteParty_Lavaridge));
+            break;
+        case 22: //fortree
+            memcpy(poolparty + classPoolSize, RouteParty_Fortree, sizeof(RouteParty_Fortree));
+            break;
+        case 23: //mtpyre
+            memcpy(poolparty + classPoolSize, RouteParty_Mtpyre, sizeof(RouteParty_Mtpyre));
+            break;
+        case 24: //lilycove
+            memcpy(poolparty + classPoolSize, RouteParty_Lilycove, sizeof(RouteParty_Lilycove));
+            break;
+        case 25: //mossdeep
+            memcpy(poolparty + classPoolSize, RouteParty_Mossdeep, sizeof(RouteParty_Mossdeep));
+            break;
+        case 26: //sootopolis
+            memcpy(poolparty + classPoolSize, RouteParty_Sootopolis, sizeof(RouteParty_Sootopolis));
+            break;
+        case 27: //battle frontier
+            memcpy(poolparty + classPoolSize, RouteParty_Battle_Frontier, sizeof(RouteParty_Battle_Frontier));
+            break;
+        default:
+            memcpy(poolparty + classPoolSize, RouteParty_Fallarbor_Rustboro, sizeof(RouteParty_Fallarbor_Rustboro));
             break;
     };
 
-
-    return *poolparty;
+    return RouteParty_Fallarbor;
 };
-
-    //     case 11:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/fortree_mtpyre.h"
-    //         };
-    //         break;
-    //     case 12:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/mtpyre_lilycove.h"
-    //         };
-    //         breka;
-    //     case 13:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/lilycove_mossdeep.h"
-    //         };
-    //         break;
-    //     case 14:
-    //         routepoool =
-    //         {
-    //             #include "data/routeparties/slateport_mossdeep.h"
-    //         };
-    //         break;
-    //     case 15:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/fallarbor.h"
-    //         };
-    //         break;
-    //     case 16:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/rustboro.h"
-    //         };
-    //         break;
-    //     case 17:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/petalburg.h"
-    //         };
-    //         break;
-    //     case 18:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/dewford.h"
-    //         };
-    //         break;
-    //     case 19:
-    //         routepool = 
-    //         {
-    //             #include "data/routeparties/slateport.h"
-    //         };
-    //         break;
-    //     case 20:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/mauville.h"
-    //         };
-    //         break;
-    //     case 21:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/lavaridge.h"
-    //         };
-    //         break;
-    //     case 22:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/fortree.h"
-    //         };
-    //         break;
-    //     case 23:
-    //         routepool =
-    //         {
-    //             #include "data/routeparties/mtpyre.h"
-//         };
-//         break;
-//     case 24:
-//         routepool =
-//         {
-//             #include "data/routeparties/lilycove.h"
-//         };
-//         break;
-//     case 25:
-//         routepool =
-//         {
-//             #include "data/routeparties/mossdeep.h"
-//         };
-//         break;
-//     case 26:
-//         routepool =
-//         {
-//             #include "data/routeparties/sootopolis.h"
-//         };
-//         break;
-//     default:
-//         routepool =
-//         {
-//             #include "data/routeparties/fallarbor_rustboro.h"
-//         };
-//         break;
-// }
-
-    
-    
