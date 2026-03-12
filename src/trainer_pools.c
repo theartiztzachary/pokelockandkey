@@ -348,6 +348,18 @@ static void RandomTagPrune(const struct Trainer *trainer, u8 *poolIndexArray, co
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 
+static void FishPokesOnlyPrune(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)
+{
+    for (u32 i = 0; i < trainer->poolSize; i++)
+    {
+        if (trainer->party[poolIndexArray[i]].tags & POOL_TAG_NOT_FISH)
+        {
+            poolIndexArray[i] = POOL_SLOT_DISABLED;
+        };
+
+    };
+};
+
 static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)
 {
     //  Use defined pruning functions go here
@@ -360,6 +372,9 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
             break;
         case POOL_PRUNE_RANDOM_TAG:
             RandomTagPrune(trainer, poolIndexArray, rules);
+            break;
+        case POOL_PRUNE_FISHER:
+            FishPokesOnlyPrune(trainer, poolIndexArray, rules);
             break;
         default:
             break;

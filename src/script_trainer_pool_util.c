@@ -1,5 +1,6 @@
 #include "global.h"
 #include "data.h"
+#include "trainer_pools.h"
 
 //pool length variables
 //class
@@ -82,7 +83,7 @@ const int fortree_mtpyreLength = 1;
 const int mtpyre_lilycoveLength = 1;
 const int lilycove_mossdeepLength = 1;
 const int slateport_mossdeepLength = 1;
-const int fallarborLength = 1;
+const int fallarborLength = 2;
 const int rustboroLength = 1;
 const int petalburgLength = 1;
 const int dewfordLength = 1;
@@ -484,7 +485,7 @@ const struct TrainerMon RouteParty_Slateport_Mossdeep[1] =
     #include "data/routeparties/slateport_mossdeep.h"
 };
 
-const struct TrainerMon RouteParty_Fallarbor[1] =
+const struct TrainerMon RouteParty_Fallarbor[2] =
 {
    #include "data/routeparties/fallarbor.h" 
 };
@@ -852,7 +853,6 @@ const struct TrainerMon *CombinePools(const struct Trainer *trainer)
     u8 currentTrainerRoute = trainer->trainerUnlockedAt;
     u8 classPoolSize = GetClassPoolSize(currentTrainerClass);
     u8 routePoolSize = GetRoutePoolSize(currentTrainerRoute);
-    size_t classArraySize;
 
     const struct TrainerMon *poolparty[classPoolSize + routePoolSize];
 
@@ -971,7 +971,6 @@ const struct TrainerMon *CombinePools(const struct Trainer *trainer)
             break;
         case 37: //fisherman
             memcpy(poolparty, ClassParty_Fisherman, classPoolSize);
-            classArraySize = sizeof(ClassParty_Fisherman);
             break;
         case 38: //triathlete
             memcpy(poolparty, ClassParty_Triathlete, classPoolSize);

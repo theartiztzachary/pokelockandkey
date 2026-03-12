@@ -6,4 +6,5 @@
     .lvl = 21,
     .nature = NATURE_HARDY,
     .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+    .tags = MON_POOL_TAG_LEAD,
 },

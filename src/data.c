@@ -13,6 +13,7 @@
 #include "event_data.h"
 #include "script_lockandkey_util.h"
 #include "script_trainer_pool_util.h"
+#include "trainer_pools.h"
 
 const u16 gMinigameDigits_Pal[] = INCBIN_U16("graphics/link/minigame_digits.gbapal");
 const u32 gMinigameDigits_Gfx[] = INCBIN_U32("graphics/link/minigame_digits.4bpp.smol");

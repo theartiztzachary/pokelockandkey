@@ -43061,10 +43061,10 @@ F_TRAINER_FEMALE |
         .mugshotColor = MUGSHOT_COLOR_NONE, //yknow the like graphical cut-in that happens with gym leaders/e4? yeah that. enum is in include/battle_transition.h, line 13
         .partySize = 1, //can probably be ignored/removed, but putting a default value is probably best practice as a backup in case the game tries to read it for some reason
         .poolSize = 2, //length of class pool + length of route pool
-        .poolRuleIndex = NULL,
-        .poolPickIndex = NULL, 
-        .poolPruneIndex = NULL, 
-        .overrideTrainer = NULL, //...I got nothing, i can find where it's used in the code but idk what it does, looks like other trainers don't use this attribute so we can probably ignore it/leave it null
+        //.poolRuleIndex = NULL,
+        //.poolPickIndex = NULL, 
+        .poolPruneIndex = POOL_PRUNE_FISHER, 
+        //.overrideTrainer = NULL, //...I got nothing, i can find where it's used in the code but idk what it does, looks like other trainers don't use this attribute so we can probably ignore it/leave it null
         .trainerBackPic = TRAINER_PIC_FISHERMAN, //I... have no idea, player and partner npc back pics are handleded elsewhere and don't reference this, for the sake of matching other definitions I would use the same thing you put for .trainerPic
         .partySizeWorldZero = 1, //sets party size when world level is zero
         .partySizeWorldOne = 1, //sets par ty size when world level is one
