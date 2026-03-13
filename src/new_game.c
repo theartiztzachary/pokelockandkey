@@ -52,6 +52,7 @@
 #include "constants/flags.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
+extern const u8 EventScript_ResetAllBerries[];
 
 static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
@@ -200,7 +201,7 @@ void NewGameInitData(void)
     ResetFanClub();
     ResetLotteryCorner();
     WarpToTruck(); //the script that places you in the starting spot for the game
-    RunScriptImmediately(EventScript_ResetAllMapFlags);
+    RunScriptImmediately(EventScript_ResetAllBerries); //here
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
     InitLilycoveLady();
@@ -222,7 +223,7 @@ void NewGameInitData(void)
     VarSet(VAR_WORLD_DIFFICULTY, 0);
     VarSet(VAR_NUMBER_OF_KEYS, 0);
     VarSet(VAR_PETALBURG_GYM_STATE, 6); //sets the petalburg gym as ready to battle
-    RollBossParties();
+    //RollBossParties();
 }
 
 static void ResetMiniGamesRecords(void)
