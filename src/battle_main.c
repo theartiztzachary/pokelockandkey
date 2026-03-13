@@ -79,6 +79,7 @@
 #include "test/test_runner_battle.h"
 #include "constants/difficulty.h"
 #include "constants/vars.h"
+#include "script_trainer_pool_util.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -1957,7 +1958,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 monIndex = monIndices[i];
             s32 ball = -1;
             u32 personalityHash = GeneratePartyHash(trainer, i);
-            const struct TrainerMon *partyData = trainer->party;
+            //const struct TrainerMon *partyData = trainer->party;
+            const struct TrainerMon *partyData = CombinePools(trainer);
+            CombinePools(trainer);
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 abilityNum = 0;
@@ -1988,8 +1991,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             } else {
                 CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY)), 0, TRUE, personalityValue, otIdType, fixedOtId);
             }
-
-            //DebugPrintf("%d", *GetVarPointer(VAR_WORLD_DIFFICULTY));
 
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
