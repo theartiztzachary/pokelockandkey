@@ -4470,11 +4470,10 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
         case ABILITY_MECHAMIND:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
-                if (HasMoveWithEffect(battlerAtk, EFFECT_OHKO) || HasMoveWithEffect(battlerAtk, EFFECT_SHEER_COLD))
-                    ADJUST_SCORE(GOOD_EFFECT);
-                else if (HasMoveWithLowAccuracy(battlerAtk, battlerDef, 85, TRUE))
-                    ADJUST_SCORE(GOOD_EFFECT);
-            }
+                    SET_STATCHANGER(STAT_ACC, 6, FALSE);
+                    BattleScriptPushCursorAndCallback(BattleScript_BattlerAbilityStatRaiseOnSwitchIn);
+                    effect++;
+                }
             break;
         case ABILITY_DAUNTLESS_SHIELD:
             if (!gSpecialStatuses[battler].switchInAbilityDone
