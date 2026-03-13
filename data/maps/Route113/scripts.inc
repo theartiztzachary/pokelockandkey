@@ -3,6 +3,33 @@ Route113_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route113_OnTransition
 	.byte 0
 
+Route113_EventScript_CleverFeather::
+	goto_if_eq VAR_WORLD_DIFFICULTY, 0, Route113_ThreeCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 1, Route113_ThreeCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 2, Route113_ThreeCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 3, Route113_ThreeCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 4, Route113_FourCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 5, Route113_FourCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 6, Route113_FourCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 7, Route113_FourCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 8, Route113_FiveCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 9, Route113_FiveCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 10, Route113_FiveCleverFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 11, Route113_FiveCleverFeathers
+	end
+
+Route113_ThreeCleverFeathers::
+	finditem ITEM_CLEVER_FEATHER, amount=3
+	end
+
+Route113_FourCleverFeathers::
+	finditem ITEM_CLEVER_FEATHER, amount=4
+	end
+
+Route113_FiveCleverFeathers::
+	finditem ITEM_CLEVER_FEATHER, amount=5
+	end
+
 Route113_OnResume:
 	setstepcallback STEP_CB_ASH
 	end

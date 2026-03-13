@@ -44,6 +44,29 @@ Route112_EventScript_MagmaGrunts::
 	releaseall
 	end
 
+Route112_EventScript_Stardust::
+	goto_if_eq VAR_WORLD_DIFFICULTY, 0, Route112_Stardust
+	goto_if_eq VAR_WORLD_DIFFICULTY, 1, Route112_Stardust
+	goto_if_eq VAR_WORLD_DIFFICULTY, 2, Route112_Stardust
+	goto_if_eq VAR_WORLD_DIFFICULTY, 3, Route112_Stardust
+	goto_if_eq VAR_WORLD_DIFFICULTY, 4, Route112_Stardust
+	goto_if_eq VAR_WORLD_DIFFICULTY, 5, Route112_Stardust
+	goto_if_eq VAR_WORLD_DIFFICULTY, 6, Route112_Stardust
+	goto_if_eq VAR_WORLD_DIFFICULTY, 7, Route112_Star_Piece
+	goto_if_eq VAR_WORLD_DIFFICULTY, 8, Route112_Star_Piece
+	goto_if_eq VAR_WORLD_DIFFICULTY, 9, Route112_Star_Piece
+	goto_if_eq VAR_WORLD_DIFFICULTY, 10, Route112_Star_Piece
+	goto_if_eq VAR_WORLD_DIFFICULTY, 11, Route112_Star_Piece
+	end
+
+Route112_Stardust::
+	finditem ITEM_STARDUST, amount=1
+	end
+
+Route112_Star_Piece::
+	finditem ITEM_STAR_PIECE, amount=1
+	end
+
 Route112_EventScript_MtChimneyCableCarSign::
 	msgbox Route112_Text_MtChimneyCableCarSign, MSGBOX_SIGN
 	end

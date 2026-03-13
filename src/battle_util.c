@@ -4467,6 +4467,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 }
             }
             break;
+        case ABILITY_MECHAMIND:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                if (HasMoveWithEffect(battlerAtk, EFFECT_OHKO) || HasMoveWithEffect(battlerAtk, EFFECT_SHEER_COLD))
+                    ADJUST_SCORE(GOOD_EFFECT);
+                else if (HasMoveWithLowAccuracy(battlerAtk, battlerDef, 85, TRUE))
+                    ADJUST_SCORE(GOOD_EFFECT);
+            }
+            break;
         case ABILITY_DAUNTLESS_SHIELD:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && !GetBattlerPartyState(battler)->dauntlessShieldBoost)
@@ -5096,7 +5105,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             }
             break;
         case ABILITY_GOOEY:
-        case ABILITY_TANGLING_HAIR:
+        case ABILITY_TANGLING_VINES:
             if (IsBattlerAlive(gBattlerAttacker)
              && (CompareStat(gBattlerAttacker, STAT_SPEED, MIN_STAT_STAGE, CMP_GREATER_THAN, gLastUsedAbility) || GetBattlerAbility(gBattlerAttacker) == ABILITY_MIRROR_ARMOR)
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
@@ -8390,6 +8399,23 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
             recordAbility = TRUE;
         }
         if (ctx->moveType != TYPE_FIRE && IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ABILITY_NONE, ctx->holdEffectAtk, ctx->move))
+        {
+            modifier = UQ_4_12(0.5);
+            recordAbility = TRUE;
+        }
+        break;
+    case ABILITY_LIFE_VEST:
+        if (IsSlicingMove(ctx->move) && !IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ABILITY_NONE, ctx->holdEffectAtk, ctx->move))
+        {
+            modifier = UQ_4_12(2.0);
+            recordAbility = TRUE;
+        }
+        if (IsSlicingMove(ctx->move) && IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ABILITY_NONE, ctx->holdEffectAtk, ctx->move))
+        {
+            modifier = UQ_4_12(1);
+            recordAbility = TRUE;
+        }
+        if (!IsSlicingMove(ctx->move) && IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ABILITY_NONE, ctx->holdEffectAtk, ctx->move))
         {
             modifier = UQ_4_12(0.5);
             recordAbility = TRUE;

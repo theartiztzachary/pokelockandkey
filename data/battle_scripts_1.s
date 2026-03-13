@@ -6845,6 +6845,12 @@ BattleScript_DroughtActivates::
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
+BattleScript_MechamindActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNSXMECHAMIND
+	end3
+
 BattleScript_DesolateLandActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
