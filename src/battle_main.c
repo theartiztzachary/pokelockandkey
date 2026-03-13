@@ -1951,6 +1951,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         }
 
         u32 monIndices[monsCount];
+        const struct TrainerMon *partyData = CombinePools(trainer);
         DoTrainerPartyPool(trainer, monIndices, monsCount, battleTypeFlags);
 
         for (i = 0; i < monsCount; i++)
@@ -1958,12 +1959,11 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 monIndex = monIndices[i];
             s32 ball = -1;
             u32 personalityHash = GeneratePartyHash(trainer, i);
-            //const struct TrainerMon *partyData = trainer->party;
-            const struct TrainerMon *partyData = CombinePools(trainer);
-            CombinePools(trainer);
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 abilityNum = 0;
+
+            DebugPrintf("%S", gSpeciesInfo->speciesName[partyData[monIndex].species]);
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
                 personalityValue = 0x80;
