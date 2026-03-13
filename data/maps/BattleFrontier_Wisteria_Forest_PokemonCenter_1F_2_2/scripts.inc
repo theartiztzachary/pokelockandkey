@@ -1,0 +1,2 @@
+BattleFrontier_Wisteria_Forest_PokemonCenter_1F_2_2_MapScripts::
+	.byte 0

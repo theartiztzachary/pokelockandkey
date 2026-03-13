@@ -4560,6 +4560,76 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/OLD_GraniteCave_B2F/border.bin",
       "blockdata_filepath": "data/layouts/OLD_GraniteCave_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_GLAMOR_AREA_WEST",
+      "name": "BattleFrontier_Glamor_Area_West_Layout",
+      "width": 72,
+      "height": 72,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattleFrontierOutsideWest",
+      "border_filepath": "data/layouts/BattleFrontier_Glamor_Area_West/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_Glamor_Area_West/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_SURVIVAL_AREA_POKEMON_CENTER_1F_2_2",
+      "name": "BattleFrontier_Survival_Area_PokemonCenter_1F_2_2_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/BattleFrontier_Survival_Area_PokemonCenter_1F_2_2/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_Survival_Area_PokemonCenter_1F_2_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_WISTERIA_FOREST_POKEMON_CENTER_1F_2_2",
+      "name": "BattleFrontier_Wisteria_Forest_PokemonCenter_1F_2_2_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/BattleFrontier_Wisteria_Forest_PokemonCenter_1F_2_2/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_Wisteria_Forest_PokemonCenter_1F_2_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_GLAMOR_AREA_EAST",
+      "name": "BattleFrontier_Glamor_Area_East_Layout",
+      "width": 72,
+      "height": 72,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattleFrontierOutsideWest",
+      "border_filepath": "data/layouts/BattleFrontier_Glamor_Area_East/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_Glamor_Area_East/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_CASTLE_GROUNDS_POKEMON_CENTER_1F_2",
+      "name": "BattleFrontier_Castle_Grounds_PokemonCenter_1F_2_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/BattleFrontier_Castle_Grounds_PokemonCenter_1F_2/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_Castle_Grounds_PokemonCenter_1F_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_FRONTIER_RESORT_AREA_POKEMON_CENTER_1F_2_2",
+      "name": "BattleFrontier_Resort_Area_PokemonCenter_1F_2_2_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/BattleFrontier_Resort_Area_PokemonCenter_1F_2_2/border.bin",
+      "blockdata_filepath": "data/layouts/BattleFrontier_Resort_Area_PokemonCenter_1F_2_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLAMOR_AREA",
+      "name": "GlamorArea_Layout",
+      "width": 72,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattleFrontierOutsideWest",
+      "border_filepath": "data/layouts/GlamorArea/border.bin",
+      "blockdata_filepath": "data/layouts/GlamorArea/map.bin"
     }
   ]
 }

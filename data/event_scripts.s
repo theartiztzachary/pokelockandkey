@@ -1193,3 +1193,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/OLD_GraniteCave_B1F/scripts.inc"
 
 	.include "data/maps/OLD_GraniteCave_B2F/scripts.inc"
+
+	.include "data/maps/BattleFrontier_Glamor_Area_West/scripts.inc"
+
+	.include "data/maps/BattleFrontier_Glamor_Area_East/scripts.inc"
+
+	.include "data/maps/BattleFrontier_Resort_Area_PokemonCenter_1F_2_2/scripts.inc"
+
+	.include "data/maps/GlamorArea/scripts.inc"
+
+	.include "data/maps/BattleFrontier_Castle_Grounds_PokemonCenter_1F_2/scripts.inc"
+
+	.include "data/maps/BattleFrontier_Survival_Area_PokemonCenter_1F_2_2/scripts.inc"
+
+	.include "data/maps/BattleFrontier_Wisteria_Forest_PokemonCenter_1F_2_2/scripts.inc"
