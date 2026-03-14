@@ -41,7 +41,7 @@ const int winstrateLength = 1;
 const int pokefanLength = 1;
 const int youngsterLength = 1;
 const int championLength = 1;
-const int fishermanLength = 1;
+const int fishermanLength = 7;
 const int triathleteLength = 1;
 const int dragon_tamerLength = 1;
 const int ninja_boyLength = 1;
@@ -284,7 +284,7 @@ const struct TrainerMon ClassParty_Champion[1] =
     #include "data/classparties/champion.h"
 };
 
-const struct TrainerMon ClassParty_Fisherman[1] =
+const struct TrainerMon ClassParty_Fisherman[7] =
 {
     #include "data/classparties/fisherman.h"
 };

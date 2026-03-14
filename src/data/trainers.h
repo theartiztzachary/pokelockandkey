@@ -5797,31 +5797,7 @@ F_TRAINER_FEMALE |
             .nature = NATURE_HARDY,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-        },
-        {
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-            .species = SPECIES_TYRUNT,
-            .lvl = 10,
-            .nature = NATURE_HARDY,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-        },
-          {
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-            .species = SPECIES_TYRUNT,
-            .lvl = 12,
-            .nature = NATURE_HARDY,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-        },
-        {
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-            .species = SPECIES_TYRUNT,
-            .lvl = 14,
-            .nature = NATURE_HARDY,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-        },
+        }
         },
     },
 #line 2638

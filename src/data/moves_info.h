@@ -16678,7 +16678,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Scything Slash"),
         .description = COMPOUND_STRING(
-            "Slashes with cruel talons.\n"
+            "Slashes with cruel intent.\n"
             "Frequently critically hits."),
         .effect = EFFECT_HIT,
         .power = 80,
@@ -19391,7 +19391,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_STONE_AXE,
         .power = 65,
         .type = TYPE_ROCK,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
