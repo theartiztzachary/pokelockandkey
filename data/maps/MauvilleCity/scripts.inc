@@ -133,7 +133,7 @@ MauvilleCity_EventScript_Reject_ToRustboro::
 	end
 
 MauvilleCity_EventScript_Check_ToLavaridge::
-	goto_if_unset FLAG_LAVARIDGE_MAUVILLE_STRETCH, MSGBOX_DEFAULT
+	goto_if_unset FLAG_LAVARIDGE_MAUVILLE_STRETCH, MauvilleCity_EventScript_Check_Lavaridge_Mauville
 	end
 
 MauvilleCity_EventScript_Check_Lavaridge_Mauville::
