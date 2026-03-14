@@ -16,5 +16,4 @@
     .lvl = 21,
     .nature = NATURE_BOLD,
     .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-    .tags = NULL,
 },

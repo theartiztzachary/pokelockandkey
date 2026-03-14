@@ -43036,7 +43036,7 @@ F_TRAINER_FEMALE |
         .startingStatus = STARTING_STATUS_NONE, //sets starting battlefield status, see include/constants/battle.h line 674
         .mugshotColor = MUGSHOT_COLOR_NONE, //yknow the like graphical cut-in that happens with gym leaders/e4? yeah that. enum is in include/battle_transition.h, line 13
         .partySize = 1, //can probably be ignored/removed, but putting a default value is probably best practice as a backup in case the game tries to read it for some reason
-        .poolSize = 2, //length of class pool + length of route pool
+        .poolSize = 3, //length of class pool + length of route pool
         //.poolRuleIndex = NULL,
         //.poolPickIndex = NULL, 
         .poolPruneIndex = POOL_PRUNE_FISHER, 
