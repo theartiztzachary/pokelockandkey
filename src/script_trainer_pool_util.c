@@ -1,5 +1,17 @@
 #include "global.h"
+#include "malloc.h"
+#include "battle.h"
 #include "data.h"
+#include "graphics.h"
+#include "trainer_pools.h"
+#include "battle_transition.h"
+#include "constants/abilities.h"
+#include "constants/items.h"
+#include "constants/moves.h"
+#include "constants/trainers.h"
+#include "constants/battle_ai.h"
+#include "event_data.h"
+#include "script_lockandkey_util.h"
 #include "trainer_pools.h"
 
 //pool length variables
@@ -382,6 +394,16 @@ const struct TrainerMon ClassParty_Sis_And_Bro[1] =
 const struct TrainerMon ClassParty_Salon_Maiden[1] =
 {
     #include "data/classparties/salon_maiden.h"
+};
+
+const struct TrainerMon ClassParty_Dome_Ace[1] =
+{
+    #include "data/classparties/dome_ace.h"
+};
+
+const struct TrainerMon ClassParty_Palace_Maven[1] =
+{
+    #include "data/classparties/palace_maven.h"
 };
 
 const struct TrainerMon ClassParty_Arena_Tycoon[1] =
@@ -854,198 +876,205 @@ const struct TrainerMon *CombinePools(const struct Trainer *trainer)
     u8 classPoolSize = GetClassPoolSize(currentTrainerClass);
     u8 routePoolSize = GetRoutePoolSize(currentTrainerRoute);
 
-    const struct TrainerMon *poolparty[classPoolSize + routePoolSize];
+    struct TrainerMon* poolparty = Alloc(sizeof(struct TrainerMon) * (classPoolSize + routePoolSize));
 
     switch(currentTrainerClass)
     {
         case 0: //hiker
-            memcpy(poolparty, ClassParty_Hiker, classPoolSize);
+            memcpy(poolparty, ClassParty_Hiker, sizeof(ClassParty_Hiker));
             break;
         case 1: //team aqua (grunt)
-            memcpy(poolparty, ClassParty_Team_Aqua, classPoolSize);
+            memcpy(poolparty, ClassParty_Team_Aqua, sizeof(ClassParty_Team_Aqua));
             break;
         case 2: //pkmn breeder
-            memcpy(poolparty, ClassParty_Pkmn_Breeder, classPoolSize);
+            memcpy(poolparty, ClassParty_Pkmn_Breeder, sizeof(ClassParty_Pkmn_Breeder));
             break;
         case 3: //cool trainer
-            memcpy(poolparty, ClassParty_Cooltrainer, classPoolSize);
+            memcpy(poolparty, ClassParty_Cooltrainer, sizeof(ClassParty_Cooltrainer));
             break;
         case 4: //bird keeper
-            memcpy(poolparty, ClassParty_Bird_Keeper, classPoolSize);
+            memcpy(poolparty, ClassParty_Bird_Keeper, sizeof(ClassParty_Bird_Keeper));
             break;
         case 5: //collector
-            memcpy(poolparty, ClassParty_Collector, classPoolSize);
+            memcpy(poolparty, ClassParty_Collector, sizeof(ClassParty_Collector));
             break;
         case 6: //swimmer m
-            memcpy(poolparty, ClassParty_Swimmer_M, classPoolSize);
+            memcpy(poolparty, ClassParty_Swimmer_M, sizeof(ClassParty_Swimmer_M));
             break;
         case 7: //team magma (grunt)
-            memcpy(poolparty, ClassParty_Team_Magma, classPoolSize);
+            memcpy(poolparty, ClassParty_Team_Magma, sizeof(ClassParty_Team_Magma));
             break;
         case 8: //expert
-            memcpy(poolparty, ClassParty_Expert, classPoolSize);
+            memcpy(poolparty, ClassParty_Expert, sizeof(ClassParty_Expert));
             break;
         case 9: //aqua admin
-            memcpy(poolparty, ClassParty_Aqua_Admin, classPoolSize);
+            memcpy(poolparty, ClassParty_Aqua_Admin, sizeof(ClassParty_Aqua_Admin));
             break;
         case 10: // black belt
-            memcpy(poolparty, ClassParty_Black_Belt, classPoolSize);
+            memcpy(poolparty, ClassParty_Black_Belt, sizeof(ClassParty_Black_Belt));
             break;
         case 11: // aqua leader
-            memcpy(poolparty, ClassParty_Aqua_Leader, classPoolSize);
+            memcpy(poolparty, ClassParty_Aqua_Leader, sizeof(ClassParty_Aqua_Leader));
             break;
         case 12: // hex maniac
-            memcpy(poolparty, ClassParty_Hex_Maniac, classPoolSize);
+            memcpy(poolparty, ClassParty_Hex_Maniac, sizeof(ClassParty_Hex_Maniac));
             break;
         case 13: //aroma lady
-            memcpy(poolparty, ClassParty_Hex_Maniac, classPoolSize);
+            memcpy(poolparty, ClassParty_Aroma_Lady, sizeof(ClassParty_Aroma_Lady));
             break;
         case 14: //ruin maniac
-            memcpy(poolparty, ClassParty_Ruin_Maniac, classPoolSize);
+            memcpy(poolparty, ClassParty_Ruin_Maniac, sizeof(ClassParty_Ruin_Maniac));
             break;
         case 15: //interviewer
-            memcpy(poolparty, ClassParty_Interviewer, classPoolSize);
+            memcpy(poolparty, ClassParty_Interviewer, sizeof(ClassParty_Interviewer));
             break;
         case 16: //tuber f
-            memcpy(poolparty, ClassParty_Tuber_F, classPoolSize);
+            memcpy(poolparty, ClassParty_Tuber_F, sizeof(ClassParty_Tuber_F));
             break;
         case 17: //tuber m
-            memcpy(poolparty, ClassParty_Tuber_M, classPoolSize);
+            memcpy(poolparty, ClassParty_Tuber_M, sizeof(ClassParty_Tuber_M));
             break;
         case 18: //lady
-            memcpy(poolparty, ClassParty_Lady, classPoolSize);
+            memcpy(poolparty, ClassParty_Lady, sizeof(ClassParty_Lady));
             break;
         case 19: //beauty
-            memcpy(poolparty, ClassParty_Beauty, classPoolSize);
+            memcpy(poolparty, ClassParty_Beauty, sizeof(ClassParty_Beauty));
             break;
         case 20: //rich boy
-            memcpy(poolparty, ClassParty_Rich_Boy, classPoolSize);
+            memcpy(poolparty, ClassParty_Rich_Boy, sizeof(ClassParty_Rich_Boy));
             break;
         case 21: //pokemaniac
-            memcpy(poolparty, ClassParty_Pokemaniac, classPoolSize);
+            memcpy(poolparty, ClassParty_Pokemaniac, sizeof(ClassParty_Pokemaniac));
             break;
         case 22: //guitarist
-            memcpy(poolparty, ClassParty_Guitarist, classPoolSize);
+            memcpy(poolparty, ClassParty_Guitarist, sizeof(ClassParty_Guitarist));
             break;
         case 23: //kindler
-            memcpy(poolparty, ClassParty_Kindler, classPoolSize);
+            memcpy(poolparty, ClassParty_Kindler, sizeof(ClassParty_Kindler));
             break;
         case 24: //camper
-            memcpy(poolparty, ClassParty_Camper, classPoolSize);
+            memcpy(poolparty, ClassParty_Camper, sizeof(ClassParty_Camper));
             break;
         case 25: //picnicker
-            memcpy(poolparty, ClassParty_Picnicker, classPoolSize);
+            memcpy(poolparty, ClassParty_Picnicker, sizeof(ClassParty_Picnicker));
             break;
         case 26: //bug maniac
-            memcpy(poolparty, ClassParty_Bug_Maniac, classPoolSize);
+            memcpy(poolparty, ClassParty_Bug_Maniac, sizeof(ClassParty_Bug_Maniac));
             break;
         case 27: //psychic
-            memcpy(poolparty, ClassParty_Psychic, classPoolSize);
+            memcpy(poolparty, ClassParty_Psychic, sizeof(ClassParty_Psychic));
             break;
         case 28: //gentleman
-            memcpy(poolparty, ClassParty_Gentleman, classPoolSize);
+            memcpy(poolparty, ClassParty_Gentleman, sizeof(ClassParty_Gentleman));
             break;
         case 29: //elite four
-            memcpy(poolparty, ClassParty_Elite_Four, classPoolSize);
+            memcpy(poolparty, ClassParty_Elite_Four, sizeof(ClassParty_Elite_Four));
             break;
         case 30: //leader
-            memcpy(poolparty, ClassParty_Leader, classPoolSize);
+            memcpy(poolparty, ClassParty_Leader, sizeof(ClassParty_Leader));
             break;
         case 31: //school kid
-            memcpy(poolparty, ClassParty_School_Kid, classPoolSize);
+            memcpy(poolparty, ClassParty_School_Kid, sizeof(ClassParty_School_Kid));
             break;
         case 32: //sr and jr
-            memcpy(poolparty, ClassParty_Sr_And_Jr, classPoolSize);
+            memcpy(poolparty, ClassParty_Sr_And_Jr, sizeof(ClassParty_Sr_And_Jr));
             break;
         case 33: //winstrate
-            memcpy(poolparty, ClassParty_Winstrate, classPoolSize);
+            memcpy(poolparty, ClassParty_Winstrate, sizeof(ClassParty_Winstrate));
             break;
         case 34: //pokefan
-            memcpy(poolparty, ClassParty_Pokefan, classPoolSize);
+            memcpy(poolparty, ClassParty_Pokefan, sizeof(ClassParty_Pokefan));
             break;
         case 35: //youngster
-            memcpy(poolparty, ClassParty_Youngster, classPoolSize);
+            memcpy(poolparty, ClassParty_Youngster, sizeof(ClassParty_Youngster));
             break;
         case 36: //champion
-            memcpy(poolparty, ClassParty_Champion, classPoolSize);
+            memcpy(poolparty, ClassParty_Champion, sizeof(ClassParty_Champion));
             break;
         case 37: //fisherman
-            memcpy(poolparty, ClassParty_Fisherman, classPoolSize);
+            memcpy(poolparty, ClassParty_Fisherman, sizeof(ClassParty_Fisherman));
+            //DebugPrintf("Fisherman class!");
             break;
         case 38: //triathlete
-            memcpy(poolparty, ClassParty_Triathlete, classPoolSize);
+            memcpy(poolparty, ClassParty_Triathlete, sizeof(ClassParty_Triathlete));
             break;
         case 39: //dragon tamer
-            memcpy(poolparty, ClassParty_Dragon_Tamer, classPoolSize);
+            memcpy(poolparty, ClassParty_Dragon_Tamer, sizeof(ClassParty_Dragon_Tamer));
             break;
         case 40: //ninja boy
-            memcpy(poolparty, ClassParty_Ninja_Boy, classPoolSize);
+            memcpy(poolparty, ClassParty_Ninja_Boy, sizeof(ClassParty_Ninja_Boy));
             break;
         case 41: //battle girl
-            memcpy(poolparty, ClassParty_Battle_Girl, classPoolSize);
+            memcpy(poolparty, ClassParty_Battle_Girl, sizeof(ClassParty_Battle_Girl));
             break;
         case 42: //parasol lady
-            memcpy(poolparty, ClassParty_Parasol_Lady, classPoolSize);
+            memcpy(poolparty, ClassParty_Parasol_Lady, sizeof(ClassParty_Parasol_Lady));
             break;
         case 43: //swimmer f
-            memcpy(poolparty, ClassParty_Swimmer_F, classPoolSize);
+            memcpy(poolparty, ClassParty_Swimmer_F, sizeof(ClassParty_Swimmer_F));
             break;
         case 44: //twins
-            memcpy(poolparty, ClassParty_Twins, classPoolSize);
+            memcpy(poolparty, ClassParty_Twins, sizeof(ClassParty_Twins));
             break;
         case 45: //sailor
-            memcpy(poolparty, ClassParty_Sailor, classPoolSize);
+            memcpy(poolparty, ClassParty_Sailor, sizeof(ClassParty_Sailor));
             break;
         case 46: //cool trainer 2
-            memcpy(poolparty, ClassParty_Cooltrainer_2, classPoolSize);
+            memcpy(poolparty, ClassParty_Cooltrainer_2, sizeof(ClassParty_Cooltrainer_2));
             break;
         case 47: //magma admin
-            memcpy(poolparty, ClassParty_Magma_Admin, classPoolSize);
+            memcpy(poolparty, ClassParty_Magma_Admin, sizeof(ClassParty_Magma_Admin));
             break;
         case 48: //rival
-            memcpy(poolparty, ClassParty_Rival, classPoolSize);
+            memcpy(poolparty, ClassParty_Rival, sizeof(ClassParty_Rival));
             break;
         case 49: //bug catchter
-            memcpy(poolparty, ClassParty_Bug_Catcher, classPoolSize);
+            memcpy(poolparty, ClassParty_Bug_Catcher, sizeof(ClassParty_Bug_Catcher));
             break;
         case 50: //pkmn ranger
-            memcpy(poolparty, ClassParty_Pkmn_Ranger, classPoolSize);
+            memcpy(poolparty, ClassParty_Pkmn_Ranger, sizeof(ClassParty_Pkmn_Ranger));
             break;
         case 51: //magma leader
-            memcpy(poolparty, ClassParty_Magma_Leader, classPoolSize);
+            memcpy(poolparty, ClassParty_Magma_Leader, sizeof(ClassParty_Magma_Leader));
             break;
         case 52: //lass
-            memcpy(poolparty, ClassParty_Lass, classPoolSize);
+            memcpy(poolparty, ClassParty_Lass, sizeof(ClassParty_Lass));
             break;
         case 53: //young couple
-            memcpy(poolparty, ClassParty_Young_Couple, classPoolSize);
+            memcpy(poolparty, ClassParty_Young_Couple, sizeof(ClassParty_Young_Couple));
             break;
         case 54: //old couple
-            memcpy(poolparty, ClassParty_Old_Couple, classPoolSize);
+            memcpy(poolparty, ClassParty_Old_Couple, sizeof(ClassParty_Old_Couple));
             break;
         case 55: //sis and bro
-            memcpy(poolparty, ClassParty_Sis_And_Bro, classPoolSize);
+            memcpy(poolparty, ClassParty_Sis_And_Bro, sizeof(ClassParty_Sis_And_Bro));
             break;
         case 56: //salon maiden
-            memcpy(poolparty, ClassParty_Salon_Maiden, classPoolSize);
+            memcpy(poolparty, ClassParty_Salon_Maiden, sizeof(ClassParty_Salon_Maiden));
             break;
-        case 57: //arena tycoon
-            memcpy(poolparty, ClassParty_Arena_Tycoon, classPoolSize);
+        case 57: //dome ace
+            memcpy(poolparty, ClassParty_Dome_Ace, sizeof(ClassParty_Dome_Ace));
             break;
-        case 58: //factory head
-            memcpy(poolparty, ClassParty_Factory_Head, classPoolSize);
+        case 58: //palace maven
+            memcpy(poolparty, ClassParty_Palace_Maven, sizeof(ClassParty_Palace_Maven));
             break;
-        case 59: //pike queen
-            memcpy(poolparty, ClassParty_Pike_Queen, classPoolSize);
+        case 59: //arena tycoon
+            memcpy(poolparty, ClassParty_Arena_Tycoon, sizeof(ClassParty_Arena_Tycoon));
             break;
-        case 60: //pyramid king
-            memcpy(poolparty, ClassParty_Pyramid_King, classPoolSize);
+        case 60: //factory head
+            memcpy(poolparty, ClassParty_Factory_Head, sizeof(ClassParty_Factory_Head));
             break;
-        case 61: //rs protag
-            memcpy(poolparty, ClassParty_Rs_Protag, classPoolSize);
+        case 61: //pike queen
+            memcpy(poolparty, ClassParty_Pike_Queen, sizeof(ClassParty_Pike_Queen));
+            break;
+        case 62: //pyramid king
+            memcpy(poolparty, ClassParty_Pyramid_King, sizeof(ClassParty_Pyramid_King));
+            break;
+        case 63: //rs protag
+            memcpy(poolparty, ClassParty_Rs_Protag, sizeof(ClassParty_Rs_Protag));
             break;
         default: 
-            memcpy(poolparty, ClassParty_Fisherman, classPoolSize);
+            memcpy(poolparty, ClassParty_Fisherman, sizeof(ClassParty_Fisherman));
             break;
     };
 
@@ -1140,5 +1169,7 @@ const struct TrainerMon *CombinePools(const struct Trainer *trainer)
             break;
     };
 
-    return RouteParty_Fallarbor;
+    //DebugPrintf("%d", poolparty[0].species);
+
+    return poolparty;
 };
