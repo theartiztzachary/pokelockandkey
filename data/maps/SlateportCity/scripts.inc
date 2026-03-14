@@ -594,6 +594,10 @@ SlateportCity_EventScript_Reject_ToMossdeep::
 	release
 	end
 
+SlateportyCity_EventScript_Already_Unlocked::
+	return
+	end
+
 SlateportCity_Movement_TurnFrom_Mauville:
 	walk_down
 	step_end
