@@ -1,9 +1,59 @@
 [0] =
 {
-    .species = SPECIES_GEODUDE,
+    .species = SPECIES_ZANGOOSE,
     .gender = TRAINER_MON_RANDOM_GENDER,
-    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 21,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[1] =
+{
+    .species = SPECIES_SEVIPER,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[2] =
+{
+    .species = SPECIES_CLEFAIRY,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[3] =
+{
+    .species = SPECIES_BAGON,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[4] =
+{
+    .species = SPECIES_PAWNIARD,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[5] =
+{
+    .species = SPECIES_GIBLE,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
     .nature = NATURE_HARDY,
     .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 },

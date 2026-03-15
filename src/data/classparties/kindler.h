@@ -1,9 +1,69 @@
 [0] =
 {
-    .species = SPECIES_GEODUDE,
+    .species = SPECIES_VULPIX,
     .gender = TRAINER_MON_RANDOM_GENDER,
-    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 21,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[1] =
+{
+    .species = SPECIES_FLAREON,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[2] =
+{
+    .species = SPECIES_NUMEL,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[3] =
+{
+    .species = SPECIES_TORKOAL,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[4] =
+{
+    .species = SPECIES_LITWICK,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[5] =
+{
+    .species = SPECIES_FLETCHLING,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
+    .nature = NATURE_HARDY,
+    .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+},
+
+[6] =
+{
+    .species = SPECIES_TURTONATOR,
+    .gender = TRAINER_MON_RANDOM_GENDER,
+    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .lvl = 10,
     .nature = NATURE_HARDY,
     .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 },

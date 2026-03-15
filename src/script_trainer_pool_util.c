@@ -16,59 +16,59 @@
 
 //pool length variables
 //class
-const int hikerLength = 1;
+const int hikerLength = 8;
 const int team_aquaLength = 1;
-const int pkmn_breederLength = 1;
-const int cooltrainerLength = 1;
-const int bird_keeperLength = 1;
-const int collectorLength = 1;
+const int pkmn_breederLength = 9;
+const int cooltrainerLength = 12;
+const int bird_keeperLength = 6;
+const int collectorLength = 6;
 const int swimmer_mLength = 1;
 const int team_magmaLength = 1;
-const int expertLength = 1;
+const int expertLength = 6;
 const int aqua_adminLength = 1;
-const int black_beltLength = 1;
+const int black_beltLength = 6;
 const int aqua_leaderLength = 1;
-const int hex_maniacLength = 1;
-const int aroma_ladyLength = 1;
-const int ruin_maniacLength = 1;
+const int hex_maniacLength = 6;
+const int aroma_ladyLength = 6;
+const int ruin_maniacLength = 7;
 const int interviewerLength = 1;
 const int tuber_fLength = 1;
 const int tuber_mLength = 1;
-const int ladyLength = 1;
-const int beautyLength = 1;
-const int rich_boyLength = 1;
-const int pokemaniacLength = 1;
-const int guitaristLength = 1;
-const int kindlerLength = 1;
-const int camperLength = 1;
-const int picnickerLength = 1;
-const int bug_maniacLength = 1;
-const int psychicLength = 1;
-const int gentlemanLength = 1;
+const int ladyLength = 7;
+const int beautyLength = 8;
+const int rich_boyLength = 7;
+const int pokemaniacLength = 9;
+const int guitaristLength = 6;
+const int kindlerLength = 7;
+const int camperLength = 8;
+const int picnickerLength = 8;
+const int bug_maniacLength = 9;
+const int psychicLength = 8;
+const int gentlemanLength = 7;
 const int elite_fourLength = 1;
 const int leaderLength = 1;
-const int school_kidLength = 1;
+const int school_kidLength = 7;
 const int sr_and_jrLength = 1;
 const int winstrateLength = 1;
-const int pokefanLength = 1;
+const int pokefanLength = 9;
 const int youngsterLength = 1;
 const int championLength = 1;
 const int fishermanLength = 7;
 const int triathleteLength = 1;
-const int dragon_tamerLength = 1;
-const int ninja_boyLength = 1;
-const int battle_girlLength = 1;
-const int parasol_ladyLength = 1;
+const int dragon_tamerLength = 10;
+const int ninja_boyLength = 10;
+const int battle_girlLength = 6;
+const int parasol_ladyLength = 7;
 const int swimmer_fLength = 1;
 const int twinsLength = 1;
-const int sailorLength = 1;
-const int cooltrainer_2Length = 1;
+const int sailorLength = 7;
+const int cooltrainer_2Length = 12;
 const int magma_adminLength = 1;
 const int rivalLength = 1;
-const int bug_catcherLength = 1;
-const int pkmn_rangerLength = 1;
+const int bug_catcherLength = 9;
+const int pkmn_rangerLength = 9;
 const int magma_leaderLength = 1;
-const int lassLength = 1;
+const int lassLength = 7;
 const int young_coupleLength = 1;
 const int old_coupleLength = 1;
 const int sis_and_broLength = 1;
@@ -111,7 +111,7 @@ const int battle_frontierLength = 1;
 
 //initialize pools
 //class
-const struct TrainerMon ClassParty_Hiker[1] =
+const struct TrainerMon ClassParty_Hiker[8] =
 {
     #include "data/classparties/hiker.h"
 };
@@ -121,22 +121,22 @@ const struct TrainerMon ClassParty_Team_Aqua[1] =
     #include "data/classparties/team_aqua.h"
 };
 
-const struct TrainerMon ClassParty_Pkmn_Breeder[1] =
+const struct TrainerMon ClassParty_Pkmn_Breeder[9] =
 {
     #include "data/classparties/pkmn_breeder.h"
 };
 
-const struct TrainerMon ClassParty_Cooltrainer[1] =
+const struct TrainerMon ClassParty_Cooltrainer[12] =
 {
     #include "data/classparties/cooltrainer.h"
 };
 
-const struct TrainerMon ClassParty_Bird_Keeper[1] =
+const struct TrainerMon ClassParty_Bird_Keeper[6] =
 {
     #include "data/classparties/bird_keeper.h"
 };
 
-const struct TrainerMon ClassParty_Collector[1] =
+const struct TrainerMon ClassParty_Collector[6] =
 {
     #include "data/classparties/collector.h"
 };
@@ -151,7 +151,7 @@ const struct TrainerMon ClassParty_Team_Magma[1] =
     #include "data/classparties/team_magma.h"
 };
 
-const struct TrainerMon ClassParty_Expert[1] =
+const struct TrainerMon ClassParty_Expert[6] =
 {
     #include "data/classparties/expert.h"
 };
@@ -161,7 +161,7 @@ const struct TrainerMon ClassParty_Aqua_Admin[1] =
     #include "data/classparties/aqua_admin.h"
 };
 
-const struct TrainerMon ClassParty_Black_Belt[1] =
+const struct TrainerMon ClassParty_Black_Belt[6] =
 {
     #include "data/classparties/black_belt.h"
 };
@@ -171,17 +171,17 @@ const struct TrainerMon ClassParty_Aqua_Leader[1] =
     #include "data/classparties/aqua_leader.h"
 };
 
-const struct TrainerMon ClassParty_Hex_Maniac[1] =
+const struct TrainerMon ClassParty_Hex_Maniac[6] =
 {
     #include "data/classparties/hex_maniac.h"
 };
 
-const struct TrainerMon ClassParty_Aroma_Lady[1] =
+const struct TrainerMon ClassParty_Aroma_Lady[6] =
 {
     #include "data/classparties/aroma_lady.h"
 };
 
-const struct TrainerMon ClassParty_Ruin_Maniac[1] =
+const struct TrainerMon ClassParty_Ruin_Maniac[7] =
 {
     #include "data/classparties/ruin_maniac.h"
 };
@@ -201,57 +201,57 @@ const struct TrainerMon ClassParty_Tuber_M[1] =
     #include "data/classparties/tuber_m.h"
 };
 
-const struct TrainerMon ClassParty_Lady[1] =
+const struct TrainerMon ClassParty_Lady[7] =
 {
     #include "data/classparties/lady.h"
 };
 
-const struct TrainerMon ClassParty_Beauty[1] =
+const struct TrainerMon ClassParty_Beauty[8] =
 {
     #include "data/classparties/beauty.h"
 };
 
-const struct TrainerMon ClassParty_Rich_Boy[1] =
+const struct TrainerMon ClassParty_Rich_Boy[7] =
 {
     #include "data/classparties/rich_boy.h"
 };
 
-const struct TrainerMon ClassParty_Pokemaniac[1] =
+const struct TrainerMon ClassParty_Pokemaniac[9] =
 {
     #include "data/classparties/pokemaniac.h"
 };
 
-const struct TrainerMon ClassParty_Guitarist[1] =
+const struct TrainerMon ClassParty_Guitarist[6] =
 {
     #include "data/classparties/guitarist.h"
 };
 
-const struct TrainerMon ClassParty_Kindler[1] =
+const struct TrainerMon ClassParty_Kindler[7] =
 {
     #include "data/classparties/kindler.h"
 };
 
-const struct TrainerMon ClassParty_Camper[1] =
+const struct TrainerMon ClassParty_Camper[8] =
 {
     #include "data/classparties/camper.h"
 };
 
-const struct TrainerMon ClassParty_Picnicker[1] =
+const struct TrainerMon ClassParty_Picnicker[8] =
 {
     #include "data/classparties/picnicker.h"
 };
 
-const struct TrainerMon ClassParty_Bug_Maniac[1] =
+const struct TrainerMon ClassParty_Bug_Maniac[9] =
 {
     #include "data/classparties/bug_maniac.h"
 };
 
-const struct TrainerMon ClassParty_Psychic[1] =
+const struct TrainerMon ClassParty_Psychic[8] =
 {
     #include "data/classparties/psychic.h"
 };
 
-const struct TrainerMon ClassParty_Gentleman[1] =
+const struct TrainerMon ClassParty_Gentleman[7] =
 {
     #include "data/classparties/gentleman.h"
 };
@@ -266,7 +266,7 @@ const struct TrainerMon ClassParty_Leader[1] =
     #include "data/classparties/leader.h"
 };
 
-const struct TrainerMon ClassParty_School_Kid[1] =
+const struct TrainerMon ClassParty_School_Kid[7] =
 {
     #include "data/classparties/school_kid.h"
 };
@@ -281,7 +281,7 @@ const struct TrainerMon ClassParty_Winstrate[1] =
     #include "data/classparties/winstrate.h"
 };
 
-const struct TrainerMon ClassParty_Pokefan[1] =
+const struct TrainerMon ClassParty_Pokefan[9] =
 {
     #include "data/classparties/pokefan.h"
 };
@@ -306,22 +306,22 @@ const struct TrainerMon ClassParty_Triathlete[1] =
     #include "data/classparties/triathlete.h"
 };
 
-const struct TrainerMon ClassParty_Dragon_Tamer[1] =
+const struct TrainerMon ClassParty_Dragon_Tamer[10] =
 {
     #include "data/classparties/dragon_tamer.h"
 };
 
-const struct TrainerMon ClassParty_Ninja_Boy[1] =
+const struct TrainerMon ClassParty_Ninja_Boy[10] =
 {
     #include "data/classparties/ninja_boy.h"
 };
 
-const struct TrainerMon ClassParty_Battle_Girl[1] =
+const struct TrainerMon ClassParty_Battle_Girl[6] =
 {
     #include "data/classparties/battle_girl.h"
 };
 
-const struct TrainerMon ClassParty_Parasol_Lady[1] =
+const struct TrainerMon ClassParty_Parasol_Lady[7] =
 {
     #include "data/classparties/parasol_lady.h"
 };
@@ -336,12 +336,12 @@ const struct TrainerMon ClassParty_Twins[1] =
     #include "data/classparties/twins.h"
 };
 
-const struct TrainerMon ClassParty_Sailor[1] =
+const struct TrainerMon ClassParty_Sailor[7] =
 {
     #include "data/classparties/sailor.h"
 };
 
-const struct TrainerMon ClassParty_Cooltrainer_2[1] =
+const struct TrainerMon ClassParty_Cooltrainer_2[12] =
 {
     #include "data/classparties/cooltrainer_2.h"
 };
@@ -356,12 +356,12 @@ const struct TrainerMon ClassParty_Rival[1] =
     #include "data/classparties/rival.h"
 };
 
-const struct TrainerMon ClassParty_Bug_Catcher[1] =
+const struct TrainerMon ClassParty_Bug_Catcher[9] =
 {
     #include "data/classparties/bug_catcher.h"
 };
 
-const struct TrainerMon ClassParty_Pkmn_Ranger[1] =
+const struct TrainerMon ClassParty_Pkmn_Ranger[9] =
 {
     #include "data/classparties/pkmn_ranger.h"
 };
@@ -371,7 +371,7 @@ const struct TrainerMon ClassParty_Magma_Leader[1] =
     #include "data/classparties/magma_leader.h"
 };
 
-const struct TrainerMon ClassParty_Lass[1] =
+const struct TrainerMon ClassParty_Lass[7] =
 {
     #include "data/classparties/lass.h"
 };
