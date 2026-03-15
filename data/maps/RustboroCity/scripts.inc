@@ -1,6 +1,5 @@
 RustboroCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, RustboroCity_OnFrame
 	.byte 0
 
 RustboroCity_OnTransition:
@@ -49,13 +48,7 @@ RustboroCity_EventScript_Man1HaveBadge::
 RustboroCity_EventScript_Boy2::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_POKENAV, RustboroCity_EventScript_Boy2BrineyLeftTunnel
 	msgbox RustboroCity_Text_MrBrineyWalksInTheTunnel, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_EventScript_Boy2BrineyLeftTunnel::
-	msgbox RustboroCity_Text_MrBrineyLovesPeeko, MSGBOX_DEFAULT
 	release
 	end
 
@@ -77,11 +70,6 @@ RustboroCity_EventScript_DevonCorpSign::
 
 RustboroCity_EventScript_GymSign::
 	msgbox RustboroCity_Text_GymSign, MSGBOX_SIGN
-	end
-
-@ Unused
-RustboroCity_EventScript_DevonCorpBranchOfficeSign::
-	msgbox RustboroCity_Text_DevonCorpBranchOfficeSign, MSGBOX_SIGN
 	end
 
 RustboroCity_EventScript_CitySign::
@@ -125,16 +113,59 @@ RustboroCity_EventScript_Boy1::
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
 
+RustboroCity_EventScript_Check_ToFallarbor::
+	goto_if_unset FLAG_FALLARBOR_RUSTBORO_STRETCH, RustboroCity_EventScript_Check_Fallarbor_Rustboro
+	end
+
+RustboroCity_EventScript_Check_Fallarbor_Rustboro::
+	lock
+	goto_if_unset FLAG_RUSTBORO_BOSS, RustboroCity_EventScript_ToFallarbor_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1, RustboroCity_EventScript_Cannot_Unlock_Fallarbor
+	msgbox RustboroCity_Text_To_Fallarbor, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_Reject_ToFallarbor
+	copyvar VAR_FALLARBOR_RUSTBORO_LEVEL, VAR_WORLD_DIFFICULTY
+	special DecrementPlayerKeys
+	release
+	end
+
+RustboroCity_EventScript_ToFallarbor_BossUndefeated::
+	msgbox RustboroCity_Text_Boss_Undefeated, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, RustboroCity_Movement_TurnFrom_Fallarbor
+	waitmovement 0
+	release
+	end
+
+RustboroCity_EventScript_Cannot_Unlock_Fallarbor::
+	msgbox RustboroCity_Text_Cannot_Unlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, RustboroCity_Movement_TurnFrom_Fallarbor
+	waitmovement 0
+	release
+	end
+
+RustboroCity_EventScript_Reject_ToFallarbor::
+	msgbox RustboroCity_Text_Reject_Path, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, RustboroCity_Movement_TurnFrom_Fallarbor
+	waitmovement 0
+	release
+	end
+
+RustboroCity_EventScript_Check_ToMauville::
+	goto_if_unset FLAG_RUSTBORO_MAUVILLE_STRETCH, RustboroCity_EventScript_Check_Rustboro_Mauville
+	end
+
+RustboroCity_EventScript_Check_Rustboro_Mauville::
+	lock
+	goto_if_unset FLAG_RUSTBORO_BOSS, RustboroCity_EventScript_ToMauville_BossUndefeated
+	goto_if_lt VAR_NUMBER_OF_KEYS, 1 MauvilleCity_EventScript_Cannot_Unlock_Mauville
+	msgbox RustboroCity_Text_To_Mauville, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RustboroCity_EventScript_Reject_ToMauville
+	copyvar VAR_RUSTBORO_MAUVILLE_LEVEL, VAR_WORLD_DIFFICULTY
+
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The DEVON CORPORATION…\n"
 	.string "We all just shorten it to DEVON.\p"
 	.string "That company makes all sorts of\n"
 	.string "convenient products.$"
-
-RustboroCity_Text_SneakyLookingManWentAroundCorner:
-	.string "Hm? A sneaky-looking man?\p"
-	.string "Come to think of it, yes, a shady-\n"
-	.string "looking guy went around the corner.$"
 
 RustboroCity_Text_HaveYouChallengedGym:
 	.string "Have you taken the POKéMON GYM\n"
@@ -200,10 +231,6 @@ RustboroCity_Text_TradePokemonGrowFast:
 	.string "But if you don't have certain GYM\n"
 	.string "BADGES, it may not obey you…$"
 
-RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel:
-	.string "That shady character, I think he took\n"
-	.string "off towards the tunnel over there.$"
-
 RustboroCity_Text_TunnelNearingCompletion:
 	.string "“Timesaving tunnel nearing\n"
 	.string "completion!”\p"
@@ -220,11 +247,6 @@ RustboroCity_Text_GymSign:
 	.string "RUSTBORO CITY POKéMON GYM\n"
 	.string "LEADER: ROXANNE\p"
 	.string "“The ROCK-loving honors student!”$"
-
-RustboroCity_Text_DevonCorpBranchOfficeSign:
-	.string "DEVON CORP. BRANCH OFFICE\p"
-	.string "“Access limited to DEVON employees\n"
-	.string "and authorized personnel.”$"
 
 RustboroCity_Text_CitySign:
 	.string "RUSTBORO CITY\p"

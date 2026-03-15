@@ -170,7 +170,7 @@ PetalburgCity_Gym_EventScript_LeftDefenseRoomDoor::
 	goto_if_eq VAR_RESULT, NO, PetalburgCity_Gym_EventScript_DontEnterRoom
 	end
 
-PetalburgCity_Gym_EventScript_RightDefenseRoomDoor::
+PetalburgCity_Gym_EventScript_RightDefenseRoomDoor::	
 	lockall
 	goto_if_not_defeated TRAINER_MARY, PetalburgCity_Gym_EventScript_DoorLocked
 	setvar VAR_0x8008, 7
