@@ -236,6 +236,21 @@ FallarborTown_WorldEleven_Item::
 	finditem ITEM_SACRED_ASH, amount=1
 	end
 
+FallarborTown_EventScript_TestingNatu_Greeting::
+	msgbox FallarborTown_Text_TestingNatu_Greeing, MSGBOX_DEFAULT
+	@ switch(TRAINER_TEST_TRAINER)
+	@ case 0, FallarborTown_EventScript_TestingNatu_NotDefeated
+	@ case 1, FallarborTown_EventScript_TestingNatu_Defeated
+	end
+
+FallarborTown_EventScript_TestingNatu_NotDefeated::
+	msgbox FallarborTown_Text_TestingNatu_NotDefeated, MSGBOX_DEFAULT
+	end
+
+FallarborTown_EventScript_TestingNatu_Defeated::
+	msgbox FallarborTown_Text_TestingNatu_Defeated, MSGBOX_DEFAULT
+	end
+
 FallarborTown_Text_ShadyCharactersCozmosHome:
 	.string "Something's happening,\n"
 	.string "and I don't like it!\p"
@@ -333,3 +348,14 @@ FallarborTown_Text_TestLose:
 
 FallarborTown_Text_TestPostBattle:
 	.string "You already fought me!$"
+
+FallarborTown_Text_TestingNatu_Greeing:
+	.string "Hello!"
+
+FallarborTown_Text_TestingNatu_NotDefeated:
+	.string "You have not defeated the\n"
+	.string "test trainer.$"
+
+FallarborTown_Text_TestingNatu_Defeated:
+	.string "You have defeated the\n"
+	.string "test trainer. Nice!$"

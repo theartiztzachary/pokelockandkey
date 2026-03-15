@@ -88,27 +88,20 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	end
 
 PetalburgCity_Gym_EventScript_AutoUnlock_Rustboro::
-	goto_if_set FLAG_RUSTBORO_PETALBURG_STRETCH, PetalburgCity_Gym_EventScript_Already_Unlocked
 	setflag FLAG_RUSTBORO_PETALBURG_STRETCH
 	copyvar VAR_RUSTBORO_PETALBURG_LEVEL, VAR_WORLD_DIFFICULTY 
 	return
 	end
 
 PetalburgCity_Gym_EventScript_AutoUnlock_Dewford::
-	goto_if_set FLAG_PETALBURG_DEWFORD_STRETCH, PetalburgCity_Gym_EventScript_Already_Unlocked
 	setflag FLAG_PETALBURG_DEWFORD_STRETCH
 	copyvar VAR_PETALBURG_DEWFORD_LEVEL, VAR_WORLD_DIFFICULTY
 	return
 	end
 
 PetalburgCity_Gym_EventScript_AutoUnlock_Slateport::
-	goto_if_set FLAG_PETALBURG_SLATEPORT_STRETCH, PetalburgCity_Gym_EventScript_Already_Unlocked
 	setflag FLAG_PETALBURG_SLATEPORT_STRETCH
 	copyvar VAR_PETALBURG_SLATEPORT_LEVEL, VAR_WORLD_DIFFICULTY
-	return
-	end
-
-PetalburgCity_Gym_EventScript_Already_Unlocked::
 	return
 	end
 
@@ -177,7 +170,7 @@ PetalburgCity_Gym_EventScript_LeftDefenseRoomDoor::
 	goto_if_eq VAR_RESULT, NO, PetalburgCity_Gym_EventScript_DontEnterRoom
 	end
 
-PetalburgCity_Gym_EventScript_RightDefenseRoomDoor::
+PetalburgCity_Gym_EventScript_RightDefenseRoomDoor::	
 	lockall
 	goto_if_not_defeated TRAINER_MARY, PetalburgCity_Gym_EventScript_DoorLocked
 	setvar VAR_0x8008, 7
