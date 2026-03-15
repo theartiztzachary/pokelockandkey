@@ -28,6 +28,7 @@ enum PoolPruneOptions {
     POOL_PRUNE_NONE,
     POOL_PRUNE_TEST,
     POOL_PRUNE_RANDOM_TAG,
+    POOL_PRUNE_FISHER,
 };
 
 enum PoolTags {
@@ -38,7 +39,7 @@ enum PoolTags {
     POOL_TAG_WEATHER_SETTER = 2,
     POOL_TAG_WEATHER_ABUSER = 3,
     POOL_TAG_SUPPORT = 4,
-    POOL_TAG_TAG6 = 5,
+    POOL_TAG_NOT_FISH = 5,
     POOL_TAG_TAG7 = 6,
     POOL_TAG_TAG8 = 7,
     //  Must be the last element
@@ -50,7 +51,7 @@ enum PoolTags {
 #define MON_POOL_TAG_WEATHER_SETTER 1 << POOL_TAG_WEATHER_SETTER
 #define MON_POOL_TAG_WEATHER_ABUSER 1 << POOL_TAG_WEATHER_ABUSER
 #define MON_POOL_TAG_SUPPORT        1 << POOL_TAG_SUPPORT
-#define MON_POOL_TAG_TAG6           1 << POOL_TAG_TAG6
+#define MON_POOL_TAG_NOT_FISH       1 << POOL_TAG_NOT_FISH
 #define MON_POOL_TAG_TAG7           1 << POOL_TAG_TAG7
 #define MON_POOL_TAG_TAG8           1 << POOL_TAG_TAG8
 
@@ -68,11 +69,11 @@ struct PoolRules
 
 struct PickFunctions
 {
-    u32 (*LeadFunction)(const struct Trainer *, u8 *, u32, u32, u32, struct PoolRules *);
-    u32 (*AceFunction)(const struct Trainer *, u8 *, u32, u32, u32, struct PoolRules *);
-    u32 (*OtherFunction)(const struct Trainer *, u8 *, u32, u32, u32, struct PoolRules *);
+    u32 (*LeadFunction)(const struct Trainer *, u8 *, u32, u32, u32, struct PoolRules *, const struct TrainerMon *);
+    u32 (*AceFunction)(const struct Trainer *, u8 *, u32, u32, u32, struct PoolRules *, const struct TrainerMon *);
+    u32 (*OtherFunction)(const struct Trainer *, u8 *, u32, u32, u32, struct PoolRules *, const struct TrainerMon *);
 };
 
-void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags);
+void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags, const struct TrainerMon *trainerPool);
 
 #endif

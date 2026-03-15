@@ -1096,7 +1096,7 @@ struct SaveBlock1
     /*0x9C2*/ u8 unused_9C2[6];
 #if FREE_MATCH_CALL == FALSE
     /*0x9C8*/ u16 trainerRematchStepCounter;
-    /*0x9CA*/ u8 trainerRematches[MAX_REMATCH_ENTRIES];
+    /*0x9CA*/ u8 trainerRematches[MAX_REMATCH_ENTRIES]; //nts remove/inestigate
 #endif //FREE_MATCH_CALL
     /*0xA2E*/ //u8 padding3[2];
     /*0xA30*/ struct ObjectEvent objectEvents[OBJECT_EVENTS_COUNT];

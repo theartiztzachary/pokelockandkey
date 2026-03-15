@@ -10,13 +10,13 @@
 
 #include "data/battle_pool_rules.h"
 
-static void HasRequiredTag(const struct Trainer *trainer, u8* poolIndexArray, struct PoolRules *rules, u32 *arrayIndex, bool32 *foundRequiredTag, u32 currIndex)
+static void HasRequiredTag(const struct Trainer *trainer, u8* poolIndexArray, struct PoolRules *rules, u32 *arrayIndex, bool32 *foundRequiredTag, u32 currIndex, const struct TrainerMon *trainerPool)
 {
     //  Start from index 2, since lead and ace has special handling
     for (u32 currTag = 2; currTag < POOL_NUM_TAGS; currTag++)
     {
         if (rules->tagRequired[currTag]
-         && trainer->party[poolIndexArray[currIndex]].tags & (1u << currTag))
+         && trainerPool[poolIndexArray[currIndex]].tags & (1u << currTag))
         {
             *arrayIndex = currIndex;
             *foundRequiredTag = TRUE;
@@ -25,7 +25,7 @@ static void HasRequiredTag(const struct Trainer *trainer, u8* poolIndexArray, st
     }
 }
 
-static u32 DefaultLeadPickFunction(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules)
+static u32 DefaultLeadPickFunction(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules, const struct TrainerMon *trainerPool)
 {
     u32 arrayIndex = 0;
     u32 monIndex = POOL_SLOT_DISABLED;
@@ -39,12 +39,12 @@ static u32 DefaultLeadPickFunction(const struct Trainer *trainer, u8 *poolIndexA
         for (u32 currIndex = 0; currIndex < trainer->poolSize; currIndex++)
         {
             if ((poolIndexArray[currIndex] != POOL_SLOT_DISABLED)
-             && (trainer->party[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_LEAD)))
+             && (trainerPool[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_LEAD)))
             {
                 if (firstLeadIndex == POOL_SLOT_DISABLED)
                     firstLeadIndex = currIndex;
                 //  Start from index 2, since lead and ace has special handling
-                HasRequiredTag(trainer, poolIndexArray, rules, &arrayIndex, &foundRequiredTag, currIndex);
+                HasRequiredTag(trainer, poolIndexArray, rules, &arrayIndex, &foundRequiredTag, currIndex, trainerPool);
             }
             if (foundRequiredTag)
                 break;
@@ -64,7 +64,7 @@ static u32 DefaultLeadPickFunction(const struct Trainer *trainer, u8 *poolIndexA
     return monIndex;
 }
 
-static u32 DefaultAcePickFunction(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules)
+static u32 DefaultAcePickFunction(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules, const struct TrainerMon *trainerPool)
 {
     u32 arrayIndex = 0;
     u32 monIndex = POOL_SLOT_DISABLED;
@@ -78,11 +78,11 @@ static u32 DefaultAcePickFunction(const struct Trainer *trainer, u8 *poolIndexAr
         for (u32 currIndex = 0; currIndex < trainer->poolSize; currIndex++)
         {
             if ((poolIndexArray[currIndex] != POOL_SLOT_DISABLED)
-             && (trainer->party[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_ACE)))
+             && (trainerPool[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_ACE)))
             {
                 if (firstAceIndex == POOL_SLOT_DISABLED)
                     firstAceIndex = currIndex;
-                HasRequiredTag(trainer, poolIndexArray, rules, &arrayIndex, &foundRequiredTag, currIndex);
+                HasRequiredTag(trainer, poolIndexArray, rules, &arrayIndex, &foundRequiredTag, currIndex, trainerPool);
             }
             if (foundRequiredTag)
                 break;
@@ -102,7 +102,7 @@ static u32 DefaultAcePickFunction(const struct Trainer *trainer, u8 *poolIndexAr
     return monIndex;
 }
 
-static u32 DefaultOtherPickFunction(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules)
+static u32 DefaultOtherPickFunction(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules, const struct TrainerMon *trainerPool)
 {
     u32 arrayIndex = 0;
     u32 monIndex = POOL_SLOT_DISABLED;
@@ -113,12 +113,12 @@ static u32 DefaultOtherPickFunction(const struct Trainer *trainer, u8 *poolIndex
     for (u32 currIndex = 0; currIndex < trainer->poolSize; currIndex++)
     {
         if (poolIndexArray[currIndex] != POOL_SLOT_DISABLED
-         && !(trainer->party[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_LEAD))
-         && !(trainer->party[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_ACE)))
+         && !(trainerPool[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_LEAD))
+         && !(trainerPool[poolIndexArray[currIndex]].tags & (1u << POOL_TAG_ACE)))
         {
             if (firstUnpickedIndex == POOL_SLOT_DISABLED)
                 firstUnpickedIndex = currIndex;
-            HasRequiredTag(trainer, poolIndexArray, rules, &arrayIndex, &foundRequiredTag, currIndex);
+            HasRequiredTag(trainer, poolIndexArray, rules, &arrayIndex, &foundRequiredTag, currIndex, trainerPool);
         }
         if (foundRequiredTag)
             break;
@@ -137,7 +137,7 @@ static u32 DefaultOtherPickFunction(const struct Trainer *trainer, u8 *poolIndex
     return monIndex;
 }
 
-static u32 PickLowest(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules)
+static u32 PickLowest(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules, const struct TrainerMon *trainerPool)
 {
     u32 monIndex = POOL_SLOT_DISABLED;
     u32 lowestIndex = POOL_SLOT_DISABLED;
@@ -155,25 +155,25 @@ static u32 PickLowest(const struct Trainer *trainer, u8 *poolIndexArray, u32 par
     return monIndex;
 }
 
-static u32 PickMonFromPool(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules, struct PickFunctions pickFunctions)
+static u32 PickMonFromPool(const struct Trainer *trainer, u8 *poolIndexArray, u32 partyIndex, u32 monsCount, u32 battleTypeFlags, struct PoolRules *rules, struct PickFunctions pickFunctions, const struct TrainerMon *trainerPool)
 {
     u32 monIndex = POOL_SLOT_DISABLED;
     //  Pick Lead
     if (monIndex == POOL_SLOT_DISABLED)
-        monIndex = pickFunctions.LeadFunction(trainer, poolIndexArray, partyIndex, monsCount, battleTypeFlags, rules);
+        monIndex = pickFunctions.LeadFunction(trainer, poolIndexArray, partyIndex, monsCount, battleTypeFlags, rules, trainerPool);
     //  Pick Ace
     if (monIndex == POOL_SLOT_DISABLED)
-        monIndex = pickFunctions.AceFunction(trainer, poolIndexArray, partyIndex, monsCount, battleTypeFlags, rules);
+        monIndex = pickFunctions.AceFunction(trainer, poolIndexArray, partyIndex, monsCount, battleTypeFlags, rules, trainerPool);
     //  If no mon has been found yet continue looking
     if (monIndex == POOL_SLOT_DISABLED)
-        monIndex = pickFunctions.OtherFunction(trainer, poolIndexArray, partyIndex, monsCount, battleTypeFlags, rules);
+        monIndex = pickFunctions.OtherFunction(trainer, poolIndexArray, partyIndex, monsCount, battleTypeFlags, rules, trainerPool);
     //  If a mon still hasn't been found, return POOL_SLOT_DISABLED which makes party generation default to regular party generation
     if (monIndex == POOL_SLOT_DISABLED)
         return monIndex;
 
-    u32 chosenTags = trainer->party[monIndex].tags;
-    u16 chosenSpecies = trainer->party[monIndex].species;
-    u16 chosenItem = trainer->party[monIndex].heldItem;
+    u32 chosenTags = trainerPool[monIndex].tags;
+    u16 chosenSpecies = trainerPool[monIndex].species;
+    u16 chosenItem = trainerPool[monIndex].heldItem;
     enum NationalDexOrder chosenNatDex = gSpeciesInfo[chosenSpecies].natDexNum;
     //  If tag was required, change pool rule to account for the required tag already being picked
     u32 tagsToEliminate = 0;
@@ -199,9 +199,9 @@ static u32 PickMonFromPool(const struct Trainer *trainer, u8 *poolIndexArray, u3
     {
         if (poolIndexArray[currIndex] != POOL_SLOT_DISABLED)
         {
-            u32 currentTags = trainer->party[poolIndexArray[currIndex]].tags;
-            u16 currentSpecies = trainer->party[poolIndexArray[currIndex]].species;
-            u16 currentItem = trainer->party[poolIndexArray[currIndex]].heldItem;
+            u32 currentTags = trainerPool[poolIndexArray[currIndex]].tags;
+            u16 currentSpecies = trainerPool[poolIndexArray[currIndex]].species;
+            u16 currentItem = trainerPool[poolIndexArray[currIndex]].heldItem;
             enum NationalDexOrder currentNatDex = gSpeciesInfo[currentSpecies].natDexNum;
             if (currentTags & tagsToEliminate)
             {
@@ -307,7 +307,7 @@ static void RandomizePoolIndices(const struct Trainer *trainer, u8 *poolIndexArr
     }
 }
 
-static struct PickFunctions GetPickFunctions(const struct Trainer *trainer)
+static struct PickFunctions GetPickFunctions(const struct Trainer *trainer, const struct TrainerMon *trainerPool)
 {
     struct PickFunctions pickFunctions;
     switch (trainer->poolPickIndex)
@@ -348,7 +348,19 @@ static void RandomTagPrune(const struct Trainer *trainer, u8 *poolIndexArray, co
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 
-static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules)
+static void FishPokesOnlyPrune(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules, const struct TrainerMon *trainerPool)
+{
+    for (u32 i = 0; i < trainer->poolSize; i++)
+    {
+        if (trainerPool[poolIndexArray[i]].tags & (1u << POOL_TAG_NOT_FISH))
+        {
+            poolIndexArray[i] = POOL_SLOT_DISABLED;
+        };
+
+    };
+};
+
+static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const struct PoolRules *rules, const struct TrainerMon *trainerPool)
 {
     //  Use defined pruning functions go here
     switch (trainer->poolPruneIndex)
@@ -361,12 +373,15 @@ static void PrunePool(const struct Trainer *trainer, u8 *poolIndexArray, const s
         case POOL_PRUNE_RANDOM_TAG:
             RandomTagPrune(trainer, poolIndexArray, rules);
             break;
+        case POOL_PRUNE_FISHER:
+            FishPokesOnlyPrune(trainer, poolIndexArray, rules, trainerPool);
+            break;
         default:
             break;
     }
 }
 
-void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags)
+void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsCount, u32 battleTypeFlags, const struct TrainerMon *trainerPool)
 {
         bool32 usingPool = FALSE;
         struct PoolRules rules = defaultPoolRules;
@@ -377,13 +392,13 @@ void DoTrainerPartyPool(const struct Trainer *trainer, u32 *monIndices, u8 monsC
             u8 *poolIndexArray = Alloc(trainer->poolSize);
             RandomizePoolIndices(trainer, poolIndexArray);
 
-            struct PickFunctions pickFunctions = GetPickFunctions(trainer);
+            struct PickFunctions pickFunctions = GetPickFunctions(trainer, trainerPool);
 
-            PrunePool(trainer, poolIndexArray, &rules);
+            PrunePool(trainer, poolIndexArray, &rules, trainerPool);
 
             for (u32 i = 0; i < monsCount; i++)
             {
-                monIndices[i] = PickMonFromPool(trainer, poolIndexArray, i, monsCount, battleTypeFlags, &rules, pickFunctions);
+                monIndices[i] = PickMonFromPool(trainer, poolIndexArray, i, monsCount, battleTypeFlags, &rules, pickFunctions, trainerPool);
                 //  If the slot doesn't have a proper value, the pool creation failed, fall back to normal mon pick process
                 if (monIndices[i] == POOL_SLOT_DISABLED)
                 {

@@ -1,5 +1,4 @@
-// supposedly only used for one trainer so will probably change that
-
+[0] =
 {
     .species = SPECIES_GEODUDE,
     .gender = TRAINER_MON_RANDOM_GENDER,

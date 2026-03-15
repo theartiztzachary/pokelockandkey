@@ -16,6 +16,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 1,
     },
 
+    [ABILITY_ANCESTOR] =
+    {
+        .name = _("Ancestor"),
+        .description = COMPOUND_STRING("All moves are Ancient Power."),
+        .aiRating = 1,
+    },
+
     [ABILITY_DRIZZLE] =
     {
         .name = _("Drizzle"),
@@ -1663,6 +1670,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
+    [ABILITY_LIFE_VEST] =
+    {
+        .name = _("Life Vest"),
+        .description = COMPOUND_STRING("Tough unless sliced."),
+        .aiRating = 5,
+        .breakable = TRUE,
+    },
+
     [ABILITY_DAZZLING] =
     {
         .name = _("Dazzling"),
@@ -1678,9 +1693,9 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
     },
 
-    [ABILITY_TANGLING_HAIR] =
+    [ABILITY_TANGLING_VINES] =
     {
-        .name = _("Tangling Hair"),
+        .name = _("Tangling vINES"),
         .description = COMPOUND_STRING("Lowers Speed on contact."),
         .aiRating = 5,
     },
@@ -1726,6 +1741,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Electric Surge"),
         .description = COMPOUND_STRING("Field becomes Electric."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_MECHAMIND] =
+    {
+        .name = _("Mechamind"),
+        .description = COMPOUND_STRING("Ensures the first move hits."),
         .aiRating = 8,
     },
 
@@ -2403,9 +2425,9 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
     },
 
-    [ABILITY_POISON_PUPPETEER] =
+    [ABILITY_AGONIZING_VENOM] =
     {
-        .name = _("Poison Puppeteer"),
+        .name = _("Agonizing Venom"),
         .description = COMPOUND_STRING("Confuses poisoned foes."),
         .aiRating = 8,
         .cantBeCopied = TRUE,

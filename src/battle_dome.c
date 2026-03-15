@@ -4118,6 +4118,7 @@ static bool32 IsDomeComboMove(u32 move)
     case EFFECT_AQUA_RING:
     case EFFECT_LEECH_SEED:
     case EFFECT_ROAR:
+    case EFFECT_ECHOING_ROAR:
         return TRUE;
     default:
         break;

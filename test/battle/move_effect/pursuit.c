@@ -462,7 +462,7 @@ DOUBLE_BATTLE_TEST("Pursuit affected by Electrify fails against target with Volt
 SINGLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and activated ability Tangling Hair")
 {
     GIVEN {
-        PLAYER(SPECIES_DUGTRIO_ALOLA) { Ability(ABILITY_TANGLING_HAIR); }
+        PLAYER(SPECIES_DUGTRIO_ALOLA) { Ability(ABILITY_TANGLING_VINES); }
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -471,7 +471,7 @@ SINGLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and ac
     } SCENE {
         SWITCH_OUT_MESSAGE("Dugtrio");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_PURSUIT, opponent);
-        ABILITY_POPUP(player, ABILITY_TANGLING_HAIR);
+        ABILITY_POPUP(player, ABILITY_TANGLING_VINES);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
         MESSAGE("The opposing Wynaut's Speed fell!");
         SEND_IN_MESSAGE("Wobbuffet");
@@ -481,7 +481,7 @@ SINGLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and ac
 DOUBLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and activated ability Tangling Hair - Doubles")
 {
     GIVEN {
-        PLAYER(SPECIES_DUGTRIO_ALOLA) { Ability(ABILITY_TANGLING_HAIR); }
+        PLAYER(SPECIES_DUGTRIO_ALOLA) { Ability(ABILITY_TANGLING_VINES); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT);
@@ -491,11 +491,11 @@ DOUBLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and ac
     } SCENE {
         SWITCH_OUT_MESSAGE("Dugtrio");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_PURSUIT, opponentLeft);
-        ABILITY_POPUP(playerLeft, ABILITY_TANGLING_HAIR);
+        ABILITY_POPUP(playerLeft, ABILITY_TANGLING_VINES);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
         MESSAGE("The opposing Wynaut's Speed fell!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_PURSUIT, opponentRight);
-        ABILITY_POPUP(playerLeft, ABILITY_TANGLING_HAIR);
+        ABILITY_POPUP(playerLeft, ABILITY_TANGLING_VINES);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
         MESSAGE("The opposing Wobbuffet's Speed fell!");
         SEND_IN_MESSAGE("Wobbuffet");
@@ -505,7 +505,7 @@ DOUBLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and ac
 SINGLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and activated ability Tangling Hair - Mirror Armor")
 {
     GIVEN {
-        PLAYER(SPECIES_DUGTRIO_ALOLA) { Ability(ABILITY_TANGLING_HAIR); }
+        PLAYER(SPECIES_DUGTRIO_ALOLA) { Ability(ABILITY_TANGLING_VINES); }
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_CORVIKNIGHT) { Ability(ABILITY_MIRROR_ARMOR); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -514,7 +514,7 @@ SINGLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and ac
     } SCENE {
         SWITCH_OUT_MESSAGE("Dugtrio");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_PURSUIT, opponent);
-        ABILITY_POPUP(player, ABILITY_TANGLING_HAIR);
+        ABILITY_POPUP(player, ABILITY_TANGLING_VINES);
         ABILITY_POPUP(opponent, ABILITY_MIRROR_ARMOR);
         SEND_IN_MESSAGE("Wobbuffet");
     }

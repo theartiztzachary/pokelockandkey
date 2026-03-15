@@ -4467,6 +4467,14 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 }
             }
             break;
+        case ABILITY_MECHAMIND:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                    SET_STATCHANGER(STAT_ACC, 6, FALSE);
+                    BattleScriptPushCursorAndCallback(BattleScript_BattlerAbilityStatRaiseOnSwitchIn);
+                    effect++;
+                }
+            break;
         case ABILITY_DAUNTLESS_SHIELD:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && !GetBattlerPartyState(battler)->dauntlessShieldBoost)
@@ -5096,7 +5104,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             }
             break;
         case ABILITY_GOOEY:
-        case ABILITY_TANGLING_HAIR:
+        case ABILITY_TANGLING_VINES:
             if (IsBattlerAlive(gBattlerAttacker)
              && (CompareStat(gBattlerAttacker, STAT_SPEED, MIN_STAT_STAGE, CMP_GREATER_THAN, gLastUsedAbility) || GetBattlerAbility(gBattlerAttacker) == ABILITY_MIRROR_ARMOR)
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
@@ -5465,6 +5473,17 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_ANCESTOR:
+            if (IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && RandomChance(RNG_ANCESTOR, 1, 10)
+             && IsBattlerTurnDamaged(gBattlerTarget)
+             && !MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_ALL_STATS_UP))
+            {
+                SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_ALL_STATS_UP, gBattlescriptCurrInstr, EFFECT_PRIMARY);
+                effect++;
+            }
+            break;
         case ABILITY_GULP_MISSILE:
             if ((gBattleMons[gBattlerAttacker].species == SPECIES_CRAMORANT)
              && ((gCurrentMove == MOVE_SURF && IsBattlerTurnDamaged(gBattlerTarget)) || gBattleMons[gBattlerAttacker].volatiles.semiInvulnerable == STATE_UNDERWATER)
@@ -5475,12 +5494,12 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
-        case ABILITY_POISON_PUPPETEER:
-            if (gBattleMons[gBattlerAttacker].species == SPECIES_PECHARUNT
-             && gBattleStruct->poisonPuppeteerConfusion == TRUE
+        case ABILITY_AGONIZING_VENOM:
+            if (gBattleMons[gBattlerAttacker].species == SPECIES_SEVIPER
+             && gBattleStruct->agonizingVenomConfusion == TRUE
              && CanBeConfused(gBattlerTarget))
             {
-                gBattleStruct->poisonPuppeteerConfusion = FALSE;
+                gBattleStruct->agonizingVenomConfusion = FALSE;
                 gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                 BattleScriptCall(BattleScript_AbilityStatusEffect);
@@ -8379,6 +8398,23 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
             recordAbility = TRUE;
         }
         if (ctx->moveType != TYPE_FIRE && IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ABILITY_NONE, ctx->holdEffectAtk, ctx->move))
+        {
+            modifier = UQ_4_12(0.5);
+            recordAbility = TRUE;
+        }
+        break;
+    case ABILITY_LIFE_VEST:
+        if (IsSlicingMove(ctx->move) && !IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ABILITY_NONE, ctx->holdEffectAtk, ctx->move))
+        {
+            modifier = UQ_4_12(2.0);
+            recordAbility = TRUE;
+        }
+        if (IsSlicingMove(ctx->move) && IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ABILITY_NONE, ctx->holdEffectAtk, ctx->move))
+        {
+            modifier = UQ_4_12(1);
+            recordAbility = TRUE;
+        }
+        if (!IsSlicingMove(ctx->move) && IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ABILITY_NONE, ctx->holdEffectAtk, ctx->move))
         {
             modifier = UQ_4_12(0.5);
             recordAbility = TRUE;

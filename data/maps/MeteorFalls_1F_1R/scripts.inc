@@ -6,6 +6,33 @@ MeteorFalls_1F_1R_OnLoad:
 	call_if_set FLAG_SYS_GAME_CLEAR, MeteorFalls_1F_1R_EventScript_OpenStevensCave
 	end
 
+Meteor1F1R_EventScript_HealthFeather::
+	goto_if_eq VAR_WORLD_DIFFICULTY, 0, Meteor1F1R_ThreeHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 1, Meteor1F1R_ThreeHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 2, Meteor1F1R_ThreeHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 3, Meteor1F1R_ThreeHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 4, Meteor1F1R_FourHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 5, Meteor1F1R_FourHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 6, Meteor1F1R_FourHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 7, Meteor1F1R_FourHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 8, Meteor1F1R_FiveHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 9, Meteor1F1R_FiveHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 10, Meteor1F1R_FiveHealthFeathers
+	goto_if_eq VAR_WORLD_DIFFICULTY, 11, Meteor1F1R_FiveHealthFeathers
+	end
+
+Meteor1F1R_ThreeHealthFeathers::
+	finditem ITEM_HEALTH_FEATHER, amount=3
+	end
+
+Meteor1F1R_FourHealthFeathers::
+	finditem ITEM_HEALTH_FEATHER, amount=4
+	end
+
+Meteor1F1R_FiveHealthFeathers::
+	finditem ITEM_HEALTH_FEATHER, amount=5
+	end
+
 MeteorFalls_1F_1R_EventScript_OpenStevensCave::
 	setmetatile 4, 1, METATILE_MeteorFalls_CaveEntrance_Top, TRUE
 	setmetatile 3, 2, METATILE_MeteorFalls_CaveEntrance_Left, TRUE

@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Poison Puppeteer confuses target if it was poisoned by a dam
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_POISON_STING, MOVE_EFFECT_POISON) == TRUE);
-        PLAYER(SPECIES_PECHARUNT) { Ability(ABILITY_POISON_PUPPETEER); }
+        PLAYER(SPECIES_PECHARUNT) { Ability(ABILITY_AGONIZING_VENOM); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_POISON_STING); }
@@ -14,7 +14,7 @@ SINGLE_BATTLE_TEST("Poison Puppeteer confuses target if it was poisoned by a dam
         HP_BAR(opponent);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
         STATUS_ICON(opponent, poison: TRUE);
-        ABILITY_POPUP(player, ABILITY_POISON_PUPPETEER);
+        ABILITY_POPUP(player, ABILITY_AGONIZING_VENOM);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_CONFUSION, opponent);
         MESSAGE("The opposing Wobbuffet became confused!");
     }
@@ -29,7 +29,7 @@ SINGLE_BATTLE_TEST("Poison Puppeteer confuses target if it was (badly) poisoned 
 
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_POISON_STING, MOVE_EFFECT_POISON) == TRUE);
-        PLAYER(SPECIES_PECHARUNT) { Ability(ABILITY_POISON_PUPPETEER); }
+        PLAYER(SPECIES_PECHARUNT) { Ability(ABILITY_AGONIZING_VENOM); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, move); }
@@ -40,7 +40,7 @@ SINGLE_BATTLE_TEST("Poison Puppeteer confuses target if it was (badly) poisoned 
             STATUS_ICON(opponent, poison: TRUE);
         else
             STATUS_ICON(opponent, badPoison: TRUE);
-        ABILITY_POPUP(player, ABILITY_POISON_PUPPETEER);
+        ABILITY_POPUP(player, ABILITY_AGONIZING_VENOM);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_CONFUSION, opponent);
         MESSAGE("The opposing Wobbuffet became confused!");
     }
@@ -50,7 +50,7 @@ SINGLE_BATTLE_TEST("Poison Puppeteer does not trigger if poison is Toxic Spikes 
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TOXIC_SPIKES) == EFFECT_TOXIC_SPIKES);
-        PLAYER(SPECIES_PECHARUNT) { Ability(ABILITY_POISON_PUPPETEER); }
+        PLAYER(SPECIES_PECHARUNT) { Ability(ABILITY_AGONIZING_VENOM); }
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Poison Puppeteer does not trigger if poison is Toxic Spikes 
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
         STATUS_ICON(opponent, poison: TRUE);
         NONE_OF {
-            ABILITY_POPUP(player, ABILITY_POISON_PUPPETEER);
+            ABILITY_POPUP(player, ABILITY_AGONIZING_VENOM);
             ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_CONFUSION, opponent);
             MESSAGE("The opposing Wobbuffet became confused!");
         }

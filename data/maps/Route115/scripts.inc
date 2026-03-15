@@ -19,6 +19,29 @@ Route115_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
 
+Route115_EventScript_Nugget::
+	goto_if_eq VAR_WORLD_DIFFICULTY, 0, Route115_Nugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 1, Route115_Nugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 2, Route115_Nugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 3, Route115_Nugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 4, Route115_Nugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 5, Route115_Nugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 6, Route115_Nugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 7, Route115_BigNugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 8, Route115_BigNugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 9, Route115_BigNugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 10, Route115_BigNugget
+	goto_if_eq VAR_WORLD_DIFFICULTY, 11, Route115_BigNugget
+	end
+
+Route115_Nugget::
+	finditem ITEM_NUGGET, amount=1
+	end
+
+Route115_BigNugget::
+	finditem ITEM_BIG_NUGGET, amount=1
+	end
+
 Route115_EventScript_Woman::
 	msgbox Route115_Text_NeverKnowWhenCavePokemonWillAppear, MSGBOX_NPC
 	end

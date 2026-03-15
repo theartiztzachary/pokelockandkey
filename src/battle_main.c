@@ -79,6 +79,7 @@
 #include "test/test_runner_battle.h"
 #include "constants/difficulty.h"
 #include "constants/vars.h"
+#include "script_trainer_pool_util.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -1950,14 +1951,24 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         }
 
         u32 monIndices[monsCount];
-        DoTrainerPartyPool(trainer, monIndices, monsCount, battleTypeFlags);
+        const struct TrainerMon *trainerPool = CombinePools(trainer);
+
+        //DebugPrintf("Just after combining pools.");
+        //DebugPrintf("%d", trainerPool[0].species);
+
+        DoTrainerPartyPool(trainer, monIndices, monsCount, battleTypeFlags, trainerPool);
+
+        //DebugPrintf("Just after the DoTrainerPartyPool call.");
+        //DebugPrintf("%d", trainerPool[0].species);
 
         for (i = 0; i < monsCount; i++)
         {
             u32 monIndex = monIndices[i];
             s32 ball = -1;
             u32 personalityHash = GeneratePartyHash(trainer, i);
-            const struct TrainerMon *partyData = trainer->party;
+            const struct TrainerMon *partyData = trainerPool;
+            //DebugPrintf("In the monsCount for loop.");
+            //DebugPrintf("%d", partyData[monIndex].species);
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 abilityNum = 0;
@@ -1988,8 +1999,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             } else {
                 CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl + (6 * *GetVarPointer(VAR_WORLD_DIFFICULTY)), 0, TRUE, personalityValue, otIdType, fixedOtId);
             }
-
-            //DebugPrintf("%d", *GetVarPointer(VAR_WORLD_DIFFICULTY));
 
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 

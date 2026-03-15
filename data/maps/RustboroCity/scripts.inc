@@ -4,16 +4,15 @@ RustboroCity_MapScripts::
 
 RustboroCity_OnTransition:
 	setflag FLAG_VISITED_RUSTBORO_CITY
-	call Common_EventScript_SetupRivalGfxId
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	end
 
-RustboroCity_EventScript_PleaseSelectPokenav::
-	msgbox RustboroCity_Text_PleaseSelectPokenav, MSGBOX_DEFAULT
-	closemessage
-	delay 10
-	goto RustboroCity_EventScript_MatchCallTutorial
+RustboroCity_EventScript_HideMapNamePopup::
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	return
 
+RustboroCity_OnFrame:
+	.2byte 0
 
 RustboroCity_EventScript_FatMan::
 	lock

@@ -117,6 +117,7 @@ enum TrainerUnlockedAt
     LILYCOVE,
     MOSSDEEP,
     SOOTOPOLIS,
+    BATTLE_FRONTIER,
 };
 
 struct Trainer
