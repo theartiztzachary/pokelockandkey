@@ -15416,7 +15416,7 @@ F_TRAINER_FEMALE |
     {
         .trainerName = _("NOLAN"),
         .trainerClass = TRAINER_CLASS_FISHERMAN,
-        .trainerUnlockedAt = FALLARBOR_RUSTBORO
+        .trainerUnlockedAt = FALLARBOR_RUSTBORO,
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .encounterMusic_gender =
             TRAINER_ENCOUNTER_MUSIC_HIKER,

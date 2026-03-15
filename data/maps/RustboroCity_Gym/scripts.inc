@@ -3,9 +3,10 @@ RustboroCity_Gym_MapScripts::
 
 RustboroCity_Gym_EventScript_Roxanne::
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
 	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GiveRockTomb
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
-	goto if set 
 	release
 	end
 
@@ -15,12 +16,6 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
-	setflag FLAG_RUSTBORO_BOSS
-	special IncrementPlayerKeys
-	special IncrementWorldLevel
-	goto_if_set FLAG_FALLARBOR_BOSS, RustboroCity_Gym_EventScript_AutoUnlock_Fallarbor
-	goto_if_set FLAG_MAUVILLE_BOSS, RustboroCity_Gym_EventScript_AutoUnlock_Mauville
-	goto_if_set FLAG_PETALBURG_BOSS, RustboroCity_Gym_EventScript_AutoUnlock_Petalburg
 	setflag FLAG_BADGE01_GET
 	setvar VAR_RUSTBORO_CITY_STATE, 1
 	addvar VAR_PETALBURG_GYM_STATE, 1
@@ -28,24 +23,6 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	call Common_EventScript_SetGymTrainers
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
 	goto RustboroCity_Gym_EventScript_GiveRockTomb
-	end
-
-RustboroCity_Gym_EventScript_AutoUnlock_Fallarbor::
-	setflag FLAG_FALLARBOR_RUSTBORO_STRETCH
-	copyvar VAR_FALLARBOR_RUSTBORO_LEVEL, VAR_WORLD_DIFFICULTY
-	return
-	end
-
-RustboroCity_Gym_EventScript_AutoUnlock_Mauville::
-	setflag FLAG_RUSTBORO_MAUVILLE_STRETCH
-	copyvar VAR_RUSTBORO_MAUVILLE_LEVEL, VAR_WORLD_DIFFICULTY
-	return
-	end
-
-RustboroCity_Gym_EventScript_AutoUnlock_Petalburg::
-	setflag FLAG_RUSTBORO_PETALBURG_STRETCH
-	copyvar VAR_RUSTBORO_PETALBURG LEVEL, VAR_WORLD_DIFFICULTY
-	return
 	end
 
 RustboroCity_Gym_EventScript_GiveRockTomb::

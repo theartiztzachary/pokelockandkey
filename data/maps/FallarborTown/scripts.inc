@@ -237,18 +237,18 @@ FallarborTown_WorldEleven_Item::
 	end
 
 FallarborTown_EventScript_TestingNatu_Greeting::
+	lock
 	msgbox FallarborTown_Text_TestingNatu_Greeing, MSGBOX_DEFAULT
-	@ switch(TRAINER_TEST_TRAINER)
-	@ case 0, FallarborTown_EventScript_TestingNatu_NotDefeated
-	@ case 1, FallarborTown_EventScript_TestingNatu_Defeated
+	goto_if_eq VAR_WORLD_DIFFICULTY, 0, FallarborTown_EventScript_TestingNatu_Zero
+	msgbox FallarborTown_Text_TestingNatu_GoodDay, MSGBOX_NPC @ this isn't being called
+	special IncrementWorldLevel @ this also isn't being called
+	releaseall @ it's actually not.... >>
 	end
 
-FallarborTown_EventScript_TestingNatu_NotDefeated::
-	msgbox FallarborTown_Text_TestingNatu_NotDefeated, MSGBOX_DEFAULT
-	end
-
-FallarborTown_EventScript_TestingNatu_Defeated::
-	msgbox FallarborTown_Text_TestingNatu_Defeated, MSGBOX_DEFAULT
+FallarborTown_EventScript_TestingNatu_Zero::
+	msgbox FallarborTown_Text_TestingNatu_Zero, MSGBOX_DEFAULT 
+	closemessage
+	return @ WHY ARE YOU NOT RETURNING TO THE PREVIOUS
 	end
 
 FallarborTown_Text_ShadyCharactersCozmosHome:
@@ -350,12 +350,11 @@ FallarborTown_Text_TestPostBattle:
 	.string "You already fought me!$"
 
 FallarborTown_Text_TestingNatu_Greeing:
-	.string "Hello!"
+	.string "Hello!$"
 
-FallarborTown_Text_TestingNatu_NotDefeated:
-	.string "You have not defeated the\n"
-	.string "test trainer.$"
+FallarborTown_Text_TestingNatu_Zero:
+	.string "The world level is 0!$"
 
-FallarborTown_Text_TestingNatu_Defeated:
-	.string "You have defeated the\n"
-	.string "test trainer. Nice!$"
+FallarborTown_Text_TestingNatu_GoodDay:
+	.string "Are you having a good day\n"
+	.string "today?$"
